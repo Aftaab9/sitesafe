@@ -34,3 +34,5 @@ Thumbs.db
 web/public/ort/
 colab/sitesafe_code/
 colab/sitesafe_colab_results*/
+colab/sitesafe_colab_results*.zip
+colab/sitesafe_plus_results*.zip
