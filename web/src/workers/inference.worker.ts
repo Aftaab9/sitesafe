@@ -11,7 +11,7 @@ export type WorkerIn =
   | { type: 'load'; id: number; key: string; url: string; label: string; kind: 'det' | 'face' }
   | { type: 'detect'; id: number; key: string; bitmap: ImageBitmap; conf: number; iou: number; faces: boolean };
 
-const CACHE = 'sitesafe-models-v1';
+const CACHE = 'sitesafe-models-v2'; // entries are keyed by URL including ?v=<content hash>
 const sessions = new Map<string, ort.InferenceSession>();
 let backend: 'webgpu' | 'wasm' = 'wasm';
 let threads = 1;
@@ -45,6 +45,9 @@ async function fetchCached(url: string, label: string): Promise<ArrayBuffer> {
   for (const c of chunks) { buf.set(c, o); o += c.length; }
   if (cache) {
     try {
+      // drop older versions of the same model so the cache does not grow with every retrain
+      const base = url.split('?')[0];
+      for (const req of await cache.keys()) if (req.url.split('?')[0] === base && req.url !== url) await cache.delete(req);
       await cache.put(url, new Response(buf, { headers: { 'content-type': 'application/octet-stream', 'content-length': String(loaded) } }));
     } catch { /* quota: ignore */ }
   }
@@ -118,6 +121,10 @@ self.onmessage = async (e: MessageEvent<WorkerIn>) => {
   const msg = e.data;
   try {
     if (msg.type === 'init') {
+      // remove model caches from older app versions
+      try {
+        for (const k of await caches.keys()) if (k.startsWith('sitesafe-models') && k !== CACHE) await caches.delete(k);
+      } catch { /* no Cache API: nothing to clean */ }
       ort.env.wasm.wasmPaths = msg.base + 'ort/';
       threads = self.crossOriginIsolated ? Math.min(4, navigator.hardwareConcurrency || 1) : 1;
       ort.env.wasm.numThreads = threads;

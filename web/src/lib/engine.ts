@@ -29,6 +29,13 @@ export const useEngine = create<EngineState>(() => ({
 }));
 
 export const BASE = import.meta.env.BASE_URL;
+
+declare const __MODEL_VERSIONS__: Record<string, string>;
+/** Model URL with a content hash, so a retrained model is never served from an old cache entry. */
+const modelUrl = (file: string) => {
+  const v = __MODEL_VERSIONS__[file.split('/').pop()!];
+  return asset(file) + (v ? `?v=${v}` : '');
+};
 export const asset = (path: string) => new URL(BASE + path, window.location.href).toString();
 
 type Pending = { resolve: (v: any) => void; reject: (e: Error) => void };
@@ -82,7 +89,7 @@ class Engine {
         await this.call({ type: 'init', base: asset(''), backend: pref });
         await this.loadModel('base');
         const info = await this.call<{ backend: 'webgpu' | 'wasm'; threads: number }>({
-          type: 'load', key: 'face', url: asset('models/yunet.onnx'), label: 'Face detector', kind: 'face',
+          type: 'load', key: 'face', url: modelUrl('models/yunet.onnx'), label: 'Face detector', kind: 'face',
         });
         useEngine.setState({ status: 'ready', backend: info.backend, threads: info.threads, progress: null });
       } catch (err) {
@@ -97,7 +104,7 @@ class Engine {
   loadModel(key: ModelKey): Promise<void> {
     let p = this.loading.get(key);
     if (!p) {
-      p = this.call({ type: 'load', key, url: asset(MODEL_FILES[key].file), label: MODEL_FILES[key].label, kind: 'det' })
+      p = this.call({ type: 'load', key, url: modelUrl(MODEL_FILES[key].file), label: MODEL_FILES[key].label, kind: 'det' })
         .then(() => { useEngine.setState((s) => ({ loaded: { ...s.loaded, [key]: true }, progress: null })); });
       p.catch(() => this.loading.delete(key));
       this.loading.set(key, p);

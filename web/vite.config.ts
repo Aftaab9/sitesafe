@@ -1,6 +1,18 @@
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 import { VitePWA } from 'vite-plugin-pwa';
+import { createHash } from 'node:crypto';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
+
+// A short content hash of every model file. It is appended to the model URLs (?v=...) so that a
+// retrained model is downloaded again instead of being served from the browser's model cache.
+const modelDir = new URL('./public/models/', import.meta.url);
+const MODEL_VERSIONS: Record<string, string> = {};
+if (existsSync(modelDir)) {
+  for (const f of readdirSync(modelDir)) {
+    if (f.endsWith('.onnx')) MODEL_VERSIONS[f] = createHash('sha1').update(readFileSync(new URL(f, modelDir))).digest('hex').slice(0, 10);
+  }
+}
 
 // Cross-origin isolation is needed for multi-threaded WASM (SharedArrayBuffer).
 // In production the same headers come from vercel.json / public/_headers.
@@ -12,6 +24,7 @@ const isolation = {
 export default defineConfig({
   base: './', // relative, so the same build works on Vercel, Cloudflare Pages and GitHub Pages
   resolve: { alias: { '@': '/src' } },
+  define: { __MODEL_VERSIONS__: JSON.stringify(MODEL_VERSIONS) },
   plugins: [
     react(),
     VitePWA({
