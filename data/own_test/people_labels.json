@@ -1,0 +1,1574 @@
+{
+ "c001.jpg": {
+  "w": 1280,
+  "h": 960,
+  "people": [
+   {
+    "box": [
+     0,
+     11,
+     183,
+     539
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "W",
+    "ignore": false
+   },
+   {
+    "box": [
+     437,
+     558,
+     628,
+     835
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     469,
+     188,
+     742,
+     535
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "W",
+    "ignore": false
+   },
+   {
+    "box": [
+     783,
+     242,
+     999,
+     555
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "W",
+    "ignore": false
+   },
+   {
+    "box": [
+     499,
+     528,
+     653,
+     672
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": true
+   }
+  ]
+ },
+ "c003.jpg": {
+  "w": 1280,
+  "h": 937,
+  "people": [
+   {
+    "box": [
+     82,
+     471,
+     139,
+     619
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     173,
+     577,
+     235,
+     742
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     308,
+     730,
+     379,
+     845
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     464,
+     403,
+     527,
+     529
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     556,
+     698,
+     612,
+     832
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     1038,
+     540,
+     1094,
+     718
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     1047,
+     433,
+     1087,
+     509
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     1106,
+     407,
+     1162,
+     586
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     1249,
+     545,
+     1279,
+     644
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   }
+  ]
+ },
+ "c005.jpg": {
+  "w": 1280,
+  "h": 959,
+  "people": [
+   {
+    "box": [
+     51,
+     153,
+     333,
+     930
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     448,
+     134,
+     832,
+     949
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ },
+ "c010.jpg": {
+  "w": 1280,
+  "h": 959,
+  "people": [
+   {
+    "box": [
+     480,
+     59,
+     726,
+     929
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "W",
+    "ignore": false
+   },
+   {
+    "box": [
+     731,
+     152,
+     1015,
+     949
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "W",
+    "ignore": false
+   }
+  ]
+ },
+ "c017.jpg": {
+  "w": 1280,
+  "h": 959,
+  "people": [
+   {
+    "box": [
+     176,
+     62,
+     501,
+     956
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     446,
+     66,
+     1007,
+     959
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ },
+ "c021.jpg": {
+  "w": 1280,
+  "h": 959,
+  "people": [
+   {
+    "box": [
+     253,
+     179,
+     508,
+     877
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "W",
+    "ignore": false
+   },
+   {
+    "box": [
+     740,
+     314,
+     1069,
+     869
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "W",
+    "ignore": false
+   }
+  ]
+ },
+ "c031.jpg": {
+  "w": 1280,
+  "h": 959,
+  "people": [
+   {
+    "box": [
+     48,
+     71,
+     551,
+     959
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     699,
+     123,
+     1086,
+     959
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ },
+ "c035.jpg": {
+  "w": 1280,
+  "h": 960,
+  "people": [
+   {
+    "box": [
+     139,
+     146,
+     200,
+     279
+    ],
+    "helmet": "N",
+    "vest": "M",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     440,
+     457,
+     560,
+     638
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     492,
+     186,
+     538,
+     248
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     585,
+     331,
+     638,
+     439
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     692,
+     260,
+     757,
+     402
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     768,
+     384,
+     870,
+     528
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     691,
+     355,
+     781,
+     461
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     851,
+     205,
+     907,
+     359
+    ],
+    "helmet": "M",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     1008,
+     257,
+     1097,
+     434
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ },
+ "c037.jpg": {
+  "w": 1280,
+  "h": 853,
+  "people": [
+   {
+    "box": [
+     730,
+     205,
+     883,
+     503
+    ],
+    "helmet": "M",
+    "vest": "M",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     883,
+     281,
+     1062,
+     572
+    ],
+    "helmet": "W",
+    "vest": "M",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ },
+ "c039.jpg": {
+  "w": 1280,
+  "h": 960,
+  "people": [
+   {
+    "box": [
+     168,
+     552,
+     295,
+     918
+    ],
+    "helmet": "W",
+    "vest": "M",
+    "boots": "W",
+    "ignore": false
+   },
+   {
+    "box": [
+     256,
+     480,
+     307,
+     557
+    ],
+    "helmet": "W",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   },
+   {
+    "box": [
+     913,
+     497,
+     959,
+     597
+    ],
+    "helmet": "N",
+    "vest": "M",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     1041,
+     509,
+     1061,
+     553
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   },
+   {
+    "box": [
+     1101,
+     490,
+     1139,
+     576
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   }
+  ]
+ },
+ "c040.jpg": {
+  "w": 1280,
+  "h": 866,
+  "people": [
+   {
+    "box": [
+     829,
+     432,
+     1000,
+     864
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     1149,
+     420,
+     1230,
+     721
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ },
+ "c041.jpg": {
+  "w": 1280,
+  "h": 720,
+  "people": [
+   {
+    "box": [
+     563,
+     288,
+     614,
+     446
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     666,
+     360,
+     742,
+     446
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ },
+ "c043.jpg": {
+  "w": 1280,
+  "h": 853,
+  "people": [
+   {
+    "box": [
+     427,
+     321,
+     621,
+     586
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ },
+ "c047.jpg": {
+  "w": 1280,
+  "h": 850,
+  "people": [
+   {
+    "box": [
+     822,
+     391,
+     894,
+     560
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     930,
+     413,
+     964,
+     483
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   },
+   {
+    "box": [
+     942,
+     367,
+     1065,
+     737
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     1116,
+     379,
+     1215,
+     617
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     1240,
+     426,
+     1279,
+     616
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": true
+   }
+  ]
+ },
+ "c050.jpg": {
+  "w": 1280,
+  "h": 720,
+  "people": [
+   {
+    "box": [
+     378,
+     208,
+     466,
+     476
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     704,
+     317,
+     832,
+     461
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     755,
+     223,
+     781,
+     266
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": true
+   }
+  ]
+ },
+ "c051.jpg": {
+  "w": 1280,
+  "h": 742,
+  "people": [
+   {
+    "box": [
+     435,
+     503,
+     522,
+     699
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     618,
+     520,
+     687,
+     643
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     685,
+     516,
+     758,
+     696
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ },
+ "c090.jpg": {
+  "w": 1280,
+  "h": 720,
+  "people": [
+   {
+    "box": [
+     230,
+     346,
+     346,
+     698
+    ],
+    "helmet": "M",
+    "vest": "M",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     435,
+     396,
+     512,
+     713
+    ],
+    "helmet": "M",
+    "vest": "M",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     538,
+     360,
+     627,
+     713
+    ],
+    "helmet": "M",
+    "vest": "M",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     602,
+     367,
+     717,
+     713
+    ],
+    "helmet": "M",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     704,
+     338,
+     806,
+     713
+    ],
+    "helmet": "M",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     794,
+     360,
+     896,
+     713
+    ],
+    "helmet": "M",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     909,
+     346,
+     1011,
+     713
+    ],
+    "helmet": "M",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     346,
+     353,
+     397,
+     713
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   },
+   {
+    "box": [
+     397,
+     374,
+     448,
+     713
+    ],
+    "helmet": "M",
+    "vest": "M",
+    "boots": "N",
+    "ignore": true
+   }
+  ]
+ },
+ "c091.jpg": {
+  "w": 1280,
+  "h": 853,
+  "people": [
+   {
+    "box": [
+     129,
+     608,
+     187,
+     767
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "W",
+    "ignore": false
+   },
+   {
+    "box": [
+     193,
+     624,
+     245,
+     763
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ },
+ "c093.jpg": {
+  "w": 1280,
+  "h": 960,
+  "people": [
+   {
+    "box": [
+     922,
+     550,
+     1082,
+     920
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ },
+ "c094.jpg": {
+  "w": 1280,
+  "h": 960,
+  "people": [
+   {
+    "box": [
+     980,
+     495,
+     1134,
+     923
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "W",
+    "ignore": false
+   },
+   {
+    "box": [
+     299,
+     597,
+     332,
+     683
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   }
+  ]
+ },
+ "c096.jpg": {
+  "w": 1280,
+  "h": 960,
+  "people": [
+   {
+    "box": [
+     1150,
+     704,
+     1212,
+     904
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     833,
+     692,
+     878,
+     840
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   },
+   {
+    "box": [
+     243,
+     634,
+     346,
+     739
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   }
+  ]
+ },
+ "c099.jpg": {
+  "w": 1280,
+  "h": 852,
+  "people": [
+   {
+    "box": [
+     338,
+     372,
+     439,
+     636
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     450,
+     425,
+     557,
+     651
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     501,
+     297,
+     597,
+     452
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     545,
+     407,
+     633,
+     763
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     622,
+     487,
+     753,
+     848
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     711,
+     282,
+     843,
+     479
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     835,
+     137,
+     941,
+     390
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     1020,
+     109,
+     1203,
+     462
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ },
+ "c105.jpg": {
+  "w": 1280,
+  "h": 905,
+  "people": [
+   {
+    "box": [
+     220,
+     481,
+     436,
+     752
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "W",
+    "ignore": false
+   },
+   {
+    "box": [
+     1190,
+     197,
+     1272,
+     394
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   }
+  ]
+ },
+ "c106.jpg": {
+  "w": 1280,
+  "h": 852,
+  "people": [
+   {
+    "box": [
+     423,
+     442,
+     515,
+     764
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     530,
+     407,
+     623,
+     696
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     1016,
+     370,
+     1113,
+     750
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     653,
+     77,
+     755,
+     400
+    ],
+    "helmet": "W",
+    "vest": "N",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ },
+ "c107.jpg": {
+  "w": 1280,
+  "h": 845,
+  "people": [
+   {
+    "box": [
+     123,
+     61,
+     520,
+     839
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "W",
+    "ignore": false
+   },
+   {
+    "box": [
+     527,
+     155,
+     706,
+     636
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     677,
+     158,
+     873,
+     705
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     766,
+     135,
+     886,
+     568
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     192,
+     144,
+     307,
+     439
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": true
+   },
+   {
+    "box": [
+     486,
+     203,
+     563,
+     380
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": true
+   },
+   {
+    "box": [
+     128,
+     169,
+     179,
+     254
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   }
+  ]
+ },
+ "c109.jpg": {
+  "w": 1280,
+  "h": 985,
+  "people": [
+   {
+    "box": [
+     450,
+     189,
+     529,
+     421
+    ],
+    "helmet": "M",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     545,
+     180,
+     630,
+     413
+    ],
+    "helmet": "M",
+    "vest": "M",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     904,
+     370,
+     1136,
+     830
+    ],
+    "helmet": "M",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     883,
+     187,
+     947,
+     463
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     589,
+     98,
+     640,
+     217
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": true
+   },
+   {
+    "box": [
+     263,
+     228,
+     299,
+     313
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   },
+   {
+    "box": [
+     291,
+     227,
+     321,
+     311
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   },
+   {
+    "box": [
+     322,
+     229,
+     355,
+     329
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   },
+   {
+    "box": [
+     340,
+     216,
+     391,
+     334
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   }
+  ]
+ },
+ "c110.jpg": {
+  "w": 1280,
+  "h": 789,
+  "people": [
+   {
+    "box": [
+     168,
+     524,
+     230,
+     689
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     328,
+     541,
+     371,
+     700
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     397,
+     537,
+     474,
+     742
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     435,
+     537,
+     477,
+     625
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     145,
+     519,
+     182,
+     679
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   },
+   {
+    "box": [
+     400,
+     532,
+     479,
+     744
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   },
+   {
+    "box": [
+     1029,
+     560,
+     1055,
+     638
+    ],
+    "helmet": "N",
+    "vest": "N",
+    "boots": "N",
+    "ignore": true
+   }
+  ]
+ },
+ "c116.jpg": {
+  "w": 1280,
+  "h": 914,
+  "people": [
+   {
+    "box": [
+     0,
+     135,
+     364,
+     905
+    ],
+    "helmet": "W",
+    "vest": "M",
+    "boots": "W",
+    "ignore": false
+   },
+   {
+    "box": [
+     768,
+     334,
+     921,
+     750
+    ],
+    "helmet": "W",
+    "vest": "M",
+    "boots": "W",
+    "ignore": false
+   },
+   {
+    "box": [
+     919,
+     447,
+     1001,
+     665
+    ],
+    "helmet": "W",
+    "vest": "M",
+    "boots": "W",
+    "ignore": false
+   }
+  ]
+ },
+ "c118.jpg": {
+  "w": 1280,
+  "h": 852,
+  "people": [
+   {
+    "box": [
+     853,
+     399,
+     909,
+     547
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   },
+   {
+    "box": [
+     930,
+     376,
+     1006,
+     599
+    ],
+    "helmet": "W",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ },
+ "c119.jpg": {
+  "w": 1280,
+  "h": 853,
+  "people": [
+   {
+    "box": [
+     460,
+     54,
+     785,
+     506
+    ],
+    "helmet": "N",
+    "vest": "W",
+    "boots": "N",
+    "ignore": false
+   }
+  ]
+ }
+}

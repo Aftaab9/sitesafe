@@ -8,7 +8,11 @@ __pycache__/
 data/raw/
 data/construction-ppe/
 data/synthetic/
-data/own_test/images/
+data/own_test/candidates/
+data/own_test/candidates.csv
+data/extra_raw/
+data/extra/
+models/external_*.pt
 data/splits/*_abs.txt
 data/splits/*.yaml
 runs/
