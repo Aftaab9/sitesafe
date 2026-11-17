@@ -1,181 +1,181 @@
 {
   "original": {
-    "map50": 0.796,
-    "map50_95": 0.5845,
+    "map50": 0.8012,
+    "map50_95": 0.5937,
     "faces_blurred": 0,
-    "helmet_recall": 0.7646,
-    "no_helmet_recall": 0.4795,
-    "goggles_recall": 0.962,
-    "no_goggle_recall": 0.3143,
-    "person_recall": 0.9261,
+    "helmet_recall": 0.7696,
+    "no_helmet_recall": 0.5148,
+    "goggles_recall": 0.9813,
+    "no_goggle_recall": 0.3714,
+    "person_recall": 0.9304,
     "per_class": {
       "helmet": {
-        "recall": 0.7646,
-        "ap50": 0.8463
+        "recall": 0.7696,
+        "ap50": 0.8411
       },
       "gloves": {
-        "recall": 0.8085,
-        "ap50": 0.8641
+        "recall": 0.8021,
+        "ap50": 0.8737
       },
       "vest": {
-        "recall": 0.8733,
-        "ap50": 0.917
+        "recall": 0.8757,
+        "ap50": 0.9235
       },
       "boots": {
-        "recall": 0.7103,
-        "ap50": 0.7781
+        "recall": 0.7405,
+        "ap50": 0.8143
       },
       "goggles": {
-        "recall": 0.962,
-        "ap50": 0.9754
+        "recall": 0.9813,
+        "ap50": 0.9843
       },
       "Person": {
-        "recall": 0.9261,
-        "ap50": 0.9561
+        "recall": 0.9304,
+        "ap50": 0.9574
       },
       "no_helmet": {
-        "recall": 0.4795,
-        "ap50": 0.5639
+        "recall": 0.5148,
+        "ap50": 0.541
       },
       "no_goggle": {
-        "recall": 0.3143,
-        "ap50": 0.3555
+        "recall": 0.3714,
+        "ap50": 0.4036
       },
       "no_gloves": {
-        "recall": 0.6526,
-        "ap50": 0.7762
+        "recall": 0.6965,
+        "ap50": 0.7527
       },
       "no_boots": {
-        "recall": 0.7399,
-        "ap50": 0.872
+        "recall": 0.7746,
+        "ap50": 0.8742
       },
       "forklift": {
-        "recall": 0.7838,
-        "ap50": 0.8724
+        "recall": 0.8104,
+        "ap50": 0.915
       },
       "no_vest": {
-        "recall": 0.7021,
-        "ap50": 0.7754
+        "recall": 0.6994,
+        "ap50": 0.7332
       }
     }
   },
   "faces": {
-    "map50": 0.6769,
-    "map50_95": 0.5025,
+    "map50": 0.6998,
+    "map50_95": 0.5201,
     "faces_blurred": 149,
-    "helmet_recall": 0.7851,
-    "no_helmet_recall": 0.3973,
-    "goggles_recall": 0.0223,
-    "no_goggle_recall": 0.0286,
-    "person_recall": 0.9435,
+    "helmet_recall": 0.7821,
+    "no_helmet_recall": 0.5068,
+    "goggles_recall": 0.0188,
+    "no_goggle_recall": 0.0,
+    "person_recall": 0.9348,
     "per_class": {
       "helmet": {
-        "recall": 0.7851,
-        "ap50": 0.828
+        "recall": 0.7821,
+        "ap50": 0.8357
       },
       "gloves": {
-        "recall": 0.8128,
-        "ap50": 0.8653
+        "recall": 0.8178,
+        "ap50": 0.8715
       },
       "vest": {
-        "recall": 0.887,
-        "ap50": 0.9164
+        "recall": 0.8983,
+        "ap50": 0.9216
       },
       "boots": {
-        "recall": 0.7469,
-        "ap50": 0.7801
+        "recall": 0.7759,
+        "ap50": 0.8115
       },
       "goggles": {
-        "recall": 0.0223,
-        "ap50": 0.0188
+        "recall": 0.0188,
+        "ap50": 0.0925
       },
       "Person": {
-        "recall": 0.9435,
-        "ap50": 0.9538
+        "recall": 0.9348,
+        "ap50": 0.9546
       },
       "no_helmet": {
-        "recall": 0.3973,
-        "ap50": 0.4316
+        "recall": 0.5068,
+        "ap50": 0.5404
       },
       "no_goggle": {
-        "recall": 0.0286,
-        "ap50": 0.0325
+        "recall": 0.0,
+        "ap50": 0.0866
       },
       "no_gloves": {
-        "recall": 0.7284,
-        "ap50": 0.7729
+        "recall": 0.7374,
+        "ap50": 0.7485
       },
       "no_boots": {
-        "recall": 0.7887,
-        "ap50": 0.8738
+        "recall": 0.8066,
+        "ap50": 0.8791
       },
       "forklift": {
-        "recall": 0.7838,
-        "ap50": 0.8718
+        "recall": 0.853,
+        "ap50": 0.922
       },
       "no_vest": {
-        "recall": 0.7021,
-        "ap50": 0.778
+        "recall": 0.6809,
+        "ap50": 0.7329
       }
     }
   },
   "strict": {
-    "map50": 0.5499,
-    "map50_95": 0.367,
+    "map50": 0.6428,
+    "map50_95": 0.4576,
     "faces_blurred": 149,
-    "helmet_recall": 0.0769,
-    "no_helmet_recall": 0.0548,
+    "helmet_recall": 0.5807,
+    "no_helmet_recall": 0.2466,
     "goggles_recall": 0.0,
     "no_goggle_recall": 0.0,
-    "person_recall": 0.8503,
+    "person_recall": 0.9261,
     "per_class": {
       "helmet": {
-        "recall": 0.0769,
-        "ap50": 0.0572
+        "recall": 0.5807,
+        "ap50": 0.6514
       },
       "gloves": {
-        "recall": 0.7647,
-        "ap50": 0.8215
+        "recall": 0.8021,
+        "ap50": 0.8571
       },
       "vest": {
-        "recall": 0.8216,
-        "ap50": 0.8591
+        "recall": 0.8757,
+        "ap50": 0.9262
       },
       "boots": {
-        "recall": 0.7079,
-        "ap50": 0.7734
+        "recall": 0.7635,
+        "ap50": 0.8052
       },
       "goggles": {
         "recall": 0.0,
-        "ap50": 0.0
+        "ap50": 0.0049
       },
       "Person": {
-        "recall": 0.8503,
-        "ap50": 0.9272
+        "recall": 0.9261,
+        "ap50": 0.9521
       },
       "no_helmet": {
-        "recall": 0.0548,
-        "ap50": 0.0398
+        "recall": 0.2466,
+        "ap50": 0.2849
       },
       "no_goggle": {
         "recall": 0.0,
         "ap50": 0.0
       },
       "no_gloves": {
-        "recall": 0.632,
-        "ap50": 0.7125
+        "recall": 0.7004,
+        "ap50": 0.7403
       },
       "no_boots": {
-        "recall": 0.7606,
-        "ap50": 0.8752
+        "recall": 0.7746,
+        "ap50": 0.875
       },
       "forklift": {
-        "recall": 0.7568,
-        "ap50": 0.8742
+        "recall": 0.8108,
+        "ap50": 0.9087
       },
       "no_vest": {
-        "recall": 0.6383,
-        "ap50": 0.6592
+        "recall": 0.6809,
+        "ap50": 0.7076
       }
     }
   }

@@ -1,17 +1,17 @@
 {
   "tag": "sitesafe_base_fp32_onnx",
   "split": "test",
-  "weights": "C:\\Users\\ADMIN\\Desktop\\CVA_Final _Project\\models\\sitesafe_base.onnx",
-  "map50": 0.7936,
-  "map50_95": 0.5856,
-  "precision": 0.8512,
-  "recall": 0.7389,
-  "no_class_mean_recall": 0.5914,
-  "no_class_mean_ap50": 0.6581,
+  "weights": "/content/sitesafe/models/sitesafe_base.onnx",
+  "map50": 0.7983,
+  "map50_95": 0.5944,
+  "precision": 0.8975,
+  "recall": 0.7504,
+  "no_class_mean_recall": 0.6117,
+  "no_class_mean_ap50": 0.6566,
   "speed_ms": {
-    "preprocess": 4.48,
-    "inference": 41.18,
+    "preprocess": 1.35,
+    "inference": 95.24,
     "loss": 0.0,
-    "postprocess": 4.63
+    "postprocess": 1.32
   }
 }

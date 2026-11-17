@@ -14,6 +14,6 @@
     16,
     8400
   ],
-  "cpu_ms_2_threads": 90.2,
-  "cpu_ms_4_threads": 49.8
+  "cpu_ms_2_threads": 90.4,
+  "cpu_ms_4_threads": 227.0
 }

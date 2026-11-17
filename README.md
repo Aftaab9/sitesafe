@@ -9,7 +9,7 @@ MAIB AI 221 Computer Vision with Applications (S P Jain School of Global Managem
 | Main app (static, all AI in the browser) | Vercel: _add URL after first deploy_ · mirror on Cloudflare Pages: _add URL_ |
 | Fallback app (Streamlit Community Cloud) | _add URL_ |
 | Model | YOLO11n fine-tuned on Construction-PPE, ONNX, 10.7 MB |
-| Training | laptop CPU (shipped model) and Colab free T4 (notebooks) |
+| Training | Colab free T4, 100 epochs, about 20 minutes per model |
 
 ## What it does
 
@@ -26,14 +26,15 @@ MAIB AI 221 Computer Vision with Applications (S P Jain School of Global Managem
 
 | | |
 |---|---|
-| mAP@0.5 / mAP@0.5:0.95 (12 classes) | 0.796 / 0.584 |
-| Mean recall of the five "no_" classes | 0.580 |
-| Person-level compliance accuracy (decided people) | 95.4 % (colour-rules baseline 70.5 %) |
-| Precision / recall for "PPE missing" (decided people) | 1.00 / 0.88 |
-| Violators shown green | 8.4 % |
-| People routed to "check manually" | 18.8 % |
-| CPU time per image, ONNX Runtime, 4 threads | 44 ms (model only) |
-| Browser, WebGPU, laptop | about 115 ms per photo end to end |
+| mAP@0.5 / mAP@0.5:0.95 (12 classes) | 0.801 / 0.593 |
+| Mean recall of the five "no_" classes | 0.610 |
+| Person-level compliance accuracy (decided people) | 94.9 % (colour-rules baseline 70.5 %) |
+| Precision / recall for "PPE missing" (decided people) | 0.93 / 0.94 |
+| Violators shown green | 4.2 % |
+| People routed to "check manually" | 16.1 % |
+| Synthetic data (diffusion), real test / weather versions | −0.3 / +14.5 points of "no_" recall |
+| Whole photo, Python on 2 CPU threads | 147 ms |
+| Browser, WebGPU, laptop | about 115 ms model, 300 ms whole photo |
 
 Full tables, the generative-AI experiment, calibration, subgroup results, the face-blur study and the failure gallery are in `docs/report.md` and on the app's Model card page. All numbers are regenerated from `results/` by `python scripts/build_metrics.py`.
 
@@ -82,7 +83,7 @@ Each step is one command. With `make`: `make data`, `make train`, and so on. Wit
 | Package web assets | `python scripts/build_web_assets.py` |
 | Tests | `python -m pytest -q` and `cd web && npm run typecheck && npm test` |
 
-My own 30-image test set: see `docs/own_test_set.md` (pre-label, correct in CVAT or Label Studio, re-import).
+My own 30-image test set: `python scripts/fetch_own_images.py` (licensed Wikimedia Commons photos, sources in `data/own_test/sources.csv`), person-level labels in `data/own_test/people_labels.json`, scored by `python scripts/own_eval.py`. Extra real-photo data for the improved model: `python scripts/prepare_extra_data.py` (three CC BY 4.0 Hugging Face datasets) and `colab/SiteSafe_Colab_Plus_Training.ipynb`.
 
 ## Run the apps locally
 
@@ -118,6 +119,8 @@ The ONNX models are committed (10.7 MB and 0.2 MB, far below the 100 MB limit). 
 - Face detector: YuNet from the OpenCV Model Zoo, MIT.
 - Diffusion: SD-Turbo by Stability AI, Stability AI Community License (free for research and for organisations under USD 1 M revenue); used only offline to make training images, not shipped. Optional inpainting ablation: Stable Diffusion inpainting, CreativeML OpenRAIL-M.
 - CLIP ViT-B/32 (quality filter), MIT. SmolVLM-256M-Instruct (summary), Apache 2.0.
+- Own test photos: Wikimedia Commons, CC0 / public domain / CC BY / CC BY-SA, authors listed in `data/own_test/sources.csv`.
+- Extra training data: HB1204/PPE_Detection, VincentGOURBIN/ppe-detection, keremberke/construction-safety-object-detection (all CC BY 4.0, Roboflow Universe exports). Teacher for pseudo-labels: killuminati1/construction-ppe-yolov8 (Apache-2.0).
 - ONNX Runtime and ONNX Runtime Web, MIT. Transformers.js, Apache 2.0. React, Vite, Tailwind CSS, Framer Motion, Lucide, jsPDF: MIT / ISC.
 
 ## Responsible use

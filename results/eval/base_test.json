@@ -1,17 +1,17 @@
 {
   "tag": "base",
   "split": "test",
-  "weights": "models/sitesafe_base.pt",
-  "map50": 0.7958,
-  "map50_95": 0.5838,
-  "precision": 0.8915,
-  "recall": 0.7286,
-  "no_class_mean_recall": 0.5797,
-  "no_class_mean_ap50": 0.666,
+  "weights": "runs/base/weights/best.pt",
+  "map50": 0.8005,
+  "map50_95": 0.5931,
+  "precision": 0.8969,
+  "recall": 0.7451,
+  "no_class_mean_recall": 0.6101,
+  "no_class_mean_ap50": 0.6622,
   "speed_ms": {
-    "preprocess": 2.2,
-    "inference": 52.33,
+    "preprocess": 0.38,
+    "inference": 4.49,
     "loss": 0.0,
-    "postprocess": 1.15
+    "postprocess": 0.96
   }
 }

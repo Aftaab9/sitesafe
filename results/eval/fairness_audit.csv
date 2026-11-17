@@ -1,15 +1,15 @@
 dimension,group,n_people,person_recall,lo,hi,n_non_compliant,nc_flagged_or_unsure,nc_lo,nc_hi,small_group
 lighting,bright,12,1.0,1.0,1.0,4,1.0,1.0,1.0,True
 lighting,dark,19,0.7368,0.5263,0.8947,14,0.6429,0.3571,0.8571,True
-lighting,normal,185,0.9676,0.9405,0.9892,72,0.875,0.7917,0.9444,False
-distance,far,84,0.881,0.8095,0.9405,40,0.7,0.55,0.825,False
+lighting,normal,185,0.9568,0.9243,0.9838,72,0.9167,0.8472,0.9722,False
+distance,far,84,0.8571,0.7738,0.9286,40,0.75,0.6,0.875,False
 distance,mid,32,0.9688,0.9062,1.0,9,0.8889,0.6667,1.0,False
-distance,near,100,1.0,1.0,1.0,41,0.9756,0.9268,1.0,False
-clothing,dark,31,0.9032,0.7742,1.0,22,0.9091,0.7727,1.0,False
+distance,near,100,1.0,1.0,1.0,41,1.0,1.0,1.0,False
+clothing,dark,31,0.871,0.7419,0.9677,22,0.9091,0.7727,1.0,False
 clothing,hi-vis,70,1.0,1.0,1.0,17,0.8824,0.7059,1.0,False
 clothing,light,1,0.0,0.0,0.0,0,,,,True
-clothing,other,114,0.9386,0.886,0.9737,51,0.8039,0.6863,0.902,False
-skin_tone,darker,124,1.0,1.0,1.0,49,0.9796,0.9388,1.0,False
+clothing,other,114,0.9298,0.8772,0.9737,51,0.8627,0.7647,0.9412,False
+skin_tone,darker,124,1.0,1.0,1.0,49,1.0,1.0,1.0,False
 skin_tone,lighter,1,1.0,1.0,1.0,1,1.0,1.0,1.0,True
 skin_tone,medium,9,1.0,1.0,1.0,3,1.0,1.0,1.0,True
-skin_tone,not visible,82,0.8659,0.7805,0.939,37,0.6486,0.4865,0.7838,False
+skin_tone,not visible,82,0.8415,0.7561,0.9146,37,0.7027,0.5669,0.8378,False

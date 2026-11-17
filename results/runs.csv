@@ -1,3 +1,8 @@
 name,model,data,epochs,imgsz,batch,seed,train_minutes,val_map50,val_map50_95,val_precision,val_recall
-base,yolo11n.pt,ppe.yaml,30,640,16,42,1018.4,0.7535,0.5328,0.8508,0.6879
-synth,yolo11n.pt,ppe_synth_diffusion.yaml,30,640,16,42,155.0,0.7497,0.5323,0.8655,0.6784
+base,yolo11n.pt,ppe.yaml,100,640,16,42,18.7,0.7654,0.5401,0.8921,0.7022
+synth,yolo11n.pt,ppe_synth_diffusion.yaml,100,640,16,42,25.8,0.7719,0.5406,0.8601,0.7164
+classical,yolo11n.pt,ppe_synth_classical.yaml,100,640,16,42,25.6,0.7729,0.545,0.8743,0.7139
+inpaint,yolo11n.pt,ppe_synth_inpaint.yaml,100,640,16,42,19.8,0.7653,0.5438,0.8867,0.6983
+base_s,yolo11s.pt,ppe.yaml,100,640,16,42,23.5,0.7991,0.5766,0.8658,0.7575
+laptop30_base,yolo11n.pt,ppe.yaml,30,640,16,42,1018.4,0.7535,0.5328,0.8508,0.6879
+laptop30_synth,yolo11n.pt,ppe_synth_diffusion.yaml,30,640,16,42,155.0,0.7497,0.5323,0.8655,0.6784

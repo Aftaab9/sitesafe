@@ -2,10 +2,10 @@
   "model": "models/sitesafe_base.onnx",
   "temperature": 0.67,
   "target_precision": 0.8,
-  "ece_val_before": 0.0921,
-  "ece_val_after": 0.07,
-  "ece_test_before": 0.0904,
-  "ece_test_after": 0.0587,
+  "ece_val_before": 0.0817,
+  "ece_val_after": 0.0522,
+  "ece_test_before": 0.0857,
+  "ece_test_after": 0.0526,
   "class_thresholds": {
     "0": 0.3,
     "6": 0.3,
@@ -16,7 +16,7 @@
     "1": 0.3,
     "8": 0.3,
     "3": 0.3,
-    "9": 0.3
+    "9": 0.35
   },
   "class_thresholds_named": {
     "helmet": 0.3,
@@ -28,8 +28,8 @@
     "gloves": 0.3,
     "no_gloves": 0.3,
     "boots": 0.3,
-    "no_boots": 0.3
+    "no_boots": 0.35
   },
-  "n_val_detections": 3153,
-  "n_test_detections": 1495
+  "n_val_detections": 3149,
+  "n_test_detections": 1485
 }

@@ -1,29 +1,29 @@
 set,class,recall_without,recall_with,delta,lo,hi,n_gt
-real test (100 images),helmet,0.8205,0.7885,-0.0321,-0.0611,0.0,156
-real test (100 images),gloves,0.8128,0.8021,-0.0107,-0.0361,0.0142,187
-real test (100 images),vest,0.887,0.904,0.0169,-0.0062,0.0414,177
-real test (100 images),boots,0.7386,0.751,0.0124,-0.0045,0.0318,241
-real test (100 images),goggles,0.9747,0.962,-0.0127,-0.0395,0.0,79
-real test (100 images),Person,0.9478,0.9391,-0.0087,-0.0209,0.0,230
-real test (100 images),no_helmet,0.5205,0.5068,-0.0137,-0.0781,0.0455,73
-real test (100 images),no_goggle,0.3143,0.3143,0.0,-0.079,0.0882,35
-real test (100 images),no_gloves,0.7172,0.7172,0.0,-0.0451,0.052,99
-real test (100 images),no_boots,0.7606,0.7887,0.0282,-0.0782,0.1304,71
-real test (100 images),forklift,0.8108,0.7838,-0.027,-0.0857,0.0,37
-real test (100 images),no_vest,0.7021,0.6809,-0.0213,-0.0714,0.0,47
-real test (100 images),ALL no_* classes,0.6369,0.6369,0.0,-0.0291,0.0302,325
-real test (100 images),ALL classes,0.801,0.7975,-0.0035,-0.0129,0.0062,1432
-synthetic weather versions of test images (100),helmet,0.6154,0.6603,0.0449,0.0076,0.0867,156
-synthetic weather versions of test images (100),gloves,0.4118,0.5722,0.1604,0.0945,0.2308,187
-synthetic weather versions of test images (100),vest,0.6949,0.7232,0.0282,-0.0054,0.0621,177
-synthetic weather versions of test images (100),boots,0.3444,0.5685,0.2241,0.1434,0.3156,241
-synthetic weather versions of test images (100),goggles,0.2658,0.8481,0.5823,0.4625,0.6914,79
-synthetic weather versions of test images (100),Person,0.7,0.713,0.013,-0.013,0.0423,230
-synthetic weather versions of test images (100),no_helmet,0.2603,0.3014,0.0411,-0.0149,0.1077,73
-synthetic weather versions of test images (100),no_goggle,0.1714,0.1143,-0.0571,-0.175,0.0526,35
-synthetic weather versions of test images (100),no_gloves,0.3838,0.4242,0.0404,-0.0111,0.1,99
-synthetic weather versions of test images (100),no_boots,0.3239,0.6056,0.2817,0.1276,0.4253,71
-synthetic weather versions of test images (100),forklift,0.2973,0.7568,0.4595,0.25,0.6389,37
-synthetic weather versions of test images (100),no_vest,0.5532,0.5957,0.0426,-0.0612,0.1464,47
-synthetic weather versions of test images (100),ALL no_* classes,0.3446,0.4277,0.0831,0.0385,0.1313,325
-synthetic weather versions of test images (100),ALL classes,0.4777,0.6096,0.132,0.1024,0.1643,1432
+real test (100 images),helmet,0.7885,0.8333,0.0449,0.013,0.08,156
+real test (100 images),gloves,0.8235,0.8396,0.016,-0.0152,0.0469,187
+real test (100 images),vest,0.904,0.9096,0.0056,-0.0178,0.0333,177
+real test (100 images),boots,0.7676,0.751,-0.0166,-0.0372,0.0,241
+real test (100 images),goggles,1.0,0.9747,-0.0253,-0.0641,0.0,79
+real test (100 images),Person,0.9391,0.9522,0.013,0.0,0.0269,230
+real test (100 images),no_helmet,0.5753,0.5616,-0.0137,-0.0822,0.0656,73
+real test (100 images),no_goggle,0.4286,0.4286,0.0,-0.1389,0.1429,35
+real test (100 images),no_gloves,0.7374,0.7475,0.0101,-0.023,0.0465,99
+real test (100 images),no_boots,0.8169,0.8028,-0.0141,-0.087,0.0606,71
+real test (100 images),forklift,0.8378,0.8108,-0.027,-0.0909,0.0,37
+real test (100 images),no_vest,0.7021,0.7021,0.0,-0.0638,0.0556,47
+real test (100 images),ALL no_* classes,0.68,0.6769,-0.0031,-0.0299,0.0269,325
+real test (100 images),ALL classes,0.8163,0.8205,0.0042,-0.0066,0.0151,1432
+synthetic weather versions of test images (100),helmet,0.6282,0.6538,0.0256,0.0057,0.0537,156
+synthetic weather versions of test images (100),gloves,0.3743,0.5936,0.2193,0.1505,0.2938,187
+synthetic weather versions of test images (100),vest,0.7006,0.7458,0.0452,0.0098,0.0896,177
+synthetic weather versions of test images (100),boots,0.3485,0.5768,0.2282,0.1472,0.3222,241
+synthetic weather versions of test images (100),goggles,0.3165,0.8608,0.5443,0.4321,0.6582,79
+synthetic weather versions of test images (100),Person,0.7043,0.7522,0.0478,0.01,0.0887,230
+synthetic weather versions of test images (100),no_helmet,0.2329,0.3151,0.0822,0.0,0.1897,73
+synthetic weather versions of test images (100),no_goggle,0.1429,0.2857,0.1429,-0.0333,0.3235,35
+synthetic weather versions of test images (100),no_gloves,0.404,0.4343,0.0303,-0.0606,0.1333,99
+synthetic weather versions of test images (100),no_boots,0.3521,0.7465,0.3944,0.2581,0.537,71
+synthetic weather versions of test images (100),forklift,0.2973,0.7838,0.4865,0.2608,0.6857,37
+synthetic weather versions of test images (100),no_vest,0.5319,0.6383,0.1064,0.0256,0.2,47
+synthetic weather versions of test images (100),ALL no_* classes,0.3446,0.4892,0.1446,0.0861,0.2088,325
+synthetic weather versions of test images (100),ALL classes,0.4791,0.6376,0.1585,0.1255,0.1968,1432

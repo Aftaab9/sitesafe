@@ -37,8 +37,9 @@ def main():
     runs = pd.read_csv(RESULTS / "runs.csv") if (RESULTS / "runs.csv").exists() else None
     if runs is not None:
         r = runs.iloc[0]
-        m["training"] = {"note": f"The shipped model was trained for {int(r.epochs)} epochs at {int(r.imgsz)} px on a laptop CPU "
-                                 f"(seed {int(r.seed)}). The Colab notebooks repeat the run for 100 epochs on a free T4 GPU."}
+        m["training"] = {"note": (f"The shipped models were trained for {int(r.epochs)} epochs at {int(r.imgsz)} px on a free Colab T4 GPU "
+                                  f"(about {float(r.train_minutes):.0f} minutes each, seed {int(r.seed)}). An earlier 30-epoch run on a laptop CPU "
+                                  "took about 17 hours and is kept for comparison in results/laptop30/.")}
 
     det = {}
     for tag, label in (("base", "Real photos only"), ("synth", "Real + synthetic")):
@@ -86,9 +87,9 @@ def main():
         no_drop = q["no_recall_fp32"] - q["no_recall_int8"]
         m["quantisation"] = {"fp32_mb": q["fp32_mb"], "int8_mb": q["int8_mb"], "map50_fp32": q["map50_fp32"], "map50_int8": q["map50_int8"],
                              "no_recall_fp32": q["no_recall_fp32"], "no_recall_int8": q["no_recall_int8"],
-                             "shipped": (f"Int8 is {q['fp32_mb'] / q['int8_mb']:.1f} times smaller and costs {100 * drop:.1f} points of mAP@0.5, but "
-                                         f"{100 * no_drop:.1f} points of mean recall on the “no_” classes, the errors that matter most. "
-                                         "The app therefore ships the float32 model; at 10.7 MB it already loads quickly and WebGPU runs it faster than int8.")}
+                             "shipped": (f"Int8 is {q['fp32_mb'] / q['int8_mb']:.1f} times smaller; it changes mAP@0.5 by {-100 * drop:+.1f} points and mean "
+                                         f"“no_” recall by {-100 * no_drop:+.1f} points. Its CPU speed-up was not consistent across machines, and WebGPU "
+                                         "has no fast path for int8, so the app ships the float32 model (10.7 MB, which still loads quickly).")}
 
     b = load(E / "blur_study.json")
     if b:
@@ -128,10 +129,11 @@ def main():
                           "flips_raw": s["status_flips_per_100_track_frames_raw"], "flips_smoothed": s["status_flips_per_100_track_frames_smoothed"]}
 
     speed = []
-    ex_b = load(E / "export_sitesafe_base.json")
-    if ex_b:
-        speed += [{"label": "ONNX Runtime, laptop CPU, 2 threads (model only)", "ms": ex_b["cpu_ms_2_threads"]},
-                  {"label": "ONNX Runtime, laptop CPU, 4 threads (model only)", "ms": ex_b["cpu_ms_4_threads"]}]
+    sc = load(E / "speed_cpu.json")
+    if sc:
+        speed += [{"label": "Python + ONNX Runtime, laptop CPU, 2 threads, whole photo (detector, face blur, matching)", "ms": sc["threads_2"]["mean_ms"]},
+                  {"label": "Same, 4 threads", "ms": sc["threads_4"]["mean_ms"]},
+                  {"label": "30-second clip at 3 frames per second, 2 threads (total)", "ms": 1000 * sc["clip_30s_at_3fps_seconds_2_threads"]}]
     sp = load(E / "speed_browser.json")
     if sp:
         speed += sp

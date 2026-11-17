@@ -1,192 +1,192 @@
 {
  "updated": "2026-11-17",
  "training": {
-  "note": "The shipped model was trained for 30 epochs at 640 px on a laptop CPU (seed 42). The Colab notebooks repeat the run for 100 epochs on a free T4 GPU."
+  "note": "The shipped models were trained for 100 epochs at 640 px on a free Colab T4 GPU (about 19 minutes each, seed 42). An earlier 30-epoch run on a laptop CPU took about 17 hours and is kept for comparison in results/laptop30/."
  },
  "detection": {
   "base": {
    "label": "Real photos only",
    "split": "test",
-   "map50": 0.7958,
-   "map50_95": 0.5838,
-   "no_class_mean_recall": 0.5797,
+   "map50": 0.8005,
+   "map50_95": 0.5931,
+   "no_class_mean_recall": 0.6101,
    "per_class": [
     {
      "class": "helmet",
-     "precision": 0.915,
-     "recall": 0.7594,
-     "ap50": 0.8467,
-     "ap50_95": 0.6735
+     "precision": 0.9677,
+     "recall": 0.7684,
+     "ap50": 0.8411,
+     "ap50_95": 0.6945
     },
     {
      "class": "gloves",
-     "precision": 0.9186,
-     "recall": 0.8235,
-     "ap50": 0.8692,
-     "ap50_95": 0.6693
+     "precision": 0.9434,
+     "recall": 0.7968,
+     "ap50": 0.871,
+     "ap50_95": 0.678
     },
     {
      "class": "vest",
-     "precision": 0.9335,
-     "recall": 0.8729,
-     "ap50": 0.9171,
-     "ap50_95": 0.7352
+     "precision": 0.9454,
+     "recall": 0.8806,
+     "ap50": 0.9185,
+     "ap50_95": 0.7483
     },
     {
      "class": "boots",
-     "precision": 0.8825,
-     "recall": 0.7171,
-     "ap50": 0.7841,
-     "ap50_95": 0.6333
+     "precision": 0.906,
+     "recall": 0.7386,
+     "ap50": 0.8044,
+     "ap50_95": 0.6438
     },
     {
      "class": "goggles",
-     "precision": 0.8748,
-     "recall": 0.962,
-     "ap50": 0.9768,
-     "ap50_95": 0.6404
+     "precision": 0.9677,
+     "recall": 0.9747,
+     "ap50": 0.9851,
+     "ap50_95": 0.6649
     },
     {
      "class": "Person",
-     "precision": 0.9688,
-     "recall": 0.9261,
-     "ap50": 0.9561,
-     "ap50_95": 0.8303
+     "precision": 0.9726,
+     "recall": 0.9244,
+     "ap50": 0.9574,
+     "ap50_95": 0.8248
     },
     {
      "class": "no_helmet",
-     "precision": 0.7935,
-     "recall": 0.4795,
-     "ap50": 0.552,
-     "ap50_95": 0.3215
+     "precision": 0.7677,
+     "recall": 0.5068,
+     "ap50": 0.5401,
+     "ap50_95": 0.3252
     },
     {
      "class": "no_goggle",
-     "precision": 0.8472,
-     "recall": 0.3143,
-     "ap50": 0.3549,
-     "ap50_95": 0.1173
+     "precision": 0.7045,
+     "recall": 0.3714,
+     "ap50": 0.4112,
+     "ap50_95": 0.1296
     },
     {
      "class": "no_gloves",
-     "precision": 0.9291,
-     "recall": 0.6618,
-     "ap50": 0.774,
-     "ap50_95": 0.499
+     "precision": 0.9451,
+     "recall": 0.6955,
+     "ap50": 0.7533,
+     "ap50_95": 0.5216
     },
     {
      "class": "no_boots",
-     "precision": 0.868,
-     "recall": 0.7408,
-     "ap50": 0.874,
-     "ap50_95": 0.6846
+     "precision": 0.8679,
+     "recall": 0.7746,
+     "ap50": 0.8724,
+     "ap50_95": 0.6636
     },
     {
      "class": "forklift",
-     "precision": 0.838,
-     "recall": 0.7838,
-     "ap50": 0.8693,
-     "ap50_95": 0.6154
+     "precision": 0.9087,
+     "recall": 0.8075,
+     "ap50": 0.917,
+     "ap50_95": 0.6615
     },
     {
      "class": "no_vest",
-     "precision": 0.9295,
+     "precision": 0.8662,
      "recall": 0.7021,
-     "ap50": 0.7751,
-     "ap50_95": 0.5858
+     "ap50": 0.7339,
+     "ap50_95": 0.5607
     }
    ]
   },
   "synth": {
    "label": "Real + synthetic",
    "split": "test",
-   "map50": 0.7862,
-   "map50_95": 0.5735,
-   "no_class_mean_recall": 0.5849,
+   "map50": 0.807,
+   "map50_95": 0.5857,
+   "no_class_mean_recall": 0.6369,
    "per_class": [
     {
      "class": "helmet",
-     "precision": 0.9249,
-     "recall": 0.7756,
-     "ap50": 0.8489,
-     "ap50_95": 0.6751
+     "precision": 0.9513,
+     "recall": 0.8205,
+     "ap50": 0.8658,
+     "ap50_95": 0.697
     },
     {
      "class": "gloves",
-     "precision": 0.9262,
-     "recall": 0.8058,
-     "ap50": 0.8619,
-     "ap50_95": 0.6599
+     "precision": 0.9057,
+     "recall": 0.8235,
+     "ap50": 0.8776,
+     "ap50_95": 0.6651
     },
     {
      "class": "vest",
-     "precision": 0.9202,
-     "recall": 0.887,
-     "ap50": 0.9196,
-     "ap50_95": 0.7282
+     "precision": 0.9315,
+     "recall": 0.8927,
+     "ap50": 0.9323,
+     "ap50_95": 0.7504
     },
     {
      "class": "boots",
-     "precision": 0.8602,
-     "recall": 0.7149,
-     "ap50": 0.7736,
-     "ap50_95": 0.6212
+     "precision": 0.8652,
+     "recall": 0.7427,
+     "ap50": 0.8037,
+     "ap50_95": 0.6403
     },
     {
      "class": "goggles",
-     "precision": 0.9088,
-     "recall": 0.9747,
-     "ap50": 0.9823,
-     "ap50_95": 0.6262
+     "precision": 0.9241,
+     "recall": 0.962,
+     "ap50": 0.9675,
+     "ap50_95": 0.6383
     },
     {
      "class": "Person",
-     "precision": 0.9362,
-     "recall": 0.9348,
-     "ap50": 0.9542,
-     "ap50_95": 0.815
+     "precision": 0.954,
+     "recall": 0.9435,
+     "ap50": 0.9619,
+     "ap50_95": 0.8251
     },
     {
      "class": "no_helmet",
-     "precision": 0.7287,
-     "recall": 0.5205,
-     "ap50": 0.5361,
-     "ap50_95": 0.3223
+     "precision": 0.8229,
+     "recall": 0.5093,
+     "ap50": 0.5773,
+     "ap50_95": 0.3298
     },
     {
      "class": "no_goggle",
-     "precision": 0.6417,
-     "recall": 0.2571,
-     "ap50": 0.3143,
-     "ap50_95": 0.0911
+     "precision": 0.89,
+     "recall": 0.4625,
+     "ap50": 0.4734,
+     "ap50_95": 0.1416
     },
     {
      "class": "no_gloves",
-     "precision": 0.8726,
-     "recall": 0.6921,
-     "ap50": 0.7633,
-     "ap50_95": 0.499
+     "precision": 0.8984,
+     "recall": 0.7273,
+     "ap50": 0.7679,
+     "ap50_95": 0.5041
     },
     {
      "class": "no_boots",
-     "precision": 0.8625,
-     "recall": 0.7953,
-     "ap50": 0.8801,
-     "ap50_95": 0.6797
+     "precision": 0.8742,
+     "recall": 0.7834,
+     "ap50": 0.8462,
+     "ap50_95": 0.6713
     },
     {
      "class": "forklift",
-     "precision": 0.7695,
+     "precision": 0.8702,
      "recall": 0.7838,
-     "ap50": 0.8694,
-     "ap50_95": 0.5977
+     "ap50": 0.8661,
+     "ap50_95": 0.5808
     },
     {
      "class": "no_vest",
-     "precision": 0.8006,
-     "recall": 0.6596,
-     "ap50": 0.7306,
-     "ap50_95": 0.567
+     "precision": 0.8514,
+     "recall": 0.7021,
+     "ap50": 0.7443,
+     "ap50_95": 0.5848
     }
    ]
   }
@@ -195,24 +195,24 @@
   {
    "label": "Fine-tuned YOLO11n (this model)",
    "n": 223,
-   "accuracy": 0.9538,
-   "precision_nc": 1.0,
-   "recall_nc": 0.8788,
-   "unsure_share": 0.1883,
-   "nc_shown_green": 0.0842,
-   "person_recall": 0.9478,
-   "decided": 173
+   "accuracy": 0.9492,
+   "precision_nc": 0.9275,
+   "recall_nc": 0.9412,
+   "unsure_share": 0.1614,
+   "nc_shown_green": 0.0421,
+   "person_recall": 0.9391,
+   "decided": 177
   },
   {
    "label": "Fine-tuned YOLO11n, real + synthetic",
    "n": 223,
-   "accuracy": 0.9486,
-   "precision_nc": 0.9683,
-   "recall_nc": 0.8971,
-   "unsure_share": 0.1704,
-   "nc_shown_green": 0.0737,
-   "person_recall": 0.9391,
-   "decided": 175
+   "accuracy": 0.9609,
+   "precision_nc": 0.9692,
+   "recall_nc": 0.9265,
+   "unsure_share": 0.1659,
+   "nc_shown_green": 0.0526,
+   "person_recall": 0.9522,
+   "decided": 179
   },
   {
    "label": "Baseline: COCO YOLO11n + colour rules",
@@ -238,108 +238,108 @@
   }
  ],
  "synthetic": {
-  "note": "165 diffusion-generated images (night, rain, fog, dust) were added to 700 real training images. Same seed and epochs for both models. Intervals are from a paired bootstrap over the 100 real test images; an interval that includes zero means the change is not demonstrated. The real test photos are almost all clear daylight, so this measures whether the synthetic data harms or helps ordinary conditions; robustness in bad weather is measured separately on generated versions.",
+  "note": "339 diffusion-generated images (night, rain, fog, dust) were added to 700 real training images. Same seed and epochs for both models. Intervals are from a paired bootstrap over the 100 real test images; an interval that includes zero means the change is not demonstrated. The real test photos are almost all clear daylight, so this measures whether the synthetic data harms or helps ordinary conditions; robustness in bad weather is measured separately on generated versions.",
   "rows": [
    {
     "class": "no_helmet",
-    "base": 0.5205,
-    "synth": 0.5068,
+    "base": 0.5753,
+    "synth": 0.5616,
     "delta": -0.0137,
-    "lo": -0.0781,
-    "hi": 0.0455
+    "lo": -0.0822,
+    "hi": 0.0656
    },
    {
     "class": "no_goggle",
-    "base": 0.3143,
-    "synth": 0.3143,
+    "base": 0.4286,
+    "synth": 0.4286,
     "delta": 0.0,
-    "lo": -0.079,
-    "hi": 0.0882
+    "lo": -0.1389,
+    "hi": 0.1429
    },
    {
     "class": "no_gloves",
-    "base": 0.7172,
-    "synth": 0.7172,
-    "delta": 0.0,
-    "lo": -0.0451,
-    "hi": 0.052
+    "base": 0.7374,
+    "synth": 0.7475,
+    "delta": 0.0101,
+    "lo": -0.023,
+    "hi": 0.0465
    },
    {
     "class": "no_boots",
-    "base": 0.7606,
-    "synth": 0.7887,
-    "delta": 0.0282,
-    "lo": -0.0782,
-    "hi": 0.1304
+    "base": 0.8169,
+    "synth": 0.8028,
+    "delta": -0.0141,
+    "lo": -0.087,
+    "hi": 0.0606
    },
    {
     "class": "no_vest",
     "base": 0.7021,
-    "synth": 0.6809,
-    "delta": -0.0213,
-    "lo": -0.0714,
-    "hi": 0.0
+    "synth": 0.7021,
+    "delta": 0.0,
+    "lo": -0.0638,
+    "hi": 0.0556
    },
    {
     "class": "ALL no_* classes",
-    "base": 0.6369,
-    "synth": 0.6369,
-    "delta": 0.0,
-    "lo": -0.0291,
-    "hi": 0.0302
+    "base": 0.68,
+    "synth": 0.6769,
+    "delta": -0.0031,
+    "lo": -0.0299,
+    "hi": 0.0269
    },
    {
     "class": "ALL classes",
-    "base": 0.801,
-    "synth": 0.7975,
-    "delta": -0.0035,
-    "lo": -0.0129,
-    "hi": 0.0062
+    "base": 0.8163,
+    "synth": 0.8205,
+    "delta": 0.0042,
+    "lo": -0.0066,
+    "hi": 0.0151
    }
   ],
   "stress": [
    {
     "class": "ALL no_* classes",
     "base": 0.3446,
-    "synth": 0.4277,
-    "delta": 0.0831,
-    "lo": 0.0385,
-    "hi": 0.1313
+    "synth": 0.4892,
+    "delta": 0.1446,
+    "lo": 0.0861,
+    "hi": 0.2088
    },
    {
     "class": "ALL classes",
-    "base": 0.4777,
-    "synth": 0.6096,
-    "delta": 0.132,
-    "lo": 0.1024,
-    "hi": 0.1643
+    "base": 0.4791,
+    "synth": 0.6376,
+    "delta": 0.1585,
+    "lo": 0.1255,
+    "hi": 0.1968
    }
   ]
  },
  "quantisation": {
   "fp32_mb": 10.67,
   "int8_mb": 3.26,
-  "map50_fp32": 0.7936,
-  "map50_int8": 0.7855,
-  "no_recall_fp32": 0.5914,
-  "no_recall_int8": 0.5383,
-  "shipped": "Int8 is 3.3 times smaller and costs 0.8 points of mAP@0.5, but 5.3 points of mean recall on the \u201cno_\u201d classes, the errors that matter most. The app therefore ships the float32 model; at 10.7 MB it already loads quickly and WebGPU runs it faster than int8."
+  "map50_fp32": 0.7983,
+  "map50_int8": 0.7798,
+  "no_recall_fp32": 0.6117,
+  "no_recall_int8": 0.6273,
+  "shipped": "Int8 is 3.3 times smaller; it changes mAP@0.5 by -1.8 points and mean \u201cno_\u201d recall by +1.6 points. Its CPU speed-up was not consistent across machines, and WebGPU has no fast path for int8, so the app ships the float32 model (10.7 MB, which still loads quickly)."
  },
  "blur": {
-  "map50_original": 0.796,
-  "map50_blurred": 0.6769,
-  "map50_strict": 0.5499,
-  "helmet_recall_original": 0.7646,
-  "helmet_recall_blurred": 0.7851,
-  "goggles_recall_original": 0.962,
-  "goggles_recall_blurred": 0.0223,
+  "map50_original": 0.8012,
+  "map50_blurred": 0.6998,
+  "map50_strict": 0.6428,
+  "helmet_recall_original": 0.7696,
+  "helmet_recall_blurred": 0.7821,
+  "goggles_recall_original": 0.9813,
+  "goggles_recall_blurred": 0.0188,
   "decision": "Blurring before detection costs accuracy, so the app detects on the original frame held in memory and blurs only what is displayed or exported."
  },
  "calibration": {
-  "ece_before": 0.0904,
-  "ece_after": 0.0587,
+  "ece_before": 0.0857,
+  "ece_after": 0.0526,
   "temperature": 0.67,
-  "unsure_share": 0.1883
+  "unsure_share": 0.1614
  },
  "subgroups": {
   "note": "Subgroup tags are automatic estimates (0 of 230 checked by hand so far); skin-tone results are withheld until the tags are checked by hand, because the automatic colour-based grouping proved unreliable (it put almost every visible face in one group). Groups under 30 people have wide intervals and support no firm conclusion. \u201cno_\u201d recall counts a non-compliant worker as caught when the model says missing PPE or check manually.",
@@ -363,18 +363,18 @@
    {
     "group": "lighting: normal",
     "n": 185,
-    "person_recall": 0.9676,
-    "lo": 0.9405,
-    "hi": 0.9892,
-    "no_recall": 0.875
+    "person_recall": 0.9568,
+    "lo": 0.9243,
+    "hi": 0.9838,
+    "no_recall": 0.9167
    },
    {
     "group": "distance: far",
     "n": 84,
-    "person_recall": 0.881,
-    "lo": 0.8095,
-    "hi": 0.9405,
-    "no_recall": 0.7
+    "person_recall": 0.8571,
+    "lo": 0.7738,
+    "hi": 0.9286,
+    "no_recall": 0.75
    },
    {
     "group": "distance: mid",
@@ -390,14 +390,14 @@
     "person_recall": 1.0,
     "lo": 1.0,
     "hi": 1.0,
-    "no_recall": 0.9756
+    "no_recall": 1.0
    },
    {
     "group": "clothing: dark",
     "n": 31,
-    "person_recall": 0.9032,
-    "lo": 0.7742,
-    "hi": 1.0,
+    "person_recall": 0.871,
+    "lo": 0.7419,
+    "hi": 0.9677,
     "no_recall": 0.9091
    },
    {
@@ -419,30 +419,34 @@
    {
     "group": "clothing: other",
     "n": 114,
-    "person_recall": 0.9386,
-    "lo": 0.886,
+    "person_recall": 0.9298,
+    "lo": 0.8772,
     "hi": 0.9737,
-    "no_recall": 0.8039
+    "no_recall": 0.8627
    }
   ]
  },
  "smoothing": {
-  "precision_raw": 0.9688,
-  "precision_smoothed": 0.9822,
-  "recall_raw": 0.4769,
-  "recall_smoothed": 0.425,
+  "precision_raw": 1.0,
+  "precision_smoothed": 1.0,
+  "recall_raw": 0.5308,
+  "recall_smoothed": 0.4577,
   "clips": 30,
-  "flips_raw": 5.46,
-  "flips_smoothed": 2.37
+  "flips_raw": 5.85,
+  "flips_smoothed": 2.31
  },
  "speed": [
   {
-   "label": "ONNX Runtime, laptop CPU, 2 threads (model only)",
-   "ms": 73.4
+   "label": "Python + ONNX Runtime, laptop CPU, 2 threads, whole photo (detector, face blur, matching)",
+   "ms": 147.1
   },
   {
-   "label": "ONNX Runtime, laptop CPU, 4 threads (model only)",
-   "ms": 43.5
+   "label": "Same, 4 threads",
+   "ms": 124.6
+  },
+  {
+   "label": "30-second clip at 3 frames per second, 2 threads (total)",
+   "ms": 13200.0
   },
   {
    "label": "Browser, WebGPU, laptop integrated GPU (model only)",
@@ -468,43 +472,43 @@
   },
   {
    "image": "failures/f02.jpg",
-   "note": "A worker was not detected at all: the worker is small and far from the camera."
+   "note": "A compliant worker was flagged for missing helmet: unusual pose, PPE colour or partial occlusion."
   },
   {
    "image": "failures/f03.jpg",
-   "note": "A worker with PPE missing (vest) was shown as compliant: the worker is cut off by the image edge."
+   "note": "A worker was not detected at all: the worker is small and far from the camera; the scene is dark."
   },
   {
    "image": "failures/f04.jpg",
-   "note": "A worker was not detected at all: the worker is small and far from the camera; the scene is dark."
+   "note": "A worker with PPE missing (helmet) was shown as compliant: the worker is small and far from the camera."
   },
   {
    "image": "failures/f05.jpg",
-   "note": "A worker with PPE missing (helmet) was shown as compliant: the worker is small and far from the camera."
+   "note": "A compliant worker was flagged for missing helmet: unusual pose, PPE colour or partial occlusion."
   },
   {
    "image": "failures/f06.jpg",
-   "note": "A worker was not detected at all: the worker is small and far from the camera; the scene is dark."
+   "note": "A worker was not detected at all: the worker is small and far from the camera."
   },
   {
    "image": "failures/f07.jpg",
-   "note": "A worker with PPE missing (helmet) was shown as compliant: the worker is small and far from the camera."
-  },
-  {
-   "image": "failures/f08.jpg",
-   "note": "A worker was not detected at all: the worker is small and far from the camera."
-  },
-  {
-   "image": "failures/f09.jpg",
    "note": "A worker with PPE missing (vest) was shown as compliant: the worker is small and far from the camera."
   },
   {
-   "image": "failures/f10.jpg",
+   "image": "failures/f08.jpg",
+   "note": "A compliant worker was flagged for missing helmet: the worker is small and far from the camera."
+  },
+  {
+   "image": "failures/f09.jpg",
    "note": "A worker was not detected at all: the worker is small and far from the camera."
   },
   {
+   "image": "failures/f10.jpg",
+   "note": "A worker with PPE missing (vest) was shown as compliant: the worker is small and far from the camera."
+  },
+  {
    "image": "failures/f11.jpg",
-   "note": "A worker with PPE missing (helmet) was shown as compliant: the worker is small and far from the camera."
+   "note": "A compliant worker was flagged for missing helmet: the worker is small and far from the camera."
   },
   {
    "image": "failures/f12.jpg",
@@ -516,35 +520,35 @@
   "rows": [
    {
     "label": "My model, real photos only",
-    "person_recall": 0.879,
-    "accuracy": 0.8,
-    "decided": 35,
+    "person_recall": 0.857,
+    "accuracy": 0.841,
+    "decided": 44,
     "decidable": 75,
-    "nc_caught": 0.737,
-    "nc_green": 0.158,
-    "unsure": 0.44,
-    "no_vest_called": 0.083,
-    "no_vest_shown_vest": 0.25,
-    "boots_shown_missing": 0.133,
-    "no_helmet_called": 0.2,
-    "false_person_boxes": 18,
-    "night_nc_caught": 0.5
+    "nc_caught": 0.789,
+    "nc_green": 0.105,
+    "unsure": 0.307,
+    "no_vest_called": 0.364,
+    "no_vest_shown_vest": 0.182,
+    "boots_shown_missing": 0.083,
+    "no_helmet_called": 0.818,
+    "false_person_boxes": 3,
+    "night_nc_caught": 0.833
    },
    {
     "label": "My model + synthetic data",
-    "person_recall": 0.868,
-    "accuracy": 0.829,
-    "decided": 35,
+    "person_recall": 0.846,
+    "accuracy": 0.881,
+    "decided": 42,
     "decidable": 75,
-    "nc_caught": 0.895,
+    "nc_caught": 0.842,
     "nc_green": 0.105,
-    "unsure": 0.453,
-    "no_vest_called": 0.083,
-    "no_vest_shown_vest": 0.25,
-    "boots_shown_missing": 0.071,
-    "no_helmet_called": 0.417,
-    "false_person_boxes": 7,
-    "night_nc_caught": 0.833
+    "unsure": 0.307,
+    "no_vest_called": 0.273,
+    "no_vest_shown_vest": 0.182,
+    "boots_shown_missing": 0.0,
+    "no_helmet_called": 0.5,
+    "false_person_boxes": 9,
+    "night_nc_caught": 0.667
    },
    {
     "label": "Off-the-shelf YOLOv8s (13k real photos)",

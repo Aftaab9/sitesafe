@@ -1,0 +1,282 @@
+[
+  {
+    "set": "real test (100 images)",
+    "class": "helmet",
+    "recall_without": 0.7885,
+    "recall_with": 0.8462,
+    "delta": 0.0577,
+    "lo": 0.0241,
+    "hi": 0.0888,
+    "n_gt": 156
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "gloves",
+    "recall_without": 0.8235,
+    "recall_with": 0.8075,
+    "delta": -0.016,
+    "lo": -0.0523,
+    "hi": 0.017,
+    "n_gt": 187
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "vest",
+    "recall_without": 0.904,
+    "recall_with": 0.8983,
+    "delta": -0.0056,
+    "lo": -0.0313,
+    "hi": 0.0181,
+    "n_gt": 177
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "boots",
+    "recall_without": 0.7676,
+    "recall_with": 0.7593,
+    "delta": -0.0083,
+    "lo": -0.0404,
+    "hi": 0.021,
+    "n_gt": 241
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "goggles",
+    "recall_without": 1.0,
+    "recall_with": 0.962,
+    "delta": -0.038,
+    "lo": -0.0816,
+    "hi": 0.0,
+    "n_gt": 79
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "Person",
+    "recall_without": 0.9391,
+    "recall_with": 0.9435,
+    "delta": 0.0043,
+    "lo": 0.0,
+    "hi": 0.0138,
+    "n_gt": 230
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "no_helmet",
+    "recall_without": 0.5753,
+    "recall_with": 0.5616,
+    "delta": -0.0137,
+    "lo": -0.0682,
+    "hi": 0.0536,
+    "n_gt": 73
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "no_goggle",
+    "recall_without": 0.4286,
+    "recall_with": 0.4857,
+    "delta": 0.0571,
+    "lo": -0.0526,
+    "hi": 0.1786,
+    "n_gt": 35
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "no_gloves",
+    "recall_without": 0.7374,
+    "recall_with": 0.7273,
+    "delta": -0.0101,
+    "lo": -0.0561,
+    "hi": 0.0341,
+    "n_gt": 99
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "no_boots",
+    "recall_without": 0.8169,
+    "recall_with": 0.7606,
+    "delta": -0.0563,
+    "lo": -0.1375,
+    "hi": 0.0141,
+    "n_gt": 71
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "forklift",
+    "recall_without": 0.8378,
+    "recall_with": 0.8649,
+    "delta": 0.027,
+    "lo": 0.0,
+    "hi": 0.0938,
+    "n_gt": 37
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "no_vest",
+    "recall_without": 0.7021,
+    "recall_with": 0.7234,
+    "delta": 0.0213,
+    "lo": 0.0,
+    "hi": 0.0667,
+    "n_gt": 47
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "ALL no_* classes",
+    "recall_without": 0.68,
+    "recall_with": 0.6708,
+    "delta": -0.0092,
+    "lo": -0.037,
+    "hi": 0.018,
+    "n_gt": 325
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "ALL classes",
+    "recall_without": 0.8163,
+    "recall_with": 0.8156,
+    "delta": -0.0007,
+    "lo": -0.0121,
+    "hi": 0.0097,
+    "n_gt": 1432
+  },
+  {
+    "set": "synthetic weather versions of test images (100)",
+    "class": "helmet",
+    "recall_without": 0.6282,
+    "recall_with": 0.6538,
+    "delta": 0.0256,
+    "lo": 0.0057,
+    "hi": 0.0537,
+    "n_gt": 156
+  },
+  {
+    "set": "synthetic weather versions of test images (100)",
+    "class": "gloves",
+    "recall_without": 0.3743,
+    "recall_with": 0.5508,
+    "delta": 0.1765,
+    "lo": 0.1094,
+    "hi": 0.2471,
+    "n_gt": 187
+  },
+  {
+    "set": "synthetic weather versions of test images (100)",
+    "class": "vest",
+    "recall_without": 0.7006,
+    "recall_with": 0.7458,
+    "delta": 0.0452,
+    "lo": 0.0066,
+    "hi": 0.0923,
+    "n_gt": 177
+  },
+  {
+    "set": "synthetic weather versions of test images (100)",
+    "class": "boots",
+    "recall_without": 0.3485,
+    "recall_with": 0.6058,
+    "delta": 0.2573,
+    "lo": 0.1736,
+    "hi": 0.3518,
+    "n_gt": 241
+  },
+  {
+    "set": "synthetic weather versions of test images (100)",
+    "class": "goggles",
+    "recall_without": 0.3165,
+    "recall_with": 0.5063,
+    "delta": 0.1899,
+    "lo": 0.0909,
+    "hi": 0.2921,
+    "n_gt": 79
+  },
+  {
+    "set": "synthetic weather versions of test images (100)",
+    "class": "Person",
+    "recall_without": 0.7043,
+    "recall_with": 0.7565,
+    "delta": 0.0522,
+    "lo": 0.0177,
+    "hi": 0.0917,
+    "n_gt": 230
+  },
+  {
+    "set": "synthetic weather versions of test images (100)",
+    "class": "no_helmet",
+    "recall_without": 0.2329,
+    "recall_with": 0.2466,
+    "delta": 0.0137,
+    "lo": -0.0536,
+    "hi": 0.0805,
+    "n_gt": 73
+  },
+  {
+    "set": "synthetic weather versions of test images (100)",
+    "class": "no_goggle",
+    "recall_without": 0.1429,
+    "recall_with": 0.4,
+    "delta": 0.2571,
+    "lo": 0.0968,
+    "hi": 0.4286,
+    "n_gt": 35
+  },
+  {
+    "set": "synthetic weather versions of test images (100)",
+    "class": "no_gloves",
+    "recall_without": 0.404,
+    "recall_with": 0.4949,
+    "delta": 0.0909,
+    "lo": 0.0125,
+    "hi": 0.1721,
+    "n_gt": 99
+  },
+  {
+    "set": "synthetic weather versions of test images (100)",
+    "class": "no_boots",
+    "recall_without": 0.3521,
+    "recall_with": 0.493,
+    "delta": 0.1408,
+    "lo": 0.0128,
+    "hi": 0.2653,
+    "n_gt": 71
+  },
+  {
+    "set": "synthetic weather versions of test images (100)",
+    "class": "forklift",
+    "recall_without": 0.2973,
+    "recall_with": 0.7568,
+    "delta": 0.4595,
+    "lo": 0.2143,
+    "hi": 0.6818,
+    "n_gt": 37
+  },
+  {
+    "set": "synthetic weather versions of test images (100)",
+    "class": "no_vest",
+    "recall_without": 0.5319,
+    "recall_with": 0.617,
+    "delta": 0.0851,
+    "lo": 0.02,
+    "hi": 0.1739,
+    "n_gt": 47
+  },
+  {
+    "set": "synthetic weather versions of test images (100)",
+    "class": "ALL no_* classes",
+    "recall_without": 0.3446,
+    "recall_with": 0.4462,
+    "delta": 0.1015,
+    "lo": 0.0597,
+    "hi": 0.1477,
+    "n_gt": 325
+  },
+  {
+    "set": "synthetic weather versions of test images (100)",
+    "class": "ALL classes",
+    "recall_without": 0.4791,
+    "recall_with": 0.6075,
+    "delta": 0.1285,
+    "lo": 0.0999,
+    "hi": 0.1598,
+    "n_gt": 1432
+  }
+]

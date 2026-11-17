@@ -5,12 +5,12 @@
   "excluded_head_nodes": 60,
   "fp32_mb": 10.67,
   "int8_mb": 3.26,
-  "map50_fp32": 0.7936,
-  "map50_int8": 0.7855,
-  "map50_95_fp32": 0.5856,
-  "map50_95_int8": 0.5734,
-  "no_recall_fp32": 0.5914,
-  "no_recall_int8": 0.5383,
-  "cpu_ms_fp32_4t": 55.1,
-  "cpu_ms_int8_4t": 40.8
+  "map50_fp32": 0.7983,
+  "map50_int8": 0.7798,
+  "map50_95_fp32": 0.5944,
+  "map50_95_int8": 0.5627,
+  "no_recall_fp32": 0.6117,
+  "no_recall_int8": 0.6273,
+  "cpu_ms_fp32_4t": 196.3,
+  "cpu_ms_int8_4t": 269.4
 }

@@ -1,0 +1,24 @@
+{
+  "clips": 30,
+  "seconds": 10,
+  "fps": 3,
+  "window": 5,
+  "min_hits": 3,
+  "id_switches": 20,
+  "status_flips_per_100_track_frames_raw": 5.46,
+  "status_flips_per_100_track_frames_smoothed": 2.37,
+  "raw": {
+    "tp": 248,
+    "fp": 8,
+    "fn": 272,
+    "precision": 0.9688,
+    "recall": 0.4769
+  },
+  "smoothed": {
+    "tp": 221,
+    "fp": 4,
+    "fn": 299,
+    "precision": 0.9822,
+    "recall": 0.425
+  }
+}
