@@ -124,6 +124,12 @@ def main():
         (RESULTS / "eval").mkdir(parents=True, exist_ok=True)
         df.to_csv(RESULTS / "eval" / f"own_people_{tag}.csv", index=False)
         res[tag] = summary(df, fp)
+        night = {"c041.jpg", "c050.jpg", "c051.jpg", "c091.jpg", "c105.jpg", "c106.jpg", "c107.jpg", "c109.jpg",
+                 "c110.jpg", "c116.jpg", "c118.jpg", "c119.jpg"}
+        for part, sel in (("night", df.image.isin(night)), ("day", ~df.image.isin(night))):
+            sub = summary(df[sel], 0)
+            res[f"{tag}:{part}"] = {k: sub[k] for k in ("scored_people", "person_recall", "accuracy", "decided",
+                                                        "nc_flagged_or_unsure", "unsure_share")}
     (RESULTS / "eval" / "own_eval.json").write_text(json.dumps(res, indent=2))
     print(pd.DataFrame(res).to_string())
 

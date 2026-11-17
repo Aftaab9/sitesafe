@@ -20,6 +20,7 @@ interface Metrics {
   vlm?: { model: string; images: number; json_valid_share: number; seconds_per_image_cpu: number; hallucination_rate_before: number | null; error_rate_after_verification: number | null; per_claim: Record<string, { hallucination_before: number; error_after_verification: number }> };
 
   speed?: { label: string; ms: number }[];
+  own?: { note: string; rows: { label: string; person_recall: number; accuracy: number | null; decided: number; decidable: number; nc_caught: number | null; nc_green: number | null; unsure: number; no_vest_called: number | null; no_vest_shown_vest: number | null; boots_shown_missing: number | null; no_helmet_called: number | null; false_person_boxes: number; night_nc_caught: number | null }[] };
   failures?: { image: string; note: string }[];
 }
 
@@ -106,6 +107,14 @@ export default function ModelCard() {
           <Table head={['Method', 'Decided / people', 'Accuracy', 'Precision (missing PPE)', 'Recall (missing PPE)', 'Sent to “not sure”', 'Violators shown green']}
             rows={m.compliance.map((c) => [c.label, `${c.decided} / ${c.n}`, pct(c.accuracy), pct(c.precision_nc), pct(c.recall_nc), pct(c.unsure_share), pct(c.nc_shown_green)])} />
           <p className="text-muted">Accuracy, precision and recall are computed on the people a method decided. A method that abstains on almost everyone can look accurate on the few it decides, so read the first column too. People sent to “not sure” are handed to the officer.</p>
+        </Section>
+      )}
+
+      {m?.own && (
+        <Section title="Real-world check: 30 photos I collected and labelled myself">
+          <Table head={['Model', 'Workers found', 'Accuracy (decided)', 'Violators caught or sent to check', 'Same, at night', 'Violators shown green', 'No-hi-vis shown as vest', 'Boots shown as “no boots”']}
+            rows={m.own.rows.map((r) => [r.label, pct(r.person_recall), `${pct(r.accuracy)} of ${r.decided}`, pct(r.nc_caught), pct(r.night_nc_caught), pct(r.nc_green), pct(r.no_vest_shown_vest), pct(r.boots_shown_missing)])} />
+          <p className="text-muted">{m.own.note}</p>
         </Section>
       )}
 

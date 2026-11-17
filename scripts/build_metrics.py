@@ -142,6 +142,26 @@ def main():
     if fl:
         m["failures"] = [{"image": i["image"], "note": i["note"]} for i in fl["items"]]
 
+    o = load(E / "own_eval.json")
+    if o:
+        labels = {"sitesafe_base": "My model, real photos only", "sitesafe_synth": "My model + synthetic data",
+                  "sitesafe_plus": "My model + extra real photos", "external_ppe_yolov8s": "Off-the-shelf YOLOv8s (13k real photos)"}
+        rows = []
+        for tag, label in labels.items():
+            r = o.get(tag)
+            if not r:
+                continue
+            rows.append({"label": label, "person_recall": r["person_recall"], "accuracy": r["accuracy"], "decided": r["decided"],
+                         "decidable": r["decidable_people"], "nc_caught": r["nc_flagged_or_unsure"], "nc_green": r["nc_shown_green"],
+                         "unsure": r["unsure_share"], "no_vest_called": r.get("vest_M_shown_M"), "no_vest_shown_vest": r.get("vest_M_shown_W"),
+                         "boots_shown_missing": r.get("boots_W_shown_M"), "no_helmet_called": r.get("helmet_M_shown_M"),
+                         "false_person_boxes": r["false_person_boxes"],
+                         "night_nc_caught": (o.get(f"{tag}:night") or {}).get("nc_flagged_or_unsure")})
+        m["own"] = {"note": ("30 real photos from Wikimedia Commons (CC0, public domain, CC BY, CC BY-SA), 12 of them at night or in tunnels, "
+                             "with 91 workers labelled by hand at person level (helmet, hi-vis, boots: worn, missing or not visible). "
+                             "Only 19 workers are non-compliant (6 at night), so differences of a few people are within noise."),
+                    "rows": rows}
+
     v = load(RESULTS / "vlm" / "hallucination.json")
     if v:
         m["vlm"] = v

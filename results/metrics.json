@@ -96,6 +96,99 @@
      "ap50_95": 0.5858
     }
    ]
+  },
+  "synth": {
+   "label": "Real + synthetic",
+   "split": "test",
+   "map50": 0.7862,
+   "map50_95": 0.5735,
+   "no_class_mean_recall": 0.5849,
+   "per_class": [
+    {
+     "class": "helmet",
+     "precision": 0.9249,
+     "recall": 0.7756,
+     "ap50": 0.8489,
+     "ap50_95": 0.6751
+    },
+    {
+     "class": "gloves",
+     "precision": 0.9262,
+     "recall": 0.8058,
+     "ap50": 0.8619,
+     "ap50_95": 0.6599
+    },
+    {
+     "class": "vest",
+     "precision": 0.9202,
+     "recall": 0.887,
+     "ap50": 0.9196,
+     "ap50_95": 0.7282
+    },
+    {
+     "class": "boots",
+     "precision": 0.8602,
+     "recall": 0.7149,
+     "ap50": 0.7736,
+     "ap50_95": 0.6212
+    },
+    {
+     "class": "goggles",
+     "precision": 0.9088,
+     "recall": 0.9747,
+     "ap50": 0.9823,
+     "ap50_95": 0.6262
+    },
+    {
+     "class": "Person",
+     "precision": 0.9362,
+     "recall": 0.9348,
+     "ap50": 0.9542,
+     "ap50_95": 0.815
+    },
+    {
+     "class": "no_helmet",
+     "precision": 0.7287,
+     "recall": 0.5205,
+     "ap50": 0.5361,
+     "ap50_95": 0.3223
+    },
+    {
+     "class": "no_goggle",
+     "precision": 0.6417,
+     "recall": 0.2571,
+     "ap50": 0.3143,
+     "ap50_95": 0.0911
+    },
+    {
+     "class": "no_gloves",
+     "precision": 0.8726,
+     "recall": 0.6921,
+     "ap50": 0.7633,
+     "ap50_95": 0.499
+    },
+    {
+     "class": "no_boots",
+     "precision": 0.8625,
+     "recall": 0.7953,
+     "ap50": 0.8801,
+     "ap50_95": 0.6797
+    },
+    {
+     "class": "forklift",
+     "precision": 0.7695,
+     "recall": 0.7838,
+     "ap50": 0.8694,
+     "ap50_95": 0.5977
+    },
+    {
+     "class": "no_vest",
+     "precision": 0.8006,
+     "recall": 0.6596,
+     "ap50": 0.7306,
+     "ap50_95": 0.567
+    }
+   ]
   }
  },
  "compliance": [
@@ -109,6 +202,17 @@
    "nc_shown_green": 0.0842,
    "person_recall": 0.9478,
    "decided": 173
+  },
+  {
+   "label": "Fine-tuned YOLO11n, real + synthetic",
+   "n": 223,
+   "accuracy": 0.9486,
+   "precision_nc": 0.9683,
+   "recall_nc": 0.8971,
+   "unsure_share": 0.1704,
+   "nc_shown_green": 0.0737,
+   "person_recall": 0.9391,
+   "decided": 175
   },
   {
    "label": "Baseline: COCO YOLO11n + colour rules",
@@ -133,6 +237,67 @@
    "decided": 8
   }
  ],
+ "synthetic": {
+  "note": "165 diffusion-generated images (night, rain, fog, dust) were added to 700 real training images. Same seed and epochs for both models. Intervals are from a paired bootstrap over the 100 real test images; an interval that includes zero means the change is not demonstrated. The real test photos are almost all clear daylight, so this measures whether the synthetic data harms or helps ordinary conditions; robustness in bad weather is measured separately on generated versions.",
+  "rows": [
+   {
+    "class": "no_helmet",
+    "base": 0.5205,
+    "synth": 0.5068,
+    "delta": -0.0137,
+    "lo": -0.0781,
+    "hi": 0.0455
+   },
+   {
+    "class": "no_goggle",
+    "base": 0.3143,
+    "synth": 0.3143,
+    "delta": 0.0,
+    "lo": -0.079,
+    "hi": 0.0882
+   },
+   {
+    "class": "no_gloves",
+    "base": 0.7172,
+    "synth": 0.7172,
+    "delta": 0.0,
+    "lo": -0.0451,
+    "hi": 0.052
+   },
+   {
+    "class": "no_boots",
+    "base": 0.7606,
+    "synth": 0.7887,
+    "delta": 0.0282,
+    "lo": -0.0782,
+    "hi": 0.1304
+   },
+   {
+    "class": "no_vest",
+    "base": 0.7021,
+    "synth": 0.6809,
+    "delta": -0.0213,
+    "lo": -0.0714,
+    "hi": 0.0
+   },
+   {
+    "class": "ALL no_* classes",
+    "base": 0.6369,
+    "synth": 0.6369,
+    "delta": 0.0,
+    "lo": -0.0291,
+    "hi": 0.0302
+   },
+   {
+    "class": "ALL classes",
+    "base": 0.801,
+    "synth": 0.7975,
+    "delta": -0.0035,
+    "lo": -0.0129,
+    "hi": 0.0062
+   }
+  ]
+ },
  "quantisation": {
   "fp32_mb": 10.67,
   "int8_mb": 3.26,
@@ -328,6 +493,59 @@
    "note": "A worker was not detected at all: the worker is small and far from the camera; the scene is dark."
   }
  ],
+ "own": {
+  "note": "30 real photos from Wikimedia Commons (CC0, public domain, CC BY, CC BY-SA), 12 of them at night or in tunnels, with 91 workers labelled by hand at person level (helmet, hi-vis, boots: worn, missing or not visible). Only 19 workers are non-compliant (6 at night), so differences of a few people are within noise.",
+  "rows": [
+   {
+    "label": "My model, real photos only",
+    "person_recall": 0.879,
+    "accuracy": 0.8,
+    "decided": 35,
+    "decidable": 75,
+    "nc_caught": 0.737,
+    "nc_green": 0.158,
+    "unsure": 0.44,
+    "no_vest_called": 0.083,
+    "no_vest_shown_vest": 0.25,
+    "boots_shown_missing": 0.133,
+    "no_helmet_called": 0.2,
+    "false_person_boxes": 18,
+    "night_nc_caught": 0.5
+   },
+   {
+    "label": "My model + synthetic data",
+    "person_recall": 0.868,
+    "accuracy": 0.829,
+    "decided": 35,
+    "decidable": 75,
+    "nc_caught": 0.895,
+    "nc_green": 0.105,
+    "unsure": 0.453,
+    "no_vest_called": 0.083,
+    "no_vest_shown_vest": 0.25,
+    "boots_shown_missing": 0.071,
+    "no_helmet_called": 0.417,
+    "false_person_boxes": 7,
+    "night_nc_caught": 0.833
+   },
+   {
+    "label": "Off-the-shelf YOLOv8s (13k real photos)",
+    "person_recall": 0.923,
+    "accuracy": 0.851,
+    "decided": 47,
+    "decidable": 75,
+    "nc_caught": 0.842,
+    "nc_green": 0.158,
+    "unsure": 0.347,
+    "no_vest_called": 0.417,
+    "no_vest_shown_vest": 0.167,
+    "boots_shown_missing": 0.0,
+    "no_helmet_called": 0.333,
+    "false_person_boxes": 10,
+    "night_nc_caught": 0.667
+   }
+  ]
+ },
  "vlm": {
   "model": "HuggingFaceTB/SmolVLM-256M-Instruct",
   "images": 40,

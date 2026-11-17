@@ -33,6 +33,72 @@
     "compliant_shown_red": 0.071,
     "unsure_share": 0.44
   },
+  "sitesafe_base:night": {
+    "scored_people": 32,
+    "person_recall": 0.812,
+    "accuracy": 0.625,
+    "decided": 8,
+    "nc_flagged_or_unsure": 0.5,
+    "unsure_share": 0.5
+  },
+  "sitesafe_base:day": {
+    "scored_people": 59,
+    "person_recall": 0.915,
+    "accuracy": 0.852,
+    "decided": 27,
+    "nc_flagged_or_unsure": 0.846,
+    "unsure_share": 0.418
+  },
+  "sitesafe_synth": {
+    "scored_people": 91,
+    "person_recall": 0.868,
+    "false_person_boxes": 7,
+    "helmet_W_n": 55,
+    "helmet_W_shown_W": 0.709,
+    "helmet_W_shown_M": 0.018,
+    "helmet_W_shown_?": 0.273,
+    "helmet_M_n": 12,
+    "helmet_M_shown_W": 0.083,
+    "helmet_M_shown_M": 0.417,
+    "helmet_M_shown_?": 0.5,
+    "vest_W_n": 67,
+    "vest_W_shown_W": 0.806,
+    "vest_W_shown_M": 0.045,
+    "vest_W_shown_?": 0.149,
+    "vest_M_n": 12,
+    "vest_M_shown_W": 0.25,
+    "vest_M_shown_M": 0.083,
+    "vest_M_shown_?": 0.667,
+    "boots_W_n": 14,
+    "boots_W_shown_W": 0.571,
+    "boots_W_shown_M": 0.071,
+    "boots_W_shown_?": 0.357,
+    "decidable_people": 75,
+    "decided": 35,
+    "accuracy": 0.829,
+    "precision_nc": 0.556,
+    "nc_people": 19,
+    "nc_flagged_or_unsure": 0.895,
+    "nc_shown_green": 0.105,
+    "compliant_shown_red": 0.071,
+    "unsure_share": 0.453
+  },
+  "sitesafe_synth:night": {
+    "scored_people": 32,
+    "person_recall": 0.75,
+    "accuracy": 0.75,
+    "decided": 8,
+    "nc_flagged_or_unsure": 0.833,
+    "unsure_share": 0.5
+  },
+  "sitesafe_synth:day": {
+    "scored_people": 59,
+    "person_recall": 0.932,
+    "accuracy": 0.852,
+    "decided": 27,
+    "nc_flagged_or_unsure": 0.923,
+    "unsure_share": 0.436
+  },
   "external_ppe_yolov8s": {
     "scored_people": 91,
     "person_recall": 0.923,
@@ -66,5 +132,21 @@
     "nc_shown_green": 0.158,
     "compliant_shown_red": 0.071,
     "unsure_share": 0.347
+  },
+  "external_ppe_yolov8s:night": {
+    "scored_people": 32,
+    "person_recall": 0.875,
+    "accuracy": 0.545,
+    "decided": 11,
+    "nc_flagged_or_unsure": 0.667,
+    "unsure_share": 0.45
+  },
+  "external_ppe_yolov8s:day": {
+    "scored_people": 59,
+    "person_recall": 0.949,
+    "accuracy": 0.944,
+    "decided": 36,
+    "nc_flagged_or_unsure": 0.923,
+    "unsure_share": 0.309
   }
 }

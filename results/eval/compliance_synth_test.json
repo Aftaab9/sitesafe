@@ -1,0 +1,26 @@
+{
+  "tag": "synth",
+  "split": "test",
+  "profile": "general",
+  "conf": 0.25,
+  "gt_people": 230,
+  "gt_decidable": 223,
+  "gt_non_compliant": 95,
+  "person_recall": 0.9391,
+  "decided": 175,
+  "accuracy": 0.9486,
+  "precision_nc": 0.9683,
+  "recall_nc": 0.8971,
+  "recall_nc_strict": 0.6421,
+  "nc_flagged_or_unsure": 0.8526,
+  "nc_shown_green": 0.0737,
+  "unsure_share": 0.1704,
+  "not_detected_share": 0.0448,
+  "false_person_boxes": 10,
+  "confusion": {
+    "tp": 61,
+    "fp": 2,
+    "fn": 7,
+    "tn": 105
+  }
+}

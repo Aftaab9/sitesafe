@@ -1,0 +1,142 @@
+[
+  {
+    "set": "real test (100 images)",
+    "class": "helmet",
+    "recall_without": 0.8205,
+    "recall_with": 0.7885,
+    "delta": -0.0321,
+    "lo": -0.0611,
+    "hi": 0.0,
+    "n_gt": 156
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "gloves",
+    "recall_without": 0.8128,
+    "recall_with": 0.8021,
+    "delta": -0.0107,
+    "lo": -0.0361,
+    "hi": 0.0142,
+    "n_gt": 187
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "vest",
+    "recall_without": 0.887,
+    "recall_with": 0.904,
+    "delta": 0.0169,
+    "lo": -0.0062,
+    "hi": 0.0414,
+    "n_gt": 177
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "boots",
+    "recall_without": 0.7386,
+    "recall_with": 0.751,
+    "delta": 0.0124,
+    "lo": -0.0045,
+    "hi": 0.0318,
+    "n_gt": 241
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "goggles",
+    "recall_without": 0.9747,
+    "recall_with": 0.962,
+    "delta": -0.0127,
+    "lo": -0.0395,
+    "hi": 0.0,
+    "n_gt": 79
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "Person",
+    "recall_without": 0.9478,
+    "recall_with": 0.9391,
+    "delta": -0.0087,
+    "lo": -0.0209,
+    "hi": 0.0,
+    "n_gt": 230
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "no_helmet",
+    "recall_without": 0.5205,
+    "recall_with": 0.5068,
+    "delta": -0.0137,
+    "lo": -0.0781,
+    "hi": 0.0455,
+    "n_gt": 73
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "no_goggle",
+    "recall_without": 0.3143,
+    "recall_with": 0.3143,
+    "delta": 0.0,
+    "lo": -0.079,
+    "hi": 0.0882,
+    "n_gt": 35
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "no_gloves",
+    "recall_without": 0.7172,
+    "recall_with": 0.7172,
+    "delta": 0.0,
+    "lo": -0.0451,
+    "hi": 0.052,
+    "n_gt": 99
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "no_boots",
+    "recall_without": 0.7606,
+    "recall_with": 0.7887,
+    "delta": 0.0282,
+    "lo": -0.0782,
+    "hi": 0.1304,
+    "n_gt": 71
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "forklift",
+    "recall_without": 0.8108,
+    "recall_with": 0.7838,
+    "delta": -0.027,
+    "lo": -0.0857,
+    "hi": 0.0,
+    "n_gt": 37
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "no_vest",
+    "recall_without": 0.7021,
+    "recall_with": 0.6809,
+    "delta": -0.0213,
+    "lo": -0.0714,
+    "hi": 0.0,
+    "n_gt": 47
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "ALL no_* classes",
+    "recall_without": 0.6369,
+    "recall_with": 0.6369,
+    "delta": 0.0,
+    "lo": -0.0291,
+    "hi": 0.0302,
+    "n_gt": 325
+  },
+  {
+    "set": "real test (100 images)",
+    "class": "ALL classes",
+    "recall_without": 0.801,
+    "recall_with": 0.7975,
+    "delta": -0.0035,
+    "lo": -0.0129,
+    "hi": 0.0062,
+    "n_gt": 1432
+  }
+]

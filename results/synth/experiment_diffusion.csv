@@ -1,0 +1,15 @@
+set,class,recall_without,recall_with,delta,lo,hi,n_gt
+real test (100 images),helmet,0.8205,0.7885,-0.0321,-0.0611,0.0,156
+real test (100 images),gloves,0.8128,0.8021,-0.0107,-0.0361,0.0142,187
+real test (100 images),vest,0.887,0.904,0.0169,-0.0062,0.0414,177
+real test (100 images),boots,0.7386,0.751,0.0124,-0.0045,0.0318,241
+real test (100 images),goggles,0.9747,0.962,-0.0127,-0.0395,0.0,79
+real test (100 images),Person,0.9478,0.9391,-0.0087,-0.0209,0.0,230
+real test (100 images),no_helmet,0.5205,0.5068,-0.0137,-0.0781,0.0455,73
+real test (100 images),no_goggle,0.3143,0.3143,0.0,-0.079,0.0882,35
+real test (100 images),no_gloves,0.7172,0.7172,0.0,-0.0451,0.052,99
+real test (100 images),no_boots,0.7606,0.7887,0.0282,-0.0782,0.1304,71
+real test (100 images),forklift,0.8108,0.7838,-0.027,-0.0857,0.0,37
+real test (100 images),no_vest,0.7021,0.6809,-0.0213,-0.0714,0.0,47
+real test (100 images),ALL no_* classes,0.6369,0.6369,0.0,-0.0291,0.0302,325
+real test (100 images),ALL classes,0.801,0.7975,-0.0035,-0.0129,0.0062,1432
