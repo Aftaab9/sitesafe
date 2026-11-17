@@ -296,6 +296,24 @@
     "lo": -0.0129,
     "hi": 0.0062
    }
+  ],
+  "stress": [
+   {
+    "class": "ALL no_* classes",
+    "base": 0.3446,
+    "synth": 0.4277,
+    "delta": 0.0831,
+    "lo": 0.0385,
+    "hi": 0.1313
+   },
+   {
+    "class": "ALL classes",
+    "base": 0.4777,
+    "synth": 0.6096,
+    "delta": 0.132,
+    "lo": 0.1024,
+    "hi": 0.1643
+   }
   ]
  },
  "quantisation": {
