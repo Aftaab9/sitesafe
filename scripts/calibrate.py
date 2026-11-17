@@ -118,6 +118,7 @@ def main():
               "class_thresholds_named": {CLASS_NAMES[int(k)]: v for k, v in thresholds.items()},
               "n_val_detections": int(len(vc)), "n_test_detections": int(len(tc))}
     (out / "calibration.json").write_text(json.dumps(result, indent=2))
+    (ROOT / "web" / "src" / "lib").mkdir(parents=True, exist_ok=True)  # absent in the Colab code bundle
     (ROOT / "web" / "src" / "lib" / "thresholds.json").write_text(json.dumps({
         "note": "Written by scripts/calibrate.py from the validation split. Do not edit by hand.",
         "class_thresholds": thresholds, "temperature": round(T, 3),
