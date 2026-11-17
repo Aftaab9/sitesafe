@@ -1,0 +1,126 @@
+[
+  {
+    "name": "fully compliant worker",
+    "required": ["helmet", "vest"],
+    "dets": [
+      {"box": [100, 100, 300, 600], "cls": 5, "conf": 0.9},
+      {"box": [160, 100, 240, 170], "cls": 0, "conf": 0.9},
+      {"box": [120, 220, 280, 400], "cls": 2, "conf": 0.9}
+    ],
+    "expected": [{"status": "compliant", "missing": []}]
+  },
+  {
+    "name": "missing helmet is a violation",
+    "required": ["helmet", "vest"],
+    "dets": [
+      {"box": [100, 100, 300, 600], "cls": 5, "conf": 0.9},
+      {"box": [160, 100, 240, 170], "cls": 6, "conf": 0.8},
+      {"box": [120, 220, 280, 400], "cls": 2, "conf": 0.9}
+    ],
+    "expected": [{"status": "non_compliant", "missing": ["helmet"]}]
+  },
+  {
+    "name": "helmet vs no_helmet conflict resolved by confidence",
+    "required": ["helmet", "vest"],
+    "dets": [
+      {"box": [100, 100, 300, 600], "cls": 5, "conf": 0.9},
+      {"box": [160, 100, 240, 170], "cls": 0, "conf": 0.9},
+      {"box": [162, 102, 238, 168], "cls": 6, "conf": 0.5},
+      {"box": [120, 220, 280, 400], "cls": 2, "conf": 0.9}
+    ],
+    "expected": [{"status": "compliant", "missing": []}]
+  },
+  {
+    "name": "close conflict goes to unsure, not red or green",
+    "required": ["helmet", "vest"],
+    "dets": [
+      {"box": [100, 100, 300, 600], "cls": 5, "conf": 0.9},
+      {"box": [160, 100, 240, 170], "cls": 0, "conf": 0.60},
+      {"box": [162, 102, 238, 168], "cls": 6, "conf": 0.55},
+      {"box": [120, 220, 280, 400], "cls": 2, "conf": 0.9}
+    ],
+    "expected": [{"status": "unsure", "missing": []}]
+  },
+  {
+    "name": "two people side by side, each PPE box goes to its own person",
+    "required": ["helmet", "vest"],
+    "dets": [
+      {"box": [100, 100, 300, 600], "cls": 5, "conf": 0.9},
+      {"box": [280, 100, 480, 600], "cls": 5, "conf": 0.9},
+      {"box": [160, 100, 240, 170], "cls": 6, "conf": 0.8},
+      {"box": [340, 100, 420, 170], "cls": 0, "conf": 0.9},
+      {"box": [120, 220, 290, 400], "cls": 2, "conf": 0.9},
+      {"box": [290, 220, 460, 400], "cls": 2, "conf": 0.9}
+    ],
+    "expected": [
+      {"status": "non_compliant", "missing": ["helmet"]},
+      {"status": "compliant", "missing": []}
+    ]
+  },
+  {
+    "name": "helmet box at the feet is not accepted as worn",
+    "required": ["helmet", "vest"],
+    "dets": [
+      {"box": [100, 100, 300, 600], "cls": 5, "conf": 0.9},
+      {"box": [160, 520, 240, 590], "cls": 0, "conf": 0.9},
+      {"box": [120, 220, 280, 400], "cls": 2, "conf": 0.9}
+    ],
+    "expected": [{"status": "unsure", "missing": []}]
+  },
+  {
+    "name": "low-confidence no_helmet gives unsure",
+    "required": ["helmet", "vest"],
+    "dets": [
+      {"box": [100, 100, 300, 600], "cls": 5, "conf": 0.9},
+      {"box": [160, 100, 240, 170], "cls": 6, "conf": 0.30},
+      {"box": [120, 220, 280, 400], "cls": 2, "conf": 0.9}
+    ],
+    "expected": [{"status": "unsure", "missing": []}]
+  },
+  {
+    "name": "crouching (wide) person skips the vertical band check",
+    "required": ["helmet"],
+    "dets": [
+      {"box": [100, 300, 500, 500], "cls": 5, "conf": 0.9},
+      {"box": [110, 400, 180, 470], "cls": 0, "conf": 0.9}
+    ],
+    "expected": [{"status": "compliant", "missing": []}]
+  },
+  {
+    "name": "goggles only matter in the cutting profile",
+    "required": ["helmet", "vest", "goggles"],
+    "dets": [
+      {"box": [100, 100, 300, 600], "cls": 5, "conf": 0.9},
+      {"box": [160, 100, 240, 170], "cls": 0, "conf": 0.9},
+      {"box": [170, 150, 230, 180], "cls": 7, "conf": 0.7},
+      {"box": [120, 220, 280, 400], "cls": 2, "conf": 0.9}
+    ],
+    "expected": [{"status": "non_compliant", "missing": ["goggles"]}]
+  },
+  {
+    "name": "PPE lying far from anyone is ignored",
+    "required": ["helmet", "vest"],
+    "dets": [
+      {"box": [100, 100, 300, 600], "cls": 5, "conf": 0.9},
+      {"box": [700, 500, 780, 570], "cls": 0, "conf": 0.9},
+      {"box": [160, 100, 240, 170], "cls": 6, "conf": 0.8},
+      {"box": [120, 220, 280, 400], "cls": 11, "conf": 0.8}
+    ],
+    "expected": [{"status": "non_compliant", "missing": ["helmet", "vest"]}]
+  },
+  {
+    "name": "no people, no results",
+    "required": ["helmet", "vest"],
+    "dets": [{"box": [10, 10, 60, 60], "cls": 0, "conf": 0.9}],
+    "expected": []
+  },
+  {
+    "name": "low-confidence person with a violation is unsure, not red",
+    "required": ["helmet"],
+    "dets": [
+      {"box": [100, 100, 300, 600], "cls": 5, "conf": 0.30},
+      {"box": [160, 100, 240, 170], "cls": 6, "conf": 0.8}
+    ],
+    "expected": [{"status": "unsure", "missing": ["helmet"]}]
+  }
+]

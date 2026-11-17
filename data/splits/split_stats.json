@@ -1,0 +1,20 @@
+{
+  "seed": 42,
+  "train": 700,
+  "val": 200,
+  "test": 100,
+  "test_images_per_class": {
+    "helmet": 79,
+    "gloves": 68,
+    "vest": 82,
+    "boots": 72,
+    "goggles": 56,
+    "Person": 100,
+    "no_helmet": 44,
+    "no_goggle": 32,
+    "no_gloves": 45,
+    "no_boots": 35,
+    "forklift": 26,
+    "no_vest": 38
+  }
+}

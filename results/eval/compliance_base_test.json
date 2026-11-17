@@ -1,0 +1,26 @@
+{
+  "tag": "base",
+  "split": "test",
+  "profile": "general",
+  "conf": 0.25,
+  "gt_people": 230,
+  "gt_decidable": 223,
+  "gt_non_compliant": 95,
+  "person_recall": 0.9478,
+  "decided": 173,
+  "accuracy": 0.9538,
+  "precision_nc": 1.0,
+  "recall_nc": 0.8788,
+  "recall_nc_strict": 0.6105,
+  "nc_flagged_or_unsure": 0.8526,
+  "nc_shown_green": 0.0842,
+  "unsure_share": 0.1883,
+  "not_detected_share": 0.0359,
+  "false_person_boxes": 12,
+  "confusion": {
+    "tp": 58,
+    "fp": 0,
+    "fn": 8,
+    "tn": 107
+  }
+}

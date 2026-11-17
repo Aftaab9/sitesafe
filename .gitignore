@@ -1,0 +1,30 @@
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# data and training artefacts (reproducible with the scripts)
+data/raw/
+data/construction-ppe/
+data/synthetic/
+data/own_test/images/
+data/splits/*_abs.txt
+data/splits/*.yaml
+runs/
+*.pt
+*.cache
+hf_cache/
+
+# web
+node_modules/
+web/dist/
+web/dev-dist/
+.vercel/
+
+# misc
+.DS_Store
+Thumbs.db
+*.log
+.claude/
+web/public/ort/

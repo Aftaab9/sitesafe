@@ -1,0 +1,82 @@
+{
+  "summary": {
+    "violator_shown_green": 8,
+    "false_alarms": 0,
+    "workers_not_detected": 8,
+    "decidable_people": 223
+  },
+  "items": [
+    {
+      "image": "failures/f01.jpg",
+      "source": "source-32e03cdb08168418670930ec33c24ec1.jpg",
+      "kind": "green",
+      "note": "A worker with PPE missing (vest) was shown as compliant: unusual pose, PPE colour or partial occlusion."
+    },
+    {
+      "image": "failures/f02.jpg",
+      "source": "source-697ef7be42e68d78ab9ba0191638f308.jpg",
+      "kind": "missed",
+      "note": "A worker was not detected at all: the worker is small and far from the camera."
+    },
+    {
+      "image": "failures/f03.jpg",
+      "source": "ultralytics-ppe-nov2026-427.jpg",
+      "kind": "green",
+      "note": "A worker with PPE missing (vest) was shown as compliant: the worker is cut off by the image edge."
+    },
+    {
+      "image": "failures/f04.jpg",
+      "source": "source-fc7635f8f5ccf2152ef0afcd824df643.jpg",
+      "kind": "missed",
+      "note": "A worker was not detected at all: the worker is small and far from the camera; the scene is dark."
+    },
+    {
+      "image": "failures/f05.jpg",
+      "source": "source-0e2a4d4463396c949ccdf3a3253e1552.jpg",
+      "kind": "green",
+      "note": "A worker with PPE missing (helmet) was shown as compliant: the worker is small and far from the camera."
+    },
+    {
+      "image": "failures/f06.jpg",
+      "source": "source-bfbb13f4dbe39c58cf7d0106cd8000f7.jpg",
+      "kind": "missed",
+      "note": "A worker was not detected at all: the worker is small and far from the camera; the scene is dark."
+    },
+    {
+      "image": "failures/f07.jpg",
+      "source": "source-efa761a319a37ba07e58ccd0bc1a4003.jpg",
+      "kind": "green",
+      "note": "A worker with PPE missing (helmet) was shown as compliant: the worker is small and far from the camera."
+    },
+    {
+      "image": "failures/f08.jpg",
+      "source": "source-5140dd69d9fd4bda1414dfea2e2e0512.jpg",
+      "kind": "missed",
+      "note": "A worker was not detected at all: the worker is small and far from the camera."
+    },
+    {
+      "image": "failures/f09.jpg",
+      "source": "ultralytics-ppe-nov2026-129.jpg",
+      "kind": "green",
+      "note": "A worker with PPE missing (vest) was shown as compliant: the worker is small and far from the camera."
+    },
+    {
+      "image": "failures/f10.jpg",
+      "source": "source-4d6af6d0fce09bd9d6228c8525c2f2c5.jpg",
+      "kind": "missed",
+      "note": "A worker was not detected at all: the worker is small and far from the camera."
+    },
+    {
+      "image": "failures/f11.jpg",
+      "source": "source-d6cf98f5a426285e1ad496703b33cf93.jpg",
+      "kind": "green",
+      "note": "A worker with PPE missing (helmet) was shown as compliant: the worker is small and far from the camera."
+    },
+    {
+      "image": "failures/f12.jpg",
+      "source": "source-fc7635f8f5ccf2152ef0afcd824df643.jpg",
+      "kind": "missed",
+      "note": "A worker was not detected at all: the worker is small and far from the camera; the scene is dark."
+    }
+  ]
+}

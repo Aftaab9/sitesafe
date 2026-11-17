@@ -1,0 +1,315 @@
+{
+ "updated": "2026-11-17",
+ "training": {
+  "note": "The shipped model was trained for 30 epochs at 640 px on a laptop CPU (seed 42). The Colab notebooks repeat the run for 100 epochs on a free T4 GPU."
+ },
+ "detection": {
+  "base": {
+   "label": "Real photos only",
+   "split": "test",
+   "map50": 0.7958,
+   "map50_95": 0.5838,
+   "no_class_mean_recall": 0.5797,
+   "per_class": [
+    {
+     "class": "helmet",
+     "precision": 0.915,
+     "recall": 0.7594,
+     "ap50": 0.8467,
+     "ap50_95": 0.6735
+    },
+    {
+     "class": "gloves",
+     "precision": 0.9186,
+     "recall": 0.8235,
+     "ap50": 0.8692,
+     "ap50_95": 0.6693
+    },
+    {
+     "class": "vest",
+     "precision": 0.9335,
+     "recall": 0.8729,
+     "ap50": 0.9171,
+     "ap50_95": 0.7352
+    },
+    {
+     "class": "boots",
+     "precision": 0.8825,
+     "recall": 0.7171,
+     "ap50": 0.7841,
+     "ap50_95": 0.6333
+    },
+    {
+     "class": "goggles",
+     "precision": 0.8748,
+     "recall": 0.962,
+     "ap50": 0.9768,
+     "ap50_95": 0.6404
+    },
+    {
+     "class": "Person",
+     "precision": 0.9688,
+     "recall": 0.9261,
+     "ap50": 0.9561,
+     "ap50_95": 0.8303
+    },
+    {
+     "class": "no_helmet",
+     "precision": 0.7935,
+     "recall": 0.4795,
+     "ap50": 0.552,
+     "ap50_95": 0.3215
+    },
+    {
+     "class": "no_goggle",
+     "precision": 0.8472,
+     "recall": 0.3143,
+     "ap50": 0.3549,
+     "ap50_95": 0.1173
+    },
+    {
+     "class": "no_gloves",
+     "precision": 0.9291,
+     "recall": 0.6618,
+     "ap50": 0.774,
+     "ap50_95": 0.499
+    },
+    {
+     "class": "no_boots",
+     "precision": 0.868,
+     "recall": 0.7408,
+     "ap50": 0.874,
+     "ap50_95": 0.6846
+    },
+    {
+     "class": "forklift",
+     "precision": 0.838,
+     "recall": 0.7838,
+     "ap50": 0.8693,
+     "ap50_95": 0.6154
+    },
+    {
+     "class": "no_vest",
+     "precision": 0.9295,
+     "recall": 0.7021,
+     "ap50": 0.7751,
+     "ap50_95": 0.5858
+    }
+   ]
+  }
+ },
+ "compliance": [
+  {
+   "label": "Fine-tuned YOLO11n (this model)",
+   "n": 223,
+   "accuracy": 0.9538,
+   "precision_nc": 1.0,
+   "recall_nc": 0.8788,
+   "unsure_share": 0.1883,
+   "nc_shown_green": 0.0842,
+   "person_recall": 0.9478,
+   "decided": 173
+  },
+  {
+   "label": "Baseline: COCO YOLO11n + colour rules",
+   "n": 223,
+   "accuracy": 0.7047,
+   "precision_nc": 0.6042,
+   "recall_nc": 0.7532,
+   "unsure_share": 0.009,
+   "nc_shown_green": 0.2,
+   "person_recall": 0.8652,
+   "decided": 193
+  },
+  {
+   "label": "Baseline: zero-shot YOLO-World",
+   "n": 223,
+   "accuracy": 0.875,
+   "precision_nc": 0.0,
+   "recall_nc": null,
+   "unsure_share": 0.9283,
+   "nc_shown_green": 0.0,
+   "person_recall": 0.9522,
+   "decided": 8
+  }
+ ],
+ "quantisation": {
+  "fp32_mb": 10.67,
+  "int8_mb": 3.26,
+  "map50_fp32": 0.7936,
+  "map50_int8": 0.7855,
+  "no_recall_fp32": 0.5914,
+  "no_recall_int8": 0.5383,
+  "shipped": "Int8 is 3.3 times smaller and costs 0.8 points of mAP@0.5, but 5.3 points of mean recall on the \u201cno_\u201d classes, the errors that matter most. The app therefore ships the float32 model; at 10.7 MB it already loads quickly and WebGPU runs it faster than int8."
+ },
+ "blur": {
+  "map50_original": 0.796,
+  "map50_blurred": 0.6769,
+  "map50_strict": 0.5499,
+  "helmet_recall_original": 0.7646,
+  "helmet_recall_blurred": 0.7851,
+  "goggles_recall_original": 0.962,
+  "goggles_recall_blurred": 0.0223,
+  "decision": "Blurring before detection costs accuracy, so the app detects on the original frame held in memory and blurs only what is displayed or exported."
+ },
+ "calibration": {
+  "ece_before": 0.0904,
+  "ece_after": 0.0587,
+  "temperature": 0.67,
+  "unsure_share": 0.1883
+ },
+ "subgroups": {
+  "note": "Subgroup tags are automatic estimates (0 of 230 checked by hand so far); skin-tone results are withheld until the tags are checked by hand, because the automatic colour-based grouping proved unreliable (it put almost every visible face in one group). Groups under 30 people have wide intervals and support no firm conclusion. \u201cno_\u201d recall counts a non-compliant worker as caught when the model says missing PPE or check manually.",
+  "rows": [
+   {
+    "group": "lighting: bright",
+    "n": 12,
+    "person_recall": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "no_recall": 1.0
+   },
+   {
+    "group": "lighting: dark",
+    "n": 19,
+    "person_recall": 0.7368,
+    "lo": 0.5263,
+    "hi": 0.8947,
+    "no_recall": 0.6429
+   },
+   {
+    "group": "lighting: normal",
+    "n": 185,
+    "person_recall": 0.9676,
+    "lo": 0.9405,
+    "hi": 0.9892,
+    "no_recall": 0.875
+   },
+   {
+    "group": "distance: far",
+    "n": 84,
+    "person_recall": 0.881,
+    "lo": 0.8095,
+    "hi": 0.9405,
+    "no_recall": 0.7
+   },
+   {
+    "group": "distance: mid",
+    "n": 32,
+    "person_recall": 0.9688,
+    "lo": 0.9062,
+    "hi": 1.0,
+    "no_recall": 0.8889
+   },
+   {
+    "group": "distance: near",
+    "n": 100,
+    "person_recall": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "no_recall": 0.9756
+   },
+   {
+    "group": "clothing: dark",
+    "n": 31,
+    "person_recall": 0.9032,
+    "lo": 0.7742,
+    "hi": 1.0,
+    "no_recall": 0.9091
+   },
+   {
+    "group": "clothing: hi-vis",
+    "n": 70,
+    "person_recall": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "no_recall": 0.8824
+   },
+   {
+    "group": "clothing: light",
+    "n": 1,
+    "person_recall": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "no_recall": null
+   },
+   {
+    "group": "clothing: other",
+    "n": 114,
+    "person_recall": 0.9386,
+    "lo": 0.886,
+    "hi": 0.9737,
+    "no_recall": 0.8039
+   }
+  ]
+ },
+ "smoothing": {
+  "precision_raw": 0.6492,
+  "precision_smoothed": 0.6443,
+  "recall_raw": 0.4769,
+  "recall_smoothed": 0.425,
+  "clips": 30,
+  "flips_raw": 5.46,
+  "flips_smoothed": 2.37
+ },
+ "speed": [
+  {
+   "label": "ONNX Runtime, laptop CPU, 2 threads (model only)",
+   "ms": 73.4
+  },
+  {
+   "label": "ONNX Runtime, laptop CPU, 4 threads (model only)",
+   "ms": 43.5
+  }
+ ],
+ "failures": [
+  {
+   "image": "failures/f01.jpg",
+   "note": "A worker with PPE missing (vest) was shown as compliant: unusual pose, PPE colour or partial occlusion."
+  },
+  {
+   "image": "failures/f02.jpg",
+   "note": "A worker was not detected at all: the worker is small and far from the camera."
+  },
+  {
+   "image": "failures/f03.jpg",
+   "note": "A worker with PPE missing (vest) was shown as compliant: the worker is cut off by the image edge."
+  },
+  {
+   "image": "failures/f04.jpg",
+   "note": "A worker was not detected at all: the worker is small and far from the camera; the scene is dark."
+  },
+  {
+   "image": "failures/f05.jpg",
+   "note": "A worker with PPE missing (helmet) was shown as compliant: the worker is small and far from the camera."
+  },
+  {
+   "image": "failures/f06.jpg",
+   "note": "A worker was not detected at all: the worker is small and far from the camera; the scene is dark."
+  },
+  {
+   "image": "failures/f07.jpg",
+   "note": "A worker with PPE missing (helmet) was shown as compliant: the worker is small and far from the camera."
+  },
+  {
+   "image": "failures/f08.jpg",
+   "note": "A worker was not detected at all: the worker is small and far from the camera."
+  },
+  {
+   "image": "failures/f09.jpg",
+   "note": "A worker with PPE missing (vest) was shown as compliant: the worker is small and far from the camera."
+  },
+  {
+   "image": "failures/f10.jpg",
+   "note": "A worker was not detected at all: the worker is small and far from the camera."
+  },
+  {
+   "image": "failures/f11.jpg",
+   "note": "A worker with PPE missing (helmet) was shown as compliant: the worker is small and far from the camera."
+  },
+  {
+   "image": "failures/f12.jpg",
+   "note": "A worker was not detected at all: the worker is small and far from the camera; the scene is dark."
+  }
+ ]
+}

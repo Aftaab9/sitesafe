@@ -1,0 +1,101 @@
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* light: site-office paper */
+    --bg: 244 243 238;
+    --surface: 255 255 255;
+    --raised: 236 234 226;
+    --line: 208 205 194;
+    --ink: 20 24 29;
+    --muted: 92 99 108;
+    --hivis: 255 212 0;
+    --hazard: 214 92 0;
+    --ok: 10 134 72;
+    --danger: 200 32 38;
+    --unsure: 0 104 181;
+    color-scheme: light;
+  }
+  .dark {
+    /* dark: control-room charcoal */
+    --bg: 11 13 16;
+    --surface: 19 23 28;
+    --raised: 28 34 41;
+    --line: 44 52 62;
+    --ink: 232 236 239;
+    --muted: 139 152 165;
+    --hivis: 255 212 0;
+    --hazard: 255 122 26;
+    --ok: 47 214 123;
+    --danger: 255 91 93;
+    --unsure: 91 192 255;
+    color-scheme: dark;
+  }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+    min-height: 100dvh;
+  }
+  h1, h2, h3 { @apply font-display tracking-tight; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  :focus-visible { outline: 2px solid rgb(var(--hivis)); outline-offset: 2px; border-radius: 4px; }
+  ::selection { background: rgb(var(--hivis) / 0.35); }
+}
+
+@layer components {
+  /* faint blueprint grid behind pages */
+  .blueprint {
+    background-image:
+      linear-gradient(rgb(var(--line) / 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--line) / 0.35) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: -1px -1px;
+  }
+  .hazard-stripes {
+    background-image: repeating-linear-gradient(-45deg, rgb(var(--hivis)) 0 14px, #0b0d10 14px 28px);
+  }
+  .hazard-stripes-soft {
+    background-image: repeating-linear-gradient(-45deg, rgb(var(--hivis) / 0.16) 0 10px, transparent 10px 20px);
+  }
+  .panel { @apply rounded-lg border border-line bg-surface; }
+  .eyebrow { @apply font-mono text-[11px] uppercase tracking-[0.18em] text-muted; }
+  .num { @apply font-mono tabular-nums; }
+  .hud-corners { position: relative; }
+  .hud-corners::before, .hud-corners::after {
+    content: ''; position: absolute; width: 18px; height: 18px; pointer-events: none;
+    border: 2px solid rgb(var(--hivis));
+  }
+  .hud-corners::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+  .hud-corners::after { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+}
+
+@keyframes scan-sweep {
+  from { top: -4%; }
+  to { top: 100%; }
+}
+.scan-line {
+  position: absolute; left: 0; right: 0; height: 4%;
+  background: linear-gradient(to bottom, transparent, rgb(var(--hivis) / 0.55) 80%, rgb(var(--hivis)));
+  box-shadow: 0 0 24px rgb(var(--hivis) / 0.6);
+  animation: scan-sweep 1.15s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .scan-line { display: none; }
+}
+.reduce-motion *, .reduce-motion *::before, .reduce-motion *::after {
+  animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; color: #000; }
+}

@@ -1,0 +1,13 @@
+class,prompt,gt,recall,precision
+helmet,hard hat,156,0.6859,0.9907
+gloves,work gloves,187,0.6684,0.8993
+vest,safety vest,177,0.0452,1.0
+boots,work boots,241,0.2656,0.9552
+goggles,safety goggles,79,0.0,
+Person,person,230,0.9522,0.8831
+no_helmet,bare head without hard hat,73,0.0,
+no_goggle,face without goggles,35,0.0,
+no_gloves,bare hands,99,0.5253,0.2889
+no_boots,shoes,71,1.0,0.2639
+forklift,forklift,37,0.0541,0.6667
+no_vest,person without safety vest,47,0.0,0.0

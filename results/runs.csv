@@ -1,0 +1,2 @@
+name,model,data,epochs,imgsz,batch,seed,train_minutes,val_map50,val_map50_95,val_precision,val_recall
+base,yolo11n.pt,ppe.yaml,30,640,16,42,1018.4,0.7535,0.5328,0.8508,0.6879

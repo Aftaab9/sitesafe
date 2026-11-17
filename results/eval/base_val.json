@@ -1,0 +1,17 @@
+{
+  "tag": "base",
+  "split": "val",
+  "weights": "models/sitesafe_base.pt",
+  "map50": 0.7534,
+  "map50_95": 0.5326,
+  "precision": 0.8504,
+  "recall": 0.6869,
+  "no_class_mean_recall": 0.5217,
+  "no_class_mean_ap50": 0.6042,
+  "speed_ms": {
+    "preprocess": 2.37,
+    "inference": 48.42,
+    "loss": 0.0,
+    "postprocess": 1.24
+  }
+}

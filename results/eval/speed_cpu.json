@@ -1,0 +1,18 @@
+{
+  "threads_1": {
+    "cold_start_ms": 415,
+    "mean_ms": 214.6,
+    "p95_ms": 251.8
+  },
+  "threads_2": {
+    "cold_start_ms": 210,
+    "mean_ms": 156.3,
+    "p95_ms": 207.5
+  },
+  "threads_4": {
+    "cold_start_ms": 243,
+    "mean_ms": 133.9,
+    "p95_ms": 165.7
+  },
+  "clip_30s_at_3fps_seconds_2_threads": 14.1
+}
