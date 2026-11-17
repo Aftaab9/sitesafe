@@ -10,13 +10,15 @@ interface Metrics {
   updated: string;
   training?: { note: string };
   detection?: Record<string, { label: string; split: string; map50: number; map50_95: number; no_class_mean_recall: number; per_class: ClassRow[] }>;
-  compliance?: { label: string; n: number; accuracy: number; precision_nc: number; recall_nc: number; unsure_share: number }[];
-  synthetic?: { note: string; rows: { class: string; base: number; synth: number; delta: number; lo: number; hi: number }[] };
+  compliance?: { label: string; n: number; decided: number; accuracy: number | null; precision_nc: number | null; recall_nc: number | null; unsure_share: number; nc_shown_green: number }[];
+  synthetic?: { note: string; rows: { class: string; base: number; synth: number; delta: number; lo: number; hi: number }[]; stress?: { class: string; base: number; synth: number; delta: number; lo: number; hi: number }[] };
   quantisation?: { fp32_mb: number; int8_mb: number; map50_fp32: number; map50_int8: number; shipped: string };
   blur?: { map50_original: number; map50_blurred: number; helmet_recall_original: number; helmet_recall_blurred: number; goggles_recall_original: number; goggles_recall_blurred: number; decision: string };
   calibration?: { ece_before: number; ece_after: number; temperature: number; unsure_share: number };
   subgroups?: { note: string; rows: { group: string; n: number; person_recall: number; lo: number; hi: number; no_recall: number | null }[] };
-  smoothing?: { precision_raw: number; precision_smoothed: number; recall_raw: number; recall_smoothed: number; clips: number };
+  smoothing?: { precision_raw: number; precision_smoothed: number; recall_raw: number; recall_smoothed: number; clips: number; flips_raw: number; flips_smoothed: number };
+  vlm?: { model: string; images: number; json_valid_share: number; seconds_per_image_cpu: number; hallucination_rate_before: number | null; error_rate_after_verification: number | null; per_claim: Record<string, { hallucination_before: number; error_after_verification: number }> };
+
   speed?: { label: string; ms: number }[];
   failures?: { image: string; note: string }[];
 }
@@ -101,9 +103,9 @@ export default function ModelCard() {
 
       {m?.compliance && (
         <Section title="Person-level compliance (the decision the officer sees)">
-          <Table head={['Method', 'People', 'Accuracy', 'Precision (missing PPE)', 'Recall (missing PPE)', 'Sent to “not sure”']}
-            rows={m.compliance.map((c) => [c.label, c.n, pct(c.accuracy), pct(c.precision_nc), pct(c.recall_nc), pct(c.unsure_share)])} />
-          <p className="text-muted">Accuracy, precision and recall are computed on people the method decided. People sent to “not sure” are handed to the officer and reported separately.</p>
+          <Table head={['Method', 'Decided / people', 'Accuracy', 'Precision (missing PPE)', 'Recall (missing PPE)', 'Sent to “not sure”', 'Violators shown green']}
+            rows={m.compliance.map((c) => [c.label, `${c.decided} / ${c.n}`, pct(c.accuracy), pct(c.precision_nc), pct(c.recall_nc), pct(c.unsure_share), pct(c.nc_shown_green)])} />
+          <p className="text-muted">Accuracy, precision and recall are computed on the people a method decided. A method that abstains on almost everyone can look accurate on the few it decides, so read the first column too. People sent to “not sure” are handed to the officer.</p>
         </Section>
       )}
 
@@ -111,6 +113,13 @@ export default function ModelCard() {
         <Section title="Does the generative AI help? Recall on real test photos, without vs with synthetic training images">
           <Table head={['Class', 'Real only', 'Real + synthetic', 'Change', '95% interval']}
             rows={m.synthetic.rows.map((r) => [r.class, pct(r.base), pct(r.synth), `${r.delta >= 0 ? '+' : ''}${(100 * r.delta).toFixed(1)} pts`, `${(100 * r.lo).toFixed(1)} to ${(100 * r.hi).toFixed(1)}`])} />
+          {m.synthetic.stress && (
+            <>
+              <Eyebrow className="pt-2">Stress test: the same 100 test photos re-rendered as night, rain, fog or dust</Eyebrow>
+              <Table head={['Classes', 'Real only', 'Real + synthetic', 'Change', '95% interval']}
+                rows={m.synthetic.stress.map((r) => [r.class, pct(r.base), pct(r.synth), `${r.delta >= 0 ? '+' : ''}${(100 * r.delta).toFixed(1)} pts`, `${(100 * r.lo).toFixed(1)} to ${(100 * r.hi).toFixed(1)}`])} />
+            </>
+          )}
           <p className="text-muted">{m.synthetic.note}</p>
         </Section>
       )}
@@ -118,7 +127,7 @@ export default function ModelCard() {
       <div className="grid gap-4 md:grid-cols-2">
         {m?.calibration && (
           <Section title="Confidence and the “not sure” state">
-            <p>Expected calibration error on validation: {pct(m.calibration.ece_before)} before and {pct(m.calibration.ece_after)} after temperature scaling (T = {m.calibration.temperature.toFixed(2)}).</p>
+            <p>Expected calibration error on the test split: {pct(m.calibration.ece_before)} before and {pct(m.calibration.ece_after)} after temperature scaling (T = {m.calibration.temperature.toFixed(2)}).</p>
             <p>Per-class thresholds chosen on validation send low-confidence decisions to “check manually” instead of forcing green or red. On the test split {pct(m.calibration.unsure_share)} of people end up there.</p>
           </Section>
         )}
@@ -143,11 +152,25 @@ export default function ModelCard() {
             <Table head={['', 'Per frame', '3 of 5 frames']} rows={[
               ['Violation precision', pct(m.smoothing.precision_raw), pct(m.smoothing.precision_smoothed)],
               ['Violation recall', pct(m.smoothing.recall_raw), pct(m.smoothing.recall_smoothed)],
+              ['Status flips per 100 track-frames', m.smoothing.flips_raw.toFixed(1), m.smoothing.flips_smoothed.toFixed(1)],
             ]} />
             <p className="text-muted">Measured on {m.smoothing.clips} simulated clips (camera moves over labelled test photos with frame noise).</p>
           </Section>
         )}
       </div>
+
+      {m?.vlm && (
+        <Section title="Written summary: how often does the language model make things up?">
+          <Table head={['Claim', 'Wrong before verification', 'Wrong after verification']}
+            rows={[...Object.entries(m.vlm.per_claim).map(([k, v]) => [k.replace('_', ' '), pct(v.hallucination_before), pct(v.error_after_verification)]),
+              ['All claims', pct(m.vlm.hallucination_rate_before), pct(m.vlm.error_rate_after_verification)]]} />
+          <p className="text-muted">
+            {m.vlm.model.split('/')[1]} on {m.vlm.images} face-blurred test photos, scored against the labels. Only {pct(m.vlm.json_valid_share)} of its answers
+            were usable JSON, and it often invented worker names and ages. After verification every published number comes from the detector, so the
+            remaining error is the detector's own. About {m.vlm.seconds_per_image_cpu.toFixed(0)} s per photo on a laptop CPU, which is why the summary is an optional button.
+          </p>
+        </Section>
+      )}
 
       {m?.subgroups && (
         <Section title="Bias check: results by subgroup">

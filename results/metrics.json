@@ -244,8 +244,8 @@
   ]
  },
  "smoothing": {
-  "precision_raw": 0.6492,
-  "precision_smoothed": 0.6443,
+  "precision_raw": 0.9688,
+  "precision_smoothed": 0.9822,
   "recall_raw": 0.4769,
   "recall_smoothed": 0.425,
   "clips": 30,
@@ -260,6 +260,22 @@
   {
    "label": "ONNX Runtime, laptop CPU, 4 threads (model only)",
    "ms": 43.5
+  },
+  {
+   "label": "Browser, WebGPU, laptop integrated GPU (model only)",
+   "ms": 116
+  },
+  {
+   "label": "Browser, WebGPU, laptop, whole photo incl. face detection and drawing",
+   "ms": 300
+  },
+  {
+   "label": "Browser, WebAssembly 4 threads, laptop CPU, busy with training (model only)",
+   "ms": 407
+  },
+  {
+   "label": "Browser, WebAssembly 4 threads, laptop CPU, busy with training (whole photo)",
+   "ms": 629
   }
  ],
  "failures": [
@@ -311,5 +327,35 @@
    "image": "failures/f12.jpg",
    "note": "A worker was not detected at all: the worker is small and far from the camera; the scene is dark."
   }
- ]
+ ],
+ "vlm": {
+  "model": "HuggingFaceTB/SmolVLM-256M-Instruct",
+  "images": 40,
+  "json_valid_share": 0.35,
+  "seconds_per_image_cpu": 46.39,
+  "per_claim": {
+   "workers": {
+    "hallucination_before": 0.8571,
+    "error_after_verification": 0.5,
+    "claims_changed_by_verifier": 0.8571
+   },
+   "missing_helmet": {
+    "hallucination_before": 0.8571,
+    "error_after_verification": 0.4286,
+    "claims_changed_by_verifier": 0.7143
+   },
+   "missing_vest": {
+    "hallucination_before": 0.7143,
+    "error_after_verification": 0.3571,
+    "claims_changed_by_verifier": 0.4286
+   },
+   "forklift_present": {
+    "hallucination_before": 0.2857,
+    "error_after_verification": 0.0,
+    "claims_changed_by_verifier": 0.2857
+   }
+  },
+  "hallucination_rate_before": 0.6786,
+  "error_rate_after_verification": 0.3214
+ }
 }

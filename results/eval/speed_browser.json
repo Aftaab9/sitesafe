@@ -1,0 +1,6 @@
+[
+  {"label": "Browser, WebGPU, laptop integrated GPU (model only)", "ms": 116},
+  {"label": "Browser, WebGPU, laptop, whole photo incl. face detection and drawing", "ms": 300},
+  {"label": "Browser, WebAssembly 4 threads, laptop CPU, busy with training (model only)", "ms": 407},
+  {"label": "Browser, WebAssembly 4 threads, laptop CPU, busy with training (whole photo)", "ms": 629}
+]

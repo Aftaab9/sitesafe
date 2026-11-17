@@ -1,0 +1,333 @@
+image,seconds,json_valid,raw,truth_workers,vlm_workers,det_workers,vlm_wrong_workers,final_wrong_workers,caught_workers,truth_missing_helmet,vlm_missing_helmet,det_missing_helmet,vlm_wrong_missing_helmet,final_wrong_missing_helmet,caught_missing_helmet,truth_missing_vest,vlm_missing_vest,det_missing_vest,vlm_wrong_missing_vest,final_wrong_missing_vest,caught_missing_vest,truth_forklift_present,vlm_forklift_present,det_forklift_present,vlm_wrong_forklift_present,final_wrong_forklift_present,caught_forklift_present
+source-078aa002dcdc9f8ffd092bed4da44e59.jpg,22.37,False, 3.,3,,3,,False,,1,,1,,False,,0,,0,,False,,False,,False,,False,
+source-08e4ee526a5ea46b79ae4b6da87e91a1.jpg,28.9,True," {
+    ""workers"": [
+        {
+            ""name"": ""JOHN"",
+            ""age"": ""35""
+        },
+        {
+            ""name"": ""JOHN"",
+            ""age"": ""40""
+        }
+    ],
+    ""missing_helmet"": 1,
+    ""missing_vest"": 0,
+    ""missing_gloves"": 2,
+    ""missing_boots"": 0,
+    ""missing_goggles"": 0,
+    """,3,2.0,3,True,False,True,0,1.0,0,True,False,True,2,0.0,0,True,True,False,False,False,False,False,False,False
+source-0e2a4d4463396c949ccdf3a3253e1552.jpg,21.16,False, 3.,5,,5,,False,,2,,0,,True,,0,,0,,False,,False,,False,,False,
+source-1c60612624732b80742dd50ae6225c57.jpg,18.4,False, 3.,5,,6,,True,,5,,0,,True,,3,,1,,True,,True,,True,,False,
+source-29a54f6e5e66462bbcbec90273e92a51.jpg,18.25,False, 3.,5,,5,,False,,0,,1,,True,,0,,0,,False,,False,,False,,False,
+source-32e03cdb08168418670930ec33c24ec1.jpg,17.12,False, 3.,4,,4,,False,,0,,0,,False,,1,,0,,True,,False,,False,,False,
+source-449d7c49b40597a87fd789730bc14f43.jpg,23.04,False, 3.,6,,6,,False,,1,,0,,True,,1,,0,,True,,False,,False,,False,
+source-4d6af6d0fce09bd9d6228c8525c2f2c5.jpg,19.05,False, 3.,6,,5,,True,,1,,1,,False,,0,,0,,False,,False,,False,,False,
+source-5140dd69d9fd4bda1414dfea2e2e0512.jpg,17.55,False, 3.,5,,5,,False,,2,,0,,True,,1,,0,,True,,False,,False,,False,
+source-58c7f3d161f4a1348b91f9808ba107a3.jpg,19.73,False, 3.,6,,6,,False,,1,,1,,False,,0,,0,,False,,False,,False,,False,
+source-5b6157b76d4cbbf7c549b77632814ace.jpg,29.55,True," {
+    ""workers"": [
+        ""3"",
+        ""4"",
+        ""5"",
+        ""6""
+    ],
+    ""missing_helmet"": 1,
+    ""missing_vest"": 0,
+    ""missing_gloves"": 2,
+    ""missing_boots"": 0,
+    ""missing_goggles"": 0,
+    ""forklift_present"": false,
+    ""scene"": ""Outdoor building site in daylight.""
+}",1,4.0,1,True,False,True,0,1.0,0,True,False,True,1,0.0,1,True,False,True,False,False,False,False,False,False
+source-697ef7be42e68d78ab9ba0191638f308.jpg,42.57,True," {
+    ""workers"": [
+        {
+            ""name"": ""BOSS"",
+            ""age"": ""35""
+        },
+        {
+            ""name"": ""JOHN""
+        },
+        {
+            ""name"": ""MICHAEL""
+        }
+    ],
+    ""missing_helmet"": {
+        ""type"": ""no helmet"",
+        ""value"": ""1""
+    },
+    ""missing_vest"": {",3,3.0,2,False,True,True,0,0.0,0,False,False,False,0,0.0,0,False,False,False,False,False,False,False,False,False
+source-9ba04898abfcdd5d414807101c5b223c.jpg,60.1,False," {
+    ""workers"": [
+        {
+            ""name"": ""JOHN"",
+            ""age"": ""35""
+        },
+        {
+            ""name"": ""JOHN""
+        },
+        {
+            ""name"": ""JOHN""
+        },
+        {
+            ""name"": ""JOHN""
+        }
+    ],
+    ""missing_helmet"": {
+        ""value"": ""1"",
+        ""un",1,,1,,False,,1,,0,,True,,1,,1,,False,,False,,False,,False,
+source-b6c58df2d8dae678b01bd4c57f28e6b3.jpg,55.12,True," {
+    ""workers"": [
+        {
+            ""name"": ""JOHN"",
+            ""age"": ""25""
+        },
+        {
+            ""name"": ""KAREN"",
+            ""age"": ""24""
+        },
+        {
+            ""name"": ""MICHAEL"",
+            ""age"": ""26""
+        }
+    ],
+    ""missing_helmet"": 1,
+    ""missing_vest"": 0,
+   ",5,3.0,5,True,False,True,3,1.0,0,True,True,True,1,0.0,0,True,True,False,False,False,False,False,False,False
+source-baa51c2ac69f7c70e92d77f740b0f120.jpg,74.11,True," {
+    ""workers"": [
+        {
+            ""name"": ""JEANNE"",
+            ""age"": ""25""
+        },
+        {
+            ""name"": ""MICHAEL"",
+            ""age"": ""47""
+        },
+        {
+            ""name"": ""SARAH"",
+            ""age"": ""69""
+        }
+    ],
+    ""missing_helmet"": 1,
+    ""missing_vest"": 0,
+ ",9,3.0,7,True,True,True,0,1.0,0,True,False,True,1,0.0,0,True,True,False,False,False,False,False,False,False
+source-bfbb13f4dbe39c58cf7d0106cd8000f7.jpg,68.51,True," {
+    ""workers"": [
+        {
+            ""name"": ""JOHN"",
+            ""position"": ""Sales Manager"",
+            ""age"": ""35"",
+            ""address"": {
+                ""street"": ""111 Main St"",
+                ""city"": ""Anytown"",
+                ""state"": ""AZ""
+            },
+            ""phone"": ""978-465-",6,2.0,5,True,True,True,6,0.0,4,True,True,True,1,0.0,1,True,False,True,True,False,True,True,False,True
+source-c285b53fb701de95fbfe70714765e8c7.jpg,50.99,False, 3.,4,,4,,False,,1,,1,,False,,0,,0,,False,,False,,False,,False,
+source-d6cf98f5a426285e1ad496703b33cf93.jpg,127.97,True," {
+    ""workers"": [
+        {
+            ""name"": ""The worker at the left"",
+            ""age"": ""25""
+        },
+        {
+            ""name"": ""The worker at the right"",
+            ""age"": ""40""
+        }
+    ],
+    ""items"": [
+        {
+            ""type"": ""construction workers"",
+            ""position""",6,2.0,5,True,True,True,2,0.0,0,True,True,False,0,0.0,0,False,False,False,False,False,False,False,False,False
+source-d7438871aefee49d413dcede6cd5d626.jpg,118.13,True," {
+    ""workers"": [
+        {
+            ""name"": ""VINCENT"",
+            ""position"": ""FULL-SIDE""
+        },
+        {
+            ""name"": ""JOHN"",
+            ""position"": ""WESTERN""
+        }
+    ],
+    ""items"": [
+        {
+            ""type"": ""boxes"",
+            ""quantity"": ""50"",
+            ""unitpr",3,2.0,4,True,True,True,3,0.0,0,True,True,False,0,0.0,0,False,False,False,True,False,True,True,False,True
+source-e459eb61dde6db49ddc16578bb8ceda7.jpg,56.07,False, 3.,4,,4,,False,,0,,0,,False,,0,,0,,False,,False,,False,,False,
+source-e497834ebd715d706366646daeb2269e.jpg,123.1,True," {
+    ""workers"": [
+        {
+            ""name"": ""JOHN"",
+            ""age"": ""35""
+        },
+        {
+            ""name"": ""JOHN""
+        },
+        {
+            ""name"": ""JOHN""
+        }
+    ],
+    ""missing_helmet"": 1,
+    ""missing_vest"": 0,
+    ""missing_gloves"": 2,
+    ""missing_boots"": 0,
+    ""mis",1,3.0,1,True,False,True,0,1.0,0,True,False,True,1,0.0,1,True,False,True,False,False,False,False,False,False
+source-efa761a319a37ba07e58ccd0bc1a4003.jpg,57.3,True," {
+    ""workers"": [
+        {
+            ""name"": ""Lady"",
+            ""position"": ""Fellow""
+        },
+        {
+            ""name"": ""Maid"",
+            ""position"": ""Fellow""
+        }
+    ],
+    ""missing_helmet"": 1,
+    ""missing_vest"": 0,
+    ""missing_gloves"": 2,
+    ""missing_boots"": 0,
+    ""missing_",8,2.0,9,True,True,True,8,1.0,0,True,True,True,1,0.0,0,True,True,False,True,False,True,True,False,True
+source-f891b842074a79a1fef1c89bc8d39507.jpg,29.66,False, 3.,6,,6,,False,,0,,0,,False,,0,,0,,False,,False,,False,,False,
+source-fc7635f8f5ccf2152ef0afcd824df643.jpg,26.72,False, 3.,7,,4,,True,,5,,0,,True,,3,,0,,True,,False,,True,,True,
+source-fd87396c628d9e0ce1ac0177cfbf27e3.jpg,23.75,False, 3.,3,,5,,True,,0,,0,,False,,0,,0,,False,,True,,False,,True,
+ultralytics-ppe-nov2026-003.jpg,63.47,True," {
+    ""workers"": [
+        {
+            ""name"": ""Aleem"",
+            ""age"": ""25""
+        },
+        {
+            ""name"": ""Muhammad"",
+            ""age"": ""24""
+        },
+        {
+            ""name"": ""Ali"",
+            ""age"": ""26""
+        }
+    ],
+    ""passengers"": [
+        {
+            ""name"": """,4,3.0,3,True,True,False,2,0.0,1,True,True,True,2,0.0,2,True,False,True,False,False,False,False,False,False
+ultralytics-ppe-nov2026-006.jpg,28.88,False, 3.,3,,3,,False,,1,,1,,False,,0,,0,,False,,False,,False,,False,
+ultralytics-ppe-nov2026-014.jpg,23.63,False, 3.,3,,3,,False,,0,,0,,False,,1,,0,,True,,False,,False,,False,
+ultralytics-ppe-nov2026-037.jpg,21.71,False, 3.,3,,3,,False,,0,,0,,False,,1,,1,,False,,False,,False,,False,
+ultralytics-ppe-nov2026-054.jpg,51.44,True," {
+    ""workers"": [
+        {
+            ""name"": ""JANE"",
+            ""age"": ""35""
+        },
+        {
+            ""name"": ""KAREN""
+        },
+        {
+            ""name"": ""MICHAEL""
+        }
+    ],
+    ""missing_helmet"": {
+        ""value"": ""1""
+    },
+    ""missing_gloves"": {
+        ""value"": ""0""
+    ",1,3.0,1,True,False,True,1,0.0,1,True,False,True,0,0.0,0,False,False,False,False,False,False,False,False,False
+ultralytics-ppe-nov2026-057.jpg,21.32,False," [3, 1, 0, 0, 0, 0, 0, 0]",2,,2,,False,,0,,0,,False,,2,,2,,False,,False,,False,,False,
+ultralytics-ppe-nov2026-083.jpg,17.53,False, 3.,1,,1,,False,,0,,0,,False,,0,,0,,False,,False,,False,,False,
+ultralytics-ppe-nov2026-084.jpg,21.47,False, 3.,1,,1,,False,,0,,0,,False,,0,,0,,False,,False,,False,,False,
+ultralytics-ppe-nov2026-103.jpg,63.68,False," {
+    ""workers"": [
+        {
+            ""name"": ""FORD"",
+            ""age"": ""35""
+        },
+        {
+            ""name"": ""JOHNSON"",
+            ""age"": ""47""
+        }
+    ],
+    ""missing_helmet"": 1,
+    ""missing_vest"": 0,
+    ""missing_gloves"": 2,
+    ""missing_boots"": 0,
+    ""missing_goggles"": 0,
+  ",1,,1,,False,,1,,1,,False,,1,,1,,False,,True,,True,,False,
+ultralytics-ppe-nov2026-107.jpg,77.07,False," {
+    ""workers"": [
+        {
+            ""name"": ""JOHN"",
+            ""age"": ""35""
+        },
+        {
+            ""name"": ""JOHN""
+        },
+        {
+            ""name"": ""JOHN""
+        }
+    ],
+    ""missing_helmet"": 1,
+    ""missing_vest"": 0,
+    ""missing_gloves"": 2,
+    ""missing_boots"": 0,
+    ""mis",1,,1,,False,,0,,0,,False,,1,,1,,False,,False,,False,,False,
+ultralytics-ppe-nov2026-116.jpg,69.75,False," {
+    ""workers"": [
+        {
+            ""name"": ""Larry"",
+            ""age"": ""25""
+        },
+        {
+            ""name"": ""Jake"",
+            ""age"": ""24""
+        }
+    ],
+    ""missing_helmet"": 1,
+    ""missing_vest"": 0,
+    ""missing_gloves"": 2,
+    ""missing_boots"": 0,
+    ""missing_goggles"": 0,
+    ",2,,2,,False,,1,,1,,False,,0,,0,,False,,False,,False,,False,
+ultralytics-ppe-nov2026-129.jpg,72.96,True," {
+    ""workers"": [
+        {
+            ""name"": ""JOHN"",
+            ""age"": ""35""
+        },
+        {
+            ""name"": ""JOHN""
+        },
+        {
+            ""name"": ""JOHN""
+        }
+    ],
+    ""missing_helmet"": 1,
+    ""missing_vest"": 0,
+    ""missing_gloves"": 2,
+    ""missing_boots"": 0,
+    ""mis",3,3.0,3,False,False,False,0,1.0,0,True,False,True,2,0.0,1,True,True,True,False,False,False,False,False,False
+ultralytics-ppe-nov2026-132.jpg,41.69,False, 3.,1,,1,,False,,1,,1,,False,,0,,0,,False,,False,,False,,False,
+ultralytics-ppe-nov2026-151.jpg,55.0,False," 3
+Missing_helmet: 1
+Missing_vest: 0
+Missing_gloves: 2
+Missing_boots: 0
+Missing_goggles: 0
+forklift_present: false",1,,1,,False,,0,,0,,False,,0,,0,,False,,True,,True,,False,
+ultralytics-ppe-nov2026-153.jpg,76.92,True," {
+    ""workers"": [
+        {
+            ""name"": ""Ferrari"",
+            ""position"": ""Ford Fiesta""
+        },
+        {
+            ""name"": ""Ferrari"",
+            ""position"": ""Ford Fiesta""
+        }
+    ],
+    ""missing_helmet"": 1,
+    ""missing_vest"": 0,
+    ""missing_gloves"": 2,
+    ""missing_boots"": ",1,2.0,1,True,False,True,1,1.0,1,False,False,False,1,0.0,1,True,False,True,True,False,True,True,False,True
