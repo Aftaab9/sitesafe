@@ -9,7 +9,7 @@
     "predev": "npm run copy-ort",
     "prebuild": "npm run copy-ort",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -p tsconfig.build.json && vite build",
     "typecheck": "tsc -b --noEmit",
     "preview": "vite preview",
     "test": "vitest run"

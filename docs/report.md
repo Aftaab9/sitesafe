@@ -2,6 +2,8 @@
 
 MAIB AI 221 Computer Vision with Applications, Project 6. Technical report.
 
+Live app: https://sitesafe-phi.vercel.app · Code: https://github.com/Aftaab9/sitesafe
+
 ## 1. Problem
 
 On a construction site, the safety officer is the person who has to notice that a worker has taken off a hard hat to wipe their forehead, or that the new labourer on the scaffold has no gloves. They cannot watch every work area at once, and the obvious fix, cameras that record workers, creates a second problem: identifiable images of people at work, which workers rightly distrust.

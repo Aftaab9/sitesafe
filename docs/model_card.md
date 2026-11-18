@@ -1,6 +1,6 @@
 # Model card: SiteSafe PPE detector
 
-**Model.** YOLO11n (2.6 M parameters) fine-tuned from COCO weights; ONNX opset 17, 640 × 640 input, 10.7 MB (float32). Face detection: YuNet (MIT). Version 1.0, November 2026. Code licence AGPL-3.0.
+**Model.** YOLO11n (2.6 M parameters) fine-tuned from COCO weights; ONNX opset 17, 640 × 640 input, 10.7 MB (float32). Face detection: YuNet (MIT). Version 1.0, November 2026. Code licence AGPL-3.0. Live app: https://sitesafe-phi.vercel.app; code: https://github.com/Aftaab9/sitesafe.
 
 **Intended use.** Helping a construction site safety officer find workers who are missing required PPE (helmet, hi-vis vest, gloves, boots, goggles) in photos, 10 to 30 second clips and live camera video, and reporting aggregate compliance for a site or shift. The output is a prompt to look, with a "check manually" state for uncertain cases.
 

@@ -6,8 +6,9 @@ MAIB AI 221 Computer Vision with Applications (S P Jain School of Global Managem
 
 | | |
 |---|---|
-| Main app (static, all AI in the browser) | Vercel: _add URL after first deploy_ · mirror on Cloudflare Pages: _add URL_ |
-| Fallback app (Streamlit Community Cloud) | _add URL_ |
+| Main app (static, all AI in the browser) | Vercel: **https://sitesafe-phi.vercel.app** · mirror on Cloudflare Pages: _not set up yet_ |
+| Fallback app (Streamlit Community Cloud) | _not set up yet_ |
+| Code | https://github.com/Aftaab9/sitesafe |
 | Model | YOLO11n fine-tuned on Construction-PPE, ONNX, 10.7 MB |
 | Training | Colab free T4, 100 epochs, about 20 minutes per model |
 

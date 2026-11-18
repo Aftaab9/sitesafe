@@ -2,7 +2,7 @@
 
 Numbers are from the held-out test split (100 real images, 230 people) unless stated. Keep them identical to the report.
 
-1. **SiteSafe: see who is missing PPE without seeing who they are** (0:30). Title, live URL as a QR code, one hero image with boxes and blurred faces.
+1. **SiteSafe: see who is missing PPE without seeing who they are** (0:30). Title, live URL (https://sitesafe-phi.vercel.app) as a QR code, one hero image with boxes and blurred faces.
 
 2. **The user and the decision** (0:45). Site safety officer on a walk-round. Decision: who needs to be stopped and kitted out. Cost of errors: a missed "no helmet" can mean a head injury; a false alarm costs a minute. Therefore: no_ recall first, and a "not sure" state instead of a wrong green.
 
