@@ -82,7 +82,8 @@ class Detector:
             opts.intra_op_num_threads = threads
         self.session = ort.InferenceSession(model_path, sess_options=opts, providers=["CPUExecutionProvider"])
         self.input_name = self.session.get_inputs()[0].name
-        self.size = size
+        shape = self.session.get_inputs()[0].shape  # static [1, 3, S, S]: use the size the model was exported at
+        self.size = shape[2] if isinstance(shape[2], int) else size
 
     def __call__(self, rgb: np.ndarray, conf_thr: float = 0.25, iou_thr: float = 0.5) -> List[Det]:
         canvas, r, pad = letterbox(rgb, self.size)

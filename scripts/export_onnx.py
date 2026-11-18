@@ -40,13 +40,14 @@ def main():
     ap.add_argument("--weights", required=True)
     ap.add_argument("--name", required=True)
     ap.add_argument("--opset", type=int, default=17)
+    ap.add_argument("--imgsz", type=int, default=640)
     a = ap.parse_args()
 
     from ultralytics import YOLO
     MODELS.mkdir(exist_ok=True)
     tmp = MODELS / f"_{a.name}.pt"
     shutil.copy(a.weights, tmp)  # export next to a copy so the run folder stays clean
-    exported = Path(YOLO(str(tmp)).export(format="onnx", opset=a.opset, imgsz=640, simplify=True, dynamic=False, half=False))
+    exported = Path(YOLO(str(tmp)).export(format="onnx", opset=a.opset, imgsz=a.imgsz, simplify=True, dynamic=False, half=False))
     out = MODELS / f"{a.name}.onnx"
     shutil.move(str(exported), out)
     pt_out = MODELS / f"{a.name}.pt"
