@@ -20,7 +20,7 @@ from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-from sitesafe.classes import FORKLIFT, FORKLIFT_MIN_CONF, PPE_ITEMS, SITE_PROFILES  # noqa: E402
+from sitesafe.classes import FORKLIFT, FORKLIFT_MIN_CONF, PERSON, PERSON_MIN_CONF, PPE_ITEMS, SITE_PROFILES  # noqa: E402
 from sitesafe.detector import Detector  # noqa: E402
 from sitesafe.matching import MatchConfig, match_people, summarise  # noqa: E402
 from sitesafe.privacy import FaceDetector, blur_regions, privacy_boxes  # noqa: E402
@@ -52,7 +52,8 @@ def thresholds() -> dict:
 def analyse(rgb: np.ndarray, profile: str, conf: float, zone, fork_dist: float, strict: bool, blur: bool):
     det, faces = load_models()
     t0 = time.perf_counter()
-    dets = det(rgb, conf)
+    # people from a lower confidence than PPE items, as in the web app (crouching workers score low)
+    dets = [d for d in det(rgb, min(conf, PERSON_MIN_CONF)) if d.cls == PERSON or d.conf >= conf]
     people = match_people(dets, SITE_PROFILES[profile], MatchConfig(class_thresholds=thresholds() or None))
     forklifts = [d.box for d in dets if d.cls == FORKLIFT and d.conf >= FORKLIFT_MIN_CONF]
     events = zone_events([p.box for p in people], forklifts, [zone] if zone else [], fork_dist)

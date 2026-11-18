@@ -5,6 +5,7 @@ import * as ort from 'onnxruntime-web/webgpu';
 import { decode, INPUT, letterboxParams, toTensorData } from '../lib/yolo';
 import { decodeFaces, FACE_INPUT, toFaceTensor } from '../lib/yunet';
 import type { Box } from '../lib/matching';
+import { PERSON, PERSON_MIN_CONF } from '../lib/classes';
 
 export type WorkerIn =
   | { type: 'init'; id: number; base: string; backend: 'auto' | 'wasm' | 'webgpu' }
@@ -92,7 +93,11 @@ async function detect(msg: Extract<WorkerIn, { type: 'detect' }>) {
   const tensor = out[session.outputNames[0]];
   const data = (await tensor.getData()) as Float32Array;
   const t2 = performance.now();
-  const dets = decode(data, tensor.dims[2], lb, bitmap.width, bitmap.height, msg.conf, msg.iou, tensor.dims[1] - 4);
+  // People are kept from a lower confidence than PPE items: a crouching or bent-over worker often scores
+  // 0.20-0.25 as a person. Such people show as "check manually" (person_unsure 0.40), never green or red.
+  const personConf = Math.min(msg.conf, PERSON_MIN_CONF);
+  const dets = decode(data, tensor.dims[2], lb, bitmap.width, bitmap.height, personConf, msg.iou, tensor.dims[1] - 4)
+    .filter((d) => d.cls === PERSON || d.conf >= msg.conf);
 
   let faces: Box[] = [];
   const faceSession = sessions.get('face');

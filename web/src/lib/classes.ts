@@ -8,6 +8,8 @@ export const PERSON = 5;
 export const FORKLIFT = 10;
 /** A forklift box below this confidence is drawn but never raises a proximity alert or counts as a forklift. */
 export const FORKLIFT_MIN_CONF = 0.5;
+/** People are detected from this confidence (PPE items from the sensitivity setting, 0.25 by default). */
+export const PERSON_MIN_CONF = 0.2;
 
 export type Item = 'helmet' | 'goggles' | 'vest' | 'gloves' | 'boots';
 export const PPE_ITEMS: Item[] = ['helmet', 'goggles', 'vest', 'gloves', 'boots'];
