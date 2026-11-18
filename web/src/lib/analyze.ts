@@ -1,5 +1,5 @@
 // Turns raw detections into the decision the safety officer sees.
-import { FORKLIFT, SITE_PROFILES, type ProfileId } from './classes';
+import { FORKLIFT, FORKLIFT_MIN_CONF, SITE_PROFILES, type ProfileId } from './classes';
 import type { DetectResult } from './engine';
 import { matchPeople, summarise, type Box, type Det, type MatchConfig, type PersonResult, type Summary, DEFAULT_MATCH } from './matching';
 import { privacyBoxes } from './yunet';
@@ -30,7 +30,7 @@ export function analyse(
   res: DetectResult, profile: ProfileId, zones: Zone[], opts: { strictBlur: boolean; forkliftDistance: number },
 ): Analysis {
   const people = matchPeople(res.dets, SITE_PROFILES[profile].required, MATCH_CONFIG);
-  const forklifts = res.dets.filter((d) => d.cls === FORKLIFT).map((d) => d.box);
+  const forklifts = res.dets.filter((d) => d.cls === FORKLIFT && d.conf >= FORKLIFT_MIN_CONF).map((d) => d.box);
   const events = zoneEvents(people.map((p) => p.box), forklifts, zones, opts.forkliftDistance);
   return {
     w: res.w,

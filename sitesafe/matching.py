@@ -14,7 +14,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Dict, Iterable, List, Optional, Sequence
 
-from .classes import (DEFAULT_PROFILE, FORKLIFT, ITEM_BAND, ITEM_OF_CLASS,
+from .classes import (DEFAULT_PROFILE, FORKLIFT, FORKLIFT_MIN_CONF, ITEM_BAND, ITEM_OF_CLASS,
                       PERSON, PPE_ITEMS, SITE_PROFILES)
 
 Box = Sequence[float]  # x1, y1, x2, y2
@@ -199,5 +199,5 @@ def summarise(people: Sequence[PersonResult], dets: Sequence[Det]) -> dict:
         "unsure": unsure,
         "compliance_pct": round(100.0 * compliant / decided, 1) if decided else None,
         "missing_by_item": missing_counts,
-        "forklifts": sum(d.cls == FORKLIFT for d in dets),
+        "forklifts": sum(d.cls == FORKLIFT and d.conf >= FORKLIFT_MIN_CONF for d in dets),
     }

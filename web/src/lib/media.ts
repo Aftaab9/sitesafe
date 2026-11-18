@@ -38,6 +38,8 @@ export interface Sample {
   w: number;
   h: number;
   gt: Det[];
+  /** Real photos from Wikimedia Commons: author and licence, shown with the photo. */
+  credit?: { title: string; author: string; licence: string; licence_url: string; page: string };
 }
 export interface WeatherItem {
   id: string;
@@ -52,6 +54,7 @@ export interface ClipItem { id: string; file: string; title: string; note: strin
 interface Catalogue {
   licence: string;
   samples: Sample[];
+  real?: Sample[];
   weather: WeatherItem[];
   clips: ClipItem[];
   models: { synth: boolean };

@@ -1,0 +1,13 @@
+# Real-photo gallery for the web app (scripts/build_real_samples.py): file | title
+c001.jpg | Rebar crew
+c090.jpg | Hi-vis, no helmets
+c047.jpg | Road crew
+c021.jpg | Crane riggers
+c109.jpg | Night road works
+c093.jpg | Excavator, one worker
+c116.jpg | Night, no PPE
+c094.jpg | Mobile crane
+c105.jpg | Night cutting
+c043.jpg | Sheet piling
+c050.jpg | Street works at night
+c020.jpg | Close-up at height

@@ -5,6 +5,9 @@ import type { OverlayPerson } from './draw';
 import type { Box, PersonStatus, Summary } from './matching';
 import { DEFAULT_TRACKER, Tracker, type TrackerConfig } from './tracking';
 
+/** A worker counts as "close to a forklift" in a clip only after this many frames, like the 3-of-5 PPE rule. */
+const FORKLIFT_FRAMES = 3;
+
 export interface WorkerAgg {
   id: number;
   frames: number;
@@ -14,6 +17,7 @@ export interface WorkerAgg {
   everViolation: boolean;
   zone: boolean;
   forklift: boolean;
+  forkliftFrames: number;   // frames near a forklift; the flag needs FORKLIFT_FRAMES of them
 }
 
 export interface FrameRecord {
@@ -32,7 +36,7 @@ export class ClipSession {
   tracker: Tracker;
   workers = new Map<number, WorkerAgg>();
   frames: FrameRecord[] = [];
-  forkliftsMax = 0;
+  forkliftCounts: number[] = []; // forklifts per frame
   newViolation = false; // set when a worker's first smoothed violation appears in the latest step
 
   constructor(public profile: ProfileId, cfg: Partial<TrackerConfig> = {}) {
@@ -53,7 +57,7 @@ export class ClipSession {
       const missing = this.tracker.smoothedMissing(tr, required);
       let w = this.workers.get(tr.id);
       if (!w) {
-        w = { id: tr.id, frames: 0, missing: new Set(), rawMissingFrames: 0, compliantFrames: 0, everViolation: false, zone: false, forklift: false };
+        w = { id: tr.id, frames: 0, missing: new Set(), rawMissingFrames: 0, compliantFrames: 0, everViolation: false, zone: false, forklift: false, forkliftFrames: 0 };
         this.workers.set(tr.id, w);
       }
       w.frames += 1;
@@ -66,17 +70,24 @@ export class ClipSession {
       }
       const alert = !!ev && (ev.zones.length > 0 || ev.nearForklift);
       if (ev?.zones.length) w.zone = true;
-      if (ev?.nearForklift) w.forklift = true;
+      if (ev?.nearForklift && ++w.forkliftFrames >= FORKLIFT_FRAMES) w.forklift = true;
       if (alert) alerts += 1;
       people.push({ box: tr.box, status, label: `W${tr.id}`, missing: missing.map((m) => ITEM_LABEL[m].toLowerCase()), alert });
     }
-    this.forkliftsMax = Math.max(this.forkliftsMax, a.summary.forklifts);
+    this.forkliftCounts.push(a.summary.forklifts);
     const rec: FrameRecord = {
       t, people, blur: a.blur, activeZones: [...new Set(a.events.flatMap((e) => e.zones))],
       persons: people.length, nonCompliant, rawNonCompliant: a.summary.nonCompliant, alerts, ms: a.ms.total,
     };
     if (keep) this.frames.push(rec);
     return rec;
+  }
+
+  /** Largest number of forklifts seen in at least FORKLIFT_FRAMES frames (a one-frame ghost is not reported). */
+  stableForklifts(): number {
+    let k = 0;
+    while (this.forkliftCounts.filter((c) => c >= k + 1).length >= Math.min(FORKLIFT_FRAMES, Math.max(1, this.forkliftCounts.length))) k += 1;
+    return k;
   }
 
   /** Workers that were tracked long enough to count (filters one-frame ghosts). */
@@ -105,7 +116,7 @@ export class ClipSession {
     return {
       persons: ws.length, compliant, nonCompliant, unsure,
       compliancePct: decided ? Math.round((1000 * compliant) / decided) / 10 : null,
-      missingByItem, forklifts: this.forkliftsMax,
+      missingByItem, forklifts: this.stableForklifts(),
     };
   }
 

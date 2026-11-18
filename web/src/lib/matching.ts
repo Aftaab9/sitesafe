@@ -1,5 +1,5 @@
 // Person-PPE matching. Line-for-line port of sitesafe/matching.py; both run the same fixture tests.
-import { FORKLIFT, ITEM_BAND, ITEM_OF_CLASS, PERSON, PPE_ITEMS, type Item } from './classes';
+import { FORKLIFT, FORKLIFT_MIN_CONF, ITEM_BAND, ITEM_OF_CLASS, PERSON, PPE_ITEMS, type Item } from './classes';
 
 export type Box = [number, number, number, number]; // x1, y1, x2, y2
 export interface Det { box: Box; cls: number; conf: number }
@@ -156,6 +156,6 @@ export function summarise(people: PersonResult[], dets: Det[]): Summary {
     unsure,
     compliancePct: decided ? Math.round((1000 * compliant) / decided) / 10 : null,
     missingByItem,
-    forklifts: dets.filter((d) => d.cls === FORKLIFT).length,
+    forklifts: dets.filter((d) => d.cls === FORKLIFT && d.conf >= FORKLIFT_MIN_CONF).length,
   };
 }

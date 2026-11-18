@@ -13,6 +13,7 @@ NUM_CLASSES = len(CLASS_NAMES)
 
 PERSON = 5
 FORKLIFT = 10
+FORKLIFT_MIN_CONF = 0.5  # a weaker forklift box never raises a proximity alert or counts as a forklift
 
 # PPE item -> (class id when worn, class id when visibly missing)
 PPE_ITEMS = ["helmet", "goggles", "vest", "gloves", "boots"]

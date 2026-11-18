@@ -6,6 +6,8 @@ export const CLASS_NAMES = [
 export const NUM_CLASSES: number = CLASS_NAMES.length;
 export const PERSON = 5;
 export const FORKLIFT = 10;
+/** A forklift box below this confidence is drawn but never raises a proximity alert or counts as a forklift. */
+export const FORKLIFT_MIN_CONF = 0.5;
 
 export type Item = 'helmet' | 'goggles' | 'vest' | 'gloves' | 'boots';
 export const PPE_ITEMS: Item[] = ['helmet', 'goggles', 'vest', 'gloves', 'boots'];

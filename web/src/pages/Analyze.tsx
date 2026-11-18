@@ -59,6 +59,8 @@ function Workbench() {
   const addLog = useLog((s) => s.add);
   const [params, setParams] = useSearchParams();
   const [samples, setSamples] = useState<Sample[]>([]);
+  const [realSamples, setRealSamples] = useState<Sample[]>([]);
+  const [galleryTab, setGalleryTab] = useState<'real' | 'dataset'>('real');
   const [source, setSource] = useState<HTMLCanvasElement | null>(null);
   const [label, setLabel] = useState('');
   const [sample, setSample] = useState<Sample | null>(null);
@@ -79,7 +81,10 @@ function Workbench() {
   const logged = useRef<string | null>(null);
   const runId = useRef(0);
 
-  useEffect(() => { loadCatalogue().then((c) => setSamples(c.samples)).catch(() => setSamples([])); }, []);
+  useEffect(() => {
+    loadCatalogue().then((c) => { setSamples(c.samples); setRealSamples(c.real ?? []); if (!c.real?.length) setGalleryTab('dataset'); })
+      .catch(() => setSamples([]));
+  }, []);
 
   const run = useCallback(async (canvas: HTMLCanvasElement, name: string, smp: Sample | null) => {
     const id = ++runId.current;
@@ -114,10 +119,11 @@ function Workbench() {
   useEffect(() => {
     const id = params.get('sample');
     if (!id || !samples.length) return;
-    const s = samples.find((x) => x.id === id) ?? samples[0];
+    const s = [...samples, ...realSamples].find((x) => x.id === id) ?? realSamples[0] ?? samples[0];
+    if (s.credit) setGalleryTab('real'); else setGalleryTab('dataset');
     setParams({}, { replace: true });
     void openSample(s);
-  }, [params, samples, openSample, setParams]);
+  }, [params, samples, realSamples, openSample, setParams]);
 
   // Re-detect when the sensitivity changes; re-match (cheap) when the profile or zones change.
   useEffect(() => {
@@ -210,6 +216,13 @@ function Workbench() {
                 drawing={drawing} onDrawingDone={() => setDrawing(false)} animateKey={animateKey}
                 heatmap={explain && sample?.heatmap ? asset(sample.heatmap) : null}
               />
+              {sample?.credit && (
+                <p className="text-[11px] text-muted">
+                  Photo: <a href={sample.credit.page} target="_blank" rel="noreferrer" className="underline hover:text-ink">{sample.credit.title}</a>
+                  {' '}by {sample.credit.author}, <a href={sample.credit.licence_url} target="_blank" rel="noreferrer" className="underline hover:text-ink">{sample.credit.licence}</a>, via Wikimedia Commons.
+                  {' '}A real photo, never used for training.
+                </p>
+              )}
               {sample?.failure && (
                 <p className="flex items-start gap-2 rounded border border-hazard/50 bg-hazard/10 px-3 py-2 text-sm">
                   <TriangleAlert size={16} className="mt-0.5 shrink-0 text-hazard" />
@@ -240,12 +253,28 @@ function Workbench() {
           ) : picker}
 
           <section aria-labelledby="gallery-h">
-            <div className="mb-2 flex items-baseline justify-between">
+            <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
               <Eyebrow id="gallery-h">Sample gallery: one tap to try</Eyebrow>
-              <span className="text-[11px] text-muted">Construction-PPE, CC BY 4.0</span>
+              <div role="tablist" aria-label="Sample set" className="flex rounded border border-line p-0.5 text-xs">
+                {realSamples.length > 0 && (
+                  <button type="button" role="tab" aria-selected={galleryTab === 'real'} onClick={() => setGalleryTab('real')}
+                    className={cn('rounded px-2 py-1', galleryTab === 'real' ? 'bg-hivis font-semibold text-[#0b0d10]' : 'text-muted hover:text-ink')}>
+                    Real site photos ({realSamples.length})
+                  </button>
+                )}
+                <button type="button" role="tab" aria-selected={galleryTab === 'dataset'} onClick={() => setGalleryTab('dataset')}
+                  className={cn('rounded px-2 py-1', galleryTab === 'dataset' ? 'bg-hivis font-semibold text-[#0b0d10]' : 'text-muted hover:text-ink')}>
+                  Test-split photos ({samples.length})
+                </button>
+              </div>
             </div>
+            <p className="mb-2 text-[11px] text-muted">
+              {galleryTab === 'real'
+                ? 'Real construction photos from Wikimedia Commons (CC0, public domain, CC BY, CC BY-SA), never used for training. Credit is shown under each photo.'
+                : 'Held-out test images from Construction-PPE (Ultralytics, CC BY 4.0), never used for training, with ground-truth labels.'}
+            </p>
             <div className="flex gap-2 overflow-x-auto pb-2">
-              {samples.map((s) => (
+              {(galleryTab === 'real' ? realSamples : samples).map((s) => (
                 <button
                   key={s.id} type="button" onClick={() => void openSample(s)}
                   className={cn('group relative h-24 w-36 shrink-0 overflow-hidden rounded border', sample?.id === s.id ? 'border-hivis' : 'border-line')}
