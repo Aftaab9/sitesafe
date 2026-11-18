@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { BadgeCheck, HelpCircle, ShieldAlert, Truck, TriangleAlert } from 'lucide-react';
 import { ITEM_LABEL, PPE_ITEMS, SITE_PROFILES, type Item, type ProfileId } from '../lib/classes';
 import type { Summary } from '../lib/matching';
+import { findOllamaModel } from '../lib/ollama';
 import { prefersReducedMotion, useSettings, type Settings } from '../lib/store';
 import { Gauge, ITEM_ICON } from './Ppe';
 import { cn, Eyebrow, Panel, Range, Segmented, Switch } from './ui';
@@ -114,17 +116,21 @@ export function SummaryPanel({ summary, zoneAlerts, forkliftAlerts, required, ti
 const DETECTOR_HINT: Record<Settings['detector'], string> = {
   base: 'Recommended. Trained on Construction-PPE; best at calling missing helmets on real photos.',
   synth: 'Also trained on diffusion-made night, rain, fog and dust images: better in bad weather, level on clear photos.',
+  lfm: 'LFM3-Omni (1.7 B vision-language model) in Ollama on this computer finds the workers and judges helmet and hi-vis itself. Photos only, about 10 to 40 s each; clips and the live camera use Standard. Gloves, boots and goggles are not checked.',
   plus: 'Fine-tuned on 3,465 extra real photos: almost never shows a violator as compliant, but sends many more workers to "check manually". Extra 11 MB download.',
 };
 
 export function DetectionSettings({ showSound = false }: { showSound?: boolean }) {
   const st = useSettings();
+  const [lfm, setLfm] = useState<string | null>(null);
+  useEffect(() => { void findOllamaModel().then(setLfm); }, []);
   return (
     <div className="divide-y divide-line">
       <div className="py-3">
         <div className="mb-2 text-sm font-medium">Detector</div>
         <Segmented<Settings['detector']> label="Detector" value={st.detector} onChange={(v) => st.set({ detector: v })}
-          options={[{ value: 'base', label: 'Standard' }, { value: 'synth', label: 'Weather-trained' }, { value: 'plus', label: 'Cautious' }]} />
+          options={[{ value: 'base', label: 'Standard' }, { value: 'synth', label: 'Weather' }, { value: 'plus', label: 'Cautious' },
+            ...(lfm || st.detector === 'lfm' ? [{ value: 'lfm' as const, label: 'LFM3-Omni' }] : [])]} />
         <p className="mt-1.5 text-xs text-muted">{DETECTOR_HINT[st.detector]}</p>
       </div>
       <Switch id="blur" label="Blur faces" hint="Applied on this device before anything is shown or exported." checked={st.blurFaces} onChange={(v) => st.set({ blurFaces: v })} />

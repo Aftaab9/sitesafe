@@ -14,7 +14,7 @@ export interface Settings {
   theme: 'dark' | 'light';
   reducedMotion: boolean;
   /** which detector runs on every page (all run on this device) */
-  detector: 'base' | 'synth' | 'plus';
+  detector: 'base' | 'synth' | 'plus' | 'lfm';
   set: (patch: Partial<Omit<Settings, 'set'>>) => void;
 }
 

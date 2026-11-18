@@ -43,6 +43,9 @@ def gt_status(p) -> str:
 
 
 def make_detector(model: str):
+    if model == "lfm":  # LFM3-Omni through a local Ollama (sitesafe/lfm.py)
+        from sitesafe.lfm import LfmDetector
+        return LfmDetector()
     if model == "external":
         from sitesafe.external import ExternalDetector
         return ExternalDetector()
@@ -117,10 +120,10 @@ def main():
     labels = json.loads((OWN / "people_labels.json").read_text())
     res = {}
     for m in a.models:
-        if m != "external" and not Path(m).exists():
+        if m not in ("external", "lfm") and not Path(m).exists():
             print("missing", m)
             continue
-        tag = "external_ppe_yolov8s" if m == "external" else Path(m).stem
+        tag = "external_ppe_yolov8s" if m == "external" else "lfm3_omni" if m == "lfm" else Path(m).stem
         # Same "unsure" thresholds the app uses: each model's own calibration from the validation split.
         cfg = None
         if m != "external" and not a.raw:

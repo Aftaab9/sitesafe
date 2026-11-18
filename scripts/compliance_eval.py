@@ -35,7 +35,11 @@ def load_match_config(tag: str = "base") -> MatchConfig:
 
 
 def run(model: str, tag: str, split: str, profile: str = "general", conf: float = 0.25, images=None) -> dict:
-    det = Detector(model)
+    if model == "lfm":  # LFM3-Omni through a local Ollama
+        from sitesafe.lfm import LfmDetector
+        det = LfmDetector()
+    else:
+        det = Detector(model)
     cfg = load_match_config(tag)
     required = SITE_PROFILES[profile]
     rows = person_rows(images or load_split(split), lambda rgb: match_people(det(rgb, conf), required, cfg), profile, cfg)

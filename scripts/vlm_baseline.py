@@ -43,6 +43,7 @@ PROMPT = ("The image shows one worker on a construction site. Answer about this 
           "hard_hat: is the person wearing a hard hat (safety helmet) on their head? "
           "hi_vis: is the person wearing a high-visibility vest or jacket (fluorescent yellow, green or orange, "
           "often with reflective stripes)? Answer yes or no; answer unsure only if that part of the body cannot be seen.")
+MAX_CROP = 768
 ANS = {"yes": "W", "no": "M", "unsure": "?"}
 STATE = {"present": "W", "missing": "M", "not_visible": "N", "unsure": "N"}
 
@@ -66,7 +67,7 @@ def test_labels() -> dict:
 def ask(model: str, crop) -> tuple[dict, float]:
     b64 = base64.b64encode(cv2.imencode(".jpg", crop, [cv2.IMWRITE_JPEG_QUALITY, 92])[1]).decode()
     body = json.dumps({"model": model, "prompt": PROMPT, "images": [b64], "stream": False, "format": SCHEMA,
-                       "options": {"temperature": 0}}).encode()
+                       "options": {"temperature": 0, "num_ctx": 4096}}).encode()
     t = time.time()
     r = json.load(urllib.request.urlopen(urllib.request.Request(URL, body, {"Content-Type": "application/json"}), timeout=600))
     try:
@@ -93,6 +94,9 @@ def run_vlm(model: str, set_name: str, labels: dict, cache: dict, cache_f, limit
                 x1, y1, x2, y2 = g["box"]
                 mw, mh = (x2 - x1) * 0.15, (y2 - y1) * 0.10
                 crop = im[max(0, int(y1 - mh)):min(H, int(y2 + mh)), max(0, int(x1 - mw)):min(W, int(x2 + mw))]
+                f = min(1.0, MAX_CROP / max(crop.shape[:2]))  # big crops cost many image tokens (12 s vs 1.3 s)
+                if f < 1:
+                    crop = cv2.resize(crop, None, fx=f, fy=f, interpolation=cv2.INTER_AREA)
                 ans, sec = ask(model, crop)
                 cache[key] = {"ans": ans, "sec": round(sec, 2)}
                 cache_f.write(json.dumps({"key": key, **cache[key]}) + "\n"); cache_f.flush()

@@ -118,7 +118,9 @@ class Engine {
     source: ImageBitmapSource, opts: { conf?: number; iou?: number; faces?: boolean; model?: ModelKey } = {},
   ): Promise<DetectResult> {
     await this.init();
-    let key: ModelKey = opts.model ?? useSettings.getState().detector ?? 'base';
+    const chosen = useSettings.getState().detector ?? 'base';
+    // LFM3-Omni (local Ollama) is applied by the photo page on top of this result; everywhere else, Standard runs.
+    let key: ModelKey = opts.model ?? (chosen === 'lfm' ? 'base' : chosen);
     try { await this.loadModel(key); } catch { key = 'base'; useSettings.getState().set({ detector: 'base' }); }
     const bitmap = source instanceof ImageBitmap ? source : await createImageBitmap(source);
     return this.call<DetectResult>({

@@ -7,6 +7,7 @@ import { EngineGate } from '../components/EngineStatus';
 import { DetectionSettings, ProfilePicker, SummaryPanel } from '../components/Panels';
 import { WorkerCard } from '../components/Ppe';
 import { SecondOpinion } from '../components/SecondOpinion';
+import { detectWorkers, findOllamaModel } from '../lib/ollama';
 import { Stage } from '../components/Stage';
 import { Button, Chip, cn, Eyebrow, PageHeader, Panel } from '../components/ui';
 import { analyse } from '../lib/analyze';
@@ -55,6 +56,16 @@ function Narrative({ state }: { state: { busy: string | null; pct: number; resul
   );
 }
 
+/** The chosen detector: the in-browser ONNX models, or LFM3-Omni in a local Ollama (faces still come from YuNet). */
+async function detectChosen(canvas: HTMLCanvasElement, bitmap: ImageBitmap, conf: number): Promise<DetectResult> {
+  const res = await engine.detect(bitmap, { conf });
+  if (useSettings.getState().detector !== 'lfm') return res;
+  const model = await findOllamaModel();
+  if (!model) throw new Error('LFM3-Omni needs Ollama running on this computer (see Second opinion for setup). Switch the detector back to Standard.');
+  const lfm = await detectWorkers(model, canvas);
+  return { ...res, dets: lfm.dets, ms: { ...res.ms, infer: lfm.ms, total: res.ms.total - res.ms.infer + lfm.ms } };
+}
+
 function Workbench() {
   const st = useSettings();
   const addLog = useLog((s) => s.add);
@@ -94,7 +105,7 @@ function Workbench() {
     try {
       const minShow = new Promise((r) => setTimeout(r, prefersReducedMotion() ? 0 : 1100));
       const bitmap = await createImageBitmap(canvas);
-      const [res] = await Promise.all([engine.detect(bitmap, { conf: useSettings.getState().conf }), minShow]);
+      const [res] = await Promise.all([detectChosen(canvas, bitmap, useSettings.getState().conf), minShow]);
       if (id !== runId.current) return;
       logged.current = null;
       setRaw(res);
@@ -131,8 +142,7 @@ function Workbench() {
     if (!source || !raw) return;
     const t = setTimeout(async () => {
       const bitmap = await createImageBitmap(source);
-      const res = await engine.detect(bitmap, { conf: st.conf });
-      setRaw(res);
+      try { setRaw(await detectChosen(source, bitmap, st.conf)); } catch (e) { setError(e instanceof Error ? e.message : 'Analysis failed'); }
     }, 250);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -243,7 +253,7 @@ function Workbench() {
                   <Eye size={15} /> Explain
                 </Button>
                 <span className="ml-auto font-mono text-[11px] text-muted">
-                  {analysis ? `${analysis.ms.total.toFixed(0)} ms · model ${analysis.ms.infer.toFixed(0)} ms · ${analysis.w}×${analysis.h}` : scanning ? 'scanning…' : ''}
+                  {analysis ? `${analysis.ms.total.toFixed(0)} ms · model ${analysis.ms.infer.toFixed(0)} ms · ${analysis.w}×${analysis.h}` : scanning ? (st.detector === 'lfm' ? 'LFM3-Omni is looking at the photo… (10–40 s)' : 'scanning…') : ''}
                 </span>
               </div>
               <div className="flex flex-wrap gap-2">
