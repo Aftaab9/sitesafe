@@ -581,6 +581,22 @@
     "no_helmet_called": 0.333,
     "false_person_boxes": 10,
     "night_nc_caught": 0.667
+   },
+   {
+    "label": "LFM3-Omni 1.7B vision-language model (local)",
+    "person_recall": 0.989,
+    "accuracy": 0.851,
+    "decided": 74,
+    "decidable": 75,
+    "nc_caught": 0.684,
+    "nc_green": 0.316,
+    "unsure": 0.0,
+    "no_vest_called": 0.5,
+    "no_vest_shown_vest": 0.5,
+    "boots_shown_missing": 0.0,
+    "no_helmet_called": 0.917,
+    "false_person_boxes": 6,
+    "night_nc_caught": 0.833
    }
   ]
  },

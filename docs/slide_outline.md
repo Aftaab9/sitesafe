@@ -10,7 +10,7 @@ Numbers are from the held-out test split (100 real images, 230 people) unless st
 
 4. **Method** (1:00). Pipeline diagram: frame → YOLO11n (ONNX, 10.7 MB) → person–PPE matching (intersection over the PPE box + position bands) → site profile → compliant / missing / not sure → tracker and 3-of-5 smoothing for clips → face blur on the output only → report. All in the browser.
 
-5. **Baselines vs my model** (1:00). Table: person-level accuracy 70.5 % (COCO + colour rules), zero-shot YOLO-World abstains on 93 % of people, fine-tuned 94.9 %. Precision for "PPE missing" 0.60 vs 0.93. Violators shown green 20 % vs 4 %.
+5. **Baselines vs my model** (1:00). Table: person-level accuracy 70.5 % (COCO + colour rules), zero-shot YOLO-World abstains on 93 % of people, fine-tuned 94.9 %. Precision for "PPE missing" 0.60 vs 0.93. Violators shown green 20 % vs 4 %. Small VLM (LFM3-Omni, 1.7 B, local): finds more people and missing helmets on real photos, but shows 14 % of violators green (vs 4 %) at 30 s per photo; as a second opinion it halves green violators (4.2 → 2.1 %).
 
 6. **Generative AI: synthetic hard cases** (1:15). Before/after images (night, rain, fog, dust). Label-preserving img2img, quality filter (kept 339 of 400 on Colab). Result: real test −0.3 points (−3.0 to +2.7); weather versions +14.5 (8.6 to 20.9), no_boots 35 → 75 %; classical filters +10.2; diffusion vs filters +1.5 (not significant) / +2.0 all classes. Inpainting no help. Say plainly what it did and did not change.
 

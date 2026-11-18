@@ -147,7 +147,8 @@ def main():
     o = load(E / "own_eval.json")
     if o:
         labels = {"sitesafe_base": "My model, real photos only", "sitesafe_synth": "My model + synthetic data",
-                  "sitesafe_plus": "My model + extra real photos", "external_ppe_yolov8s": "Off-the-shelf YOLOv8s (13k real photos)"}
+                  "sitesafe_plus": "My model + extra real photos", "external_ppe_yolov8s": "Off-the-shelf YOLOv8s (13k real photos)",
+                  "lfm3_omni": "LFM3-Omni 1.7B vision-language model (local)"}
         rows = []
         for tag, label in labels.items():
             r = o.get(tag)

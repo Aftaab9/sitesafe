@@ -21,6 +21,7 @@ MAIB AI 221 Computer Vision with Applications (S P Jain School of Global Managem
 - Danger zones drawn as polygons; people inside a zone or close to a detected forklift are flagged.
 - Faces detected with YuNet and blurred before anything is shown or exported. Detection runs on the original frame held in memory.
 - Compliance percentage, counts by PPE type, a dashboard, and PDF and CSV incident reports generated in the browser.
+- Detector choice in Settings: Standard (default), Weather-trained (synthetic data), Cautious (extra real photos), and, when Ollama runs on the same computer, LFM3-Omni (a 1.7 B vision-language model) for photos. A "Second opinion" panel asks LFM3-Omni about each detected worker; crops go to `localhost` only. One-time setup: `ollama pull lfm3-omni` and `setx OLLAMA_ORIGINS "https://sitesafe-phi.vercel.app"`, then restart Ollama.
 - Extras: live camera HUD, Inspector Challenge (you against the model), Weather Lab (diffusion-generated night, rain, fog and dust versions with both detectors), an optional small vision-language model that writes a summary whose every claim is checked against the detector.
 
 ## Results on the held-out test split (100 real images, never trained on)
@@ -79,6 +80,7 @@ Each step is one command. With `make`: `make data`, `make train`, and so on. Wit
 | Int8 quantisation | `python scripts/quantize.py` |
 | Synthetic data | `python scripts/synth_generate.py`, `python scripts/synth_filter.py`, then train with `--data ppe_synth_diffusion.yaml` (or Colab notebook 2) |
 | With vs without synthetic | `python scripts/synth_experiment.py` |
+| LFM3-Omni comparison (needs Ollama) | `python scripts/vlm_baseline.py`, `python scripts/own_eval.py --models ... lfm`, `python scripts/compliance_eval.py --model lfm --tag lfm3_omni` |
 | Studies | `fairness_audit.py`, `failure_gallery.py`, `smoothing_study.py`, `blur_study.py`, `speed_bench.py`, `vlm_hallucination.py` |
 | Collect metrics | `python scripts/build_metrics.py` |
 | Package web assets | `python scripts/build_web_assets.py` |
@@ -122,6 +124,7 @@ The ONNX models are committed (10.7 MB and 0.2 MB, far below the 100 MB limit). 
 - CLIP ViT-B/32 (quality filter), MIT. SmolVLM-256M-Instruct (summary), Apache 2.0.
 - Own test photos: Wikimedia Commons, CC0 / public domain / CC BY / CC BY-SA, authors listed in `data/own_test/sources.csv`.
 - Extra training data: HB1204/PPE_Detection, VincentGOURBIN/ppe-detection, keremberke/construction-safety-object-detection (all CC BY 4.0, Roboflow Universe exports). Teacher for pseudo-labels: killuminati1/construction-ppe-yolov8 (Apache-2.0).
+- Optional local comparison model: LFM3-Omni by Liquid AI, LFM Open License v1.0 (not shipped; run by the user in Ollama). Extra data in the Kaggle experiment: Hard Hat Workers (CC0), SH17 (CC BY 4.0).
 - ONNX Runtime and ONNX Runtime Web, MIT. Transformers.js, Apache 2.0. React, Vite, Tailwind CSS, Framer Motion, Lucide, jsPDF: MIT / ISC.
 
 ## Responsible use
