@@ -97,7 +97,7 @@ streamlit run streamlit_app/app.py    # http://localhost:8501
 
 All free tiers, no card, no paid API, no serverless functions.
 
-**Vercel (main).** Import the GitHub repo in Vercel, set the root directory to `web`. `web/vercel.json` sets the build, the SPA rewrite, `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Embedder-Policy: require-corp` (needed for multi-threaded WASM) and long cache headers for `.onnx` and `.wasm`. Every push deploys; every branch gets a preview URL.
+**Vercel (main).** Import the GitHub repo in Vercel, set the root directory to `web`. `web/vercel.json` sets the build, the SPA rewrite, `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Embedder-Policy: require-corp` (needed for multi-threaded WASM) and long cache headers for `.onnx` and `.wasm`. Every push to `main` deploys automatically (the repo is connected; Root Directory is `web`); every branch gets a preview URL.
 
 **Cloudflare Pages (mirror, on the approved list).** Create a Pages project from the same repo: root directory `web`, build command `npm run build`, output `dist`. `web/public/_headers` carries the same headers. No code change. The build uses relative paths and hash routing, so it also works on GitHub Pages.
 
