@@ -1,6 +1,7 @@
 // Main-thread handle on the inference worker.
 import { create } from 'zustand';
 import type { Box, Det } from './matching';
+import { useSettings } from './store';
 
 export interface DetectResult {
   dets: Det[];
@@ -10,10 +11,11 @@ export interface DetectResult {
   ms: { pre: number; infer: number; post: number; total: number };
 }
 
-export type ModelKey = 'base' | 'synth';
+export type ModelKey = 'base' | 'synth' | 'plus';
 export const MODEL_FILES: Record<ModelKey, { file: string; label: string }> = {
   base: { file: 'models/sitesafe_base.onnx', label: 'PPE detector' },
   synth: { file: 'models/sitesafe_synth.onnx', label: 'PPE detector (trained with synthetic data)' },
+  plus: { file: 'models/sitesafe_plus.onnx', label: 'PPE detector (extra real photos)' },
 };
 
 interface EngineState {
@@ -116,9 +118,11 @@ class Engine {
     source: ImageBitmapSource, opts: { conf?: number; iou?: number; faces?: boolean; model?: ModelKey } = {},
   ): Promise<DetectResult> {
     await this.init();
+    let key: ModelKey = opts.model ?? useSettings.getState().detector ?? 'base';
+    try { await this.loadModel(key); } catch { key = 'base'; useSettings.getState().set({ detector: 'base' }); }
     const bitmap = source instanceof ImageBitmap ? source : await createImageBitmap(source);
     return this.call<DetectResult>({
-      type: 'detect', key: opts.model ?? 'base', bitmap, conf: opts.conf ?? 0.25, iou: opts.iou ?? 0.5,
+      type: 'detect', key, bitmap, conf: opts.conf ?? 0.25, iou: opts.iou ?? 0.5,
       faces: opts.faces ?? true,
     }, [bitmap]);
   }

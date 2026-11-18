@@ -6,6 +6,7 @@ import {
 import { EngineGate } from '../components/EngineStatus';
 import { DetectionSettings, ProfilePicker, SummaryPanel } from '../components/Panels';
 import { WorkerCard } from '../components/Ppe';
+import { SecondOpinion } from '../components/SecondOpinion';
 import { Stage } from '../components/Stage';
 import { Button, Chip, cn, Eyebrow, PageHeader, Panel } from '../components/ui';
 import { analyse } from '../lib/analyze';
@@ -135,7 +136,7 @@ function Workbench() {
     }, 250);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [st.conf]);
+  }, [st.conf, st.detector]);
 
   const analysis = useMemo(
     () => (raw ? analyse(raw, st.profile, zones, { strictBlur: st.strictBlur, forkliftDistance: st.forkliftDistance }) : null),
@@ -324,6 +325,7 @@ function Workbench() {
               <Button className="mt-2 w-full" disabled={!analysis || !!nar.busy} onClick={() => void summarise()}><Sparkles size={16} /> Generate summary</Button>
               <Narrative state={nar} />
             </div>
+            <SecondOpinion source={source} analysis={analysis} />
           </Panel>
           <Panel className="p-4">
             <Eyebrow>Settings</Eyebrow>

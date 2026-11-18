@@ -13,6 +13,8 @@ export interface Settings {
   forkliftDistance: number; // in person-heights
   theme: 'dark' | 'light';
   reducedMotion: boolean;
+  /** which detector runs on every page (all run on this device) */
+  detector: 'base' | 'synth' | 'plus';
   set: (patch: Partial<Omit<Settings, 'set'>>) => void;
 }
 
@@ -27,6 +29,7 @@ export const useSettings = create<Settings>()(
       forkliftDistance: 0.5,
       theme: 'dark',
       reducedMotion: false,
+      detector: 'base',
       set: (patch) => set(patch),
     }),
     { name: 'sitesafe-settings' },

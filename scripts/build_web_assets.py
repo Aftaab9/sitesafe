@@ -194,6 +194,8 @@ def main():
     has_synth = (MODELS / "sitesafe_synth.onnx").exists()
     if has_synth:
         shutil.copy(MODELS / "sitesafe_synth.onnx", pub / "models" / "sitesafe_synth.onnx")
+    if (MODELS / "sitesafe_plus.onnx").exists():  # "Cautious" option in the app's detector setting
+        shutil.copy(MODELS / "sitesafe_plus.onnx", pub / "models" / "sitesafe_plus.onnx")
     shutil.copy(MODELS / "face_detection_yunet_2023mar.onnx", pub / "models" / "yunet.onnx")
     make_icons()
 
