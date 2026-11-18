@@ -83,7 +83,7 @@ Each step is one command. With `make`: `make data`, `make train`, and so on. Wit
 | Package web assets | `python scripts/build_web_assets.py` |
 | Tests | `python -m pytest -q` and `cd web && npm run typecheck && npm test` |
 
-My own 30-image test set: `python scripts/fetch_own_images.py` (licensed Wikimedia Commons photos, sources in `data/own_test/sources.csv`), person-level labels in `data/own_test/people_labels.json`, scored by `python scripts/own_eval.py`. Extra real-photo data for the improved model: `python scripts/prepare_extra_data.py` (three CC BY 4.0 Hugging Face datasets) and `colab/SiteSafe_Colab_Plus_Training.ipynb`.
+My own 30-image test set: `python scripts/fetch_own_images.py` (licensed Wikimedia Commons photos, sources in `data/own_test/sources.csv`), person-level labels in `data/own_test/people_labels.json`, scored by `python scripts/own_eval.py`. Extra real-photo experiment (tested, not shipped; see the report, section 5): `python scripts/prepare_extra_data.py` (three CC BY 4.0 Hugging Face datasets) and `colab/SiteSafe_Colab_Plus_Training.ipynb`.
 
 ## Run the apps locally
 

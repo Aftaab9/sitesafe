@@ -23,9 +23,11 @@ from sitesafe.matching import MatchConfig, match_people  # noqa: E402
 from sitesafe.paths import RESULTS  # noqa: E402
 
 
-def load_match_config() -> MatchConfig:
-    """Per-class thresholds from calibration, if it has been run."""
-    f = RESULTS / "eval" / "calibration.json"
+def load_match_config(tag: str = "base") -> MatchConfig:
+    """Per-class thresholds from this model's calibration (calibration_<tag>.json), else the base one."""
+    f = RESULTS / "eval" / f"calibration_{tag}.json"
+    if tag == "base" or not f.exists():
+        f = RESULTS / "eval" / "calibration.json"
     if f.exists():
         th = json.loads(f.read_text()).get("class_thresholds", {})
         return MatchConfig(class_thresholds={int(k): float(v) for k, v in th.items()})
@@ -34,7 +36,7 @@ def load_match_config() -> MatchConfig:
 
 def run(model: str, tag: str, split: str, profile: str = "general", conf: float = 0.25, images=None) -> dict:
     det = Detector(model)
-    cfg = load_match_config()
+    cfg = load_match_config(tag)
     required = SITE_PROFILES[profile]
     rows = person_rows(images or load_split(split), lambda rgb: match_people(det(rgb, conf), required, cfg), profile, cfg)
     out = RESULTS / "eval"

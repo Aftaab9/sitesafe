@@ -112,6 +112,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--models", nargs="+", default=["models/sitesafe_base.onnx"])
     ap.add_argument("--conf", type=float, default=0.25)
+    ap.add_argument("--raw", action="store_true", help="flat 0.45 unsure threshold instead of the calibrated ones")
     a = ap.parse_args()
     labels = json.loads((OWN / "people_labels.json").read_text())
     res = {}
@@ -119,8 +120,13 @@ def main():
         if m != "external" and not Path(m).exists():
             print("missing", m)
             continue
-        df, fp = evaluate(m, labels, a.conf)
         tag = "external_ppe_yolov8s" if m == "external" else Path(m).stem
+        # Same "unsure" thresholds the app uses: each model's own calibration from the validation split.
+        cfg = None
+        if m != "external" and not a.raw:
+            from compliance_eval import load_match_config
+            cfg = load_match_config(tag.removeprefix("sitesafe_"))
+        df, fp = evaluate(m, labels, a.conf, cfg)
         (RESULTS / "eval").mkdir(parents=True, exist_ok=True)
         df.to_csv(RESULTS / "eval" / f"own_people_{tag}.csv", index=False)
         res[tag] = summary(df, fp)

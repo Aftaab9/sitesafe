@@ -1,0 +1,17 @@
+{
+  "tag": "plus",
+  "split": "test",
+  "weights": "runs/plus/weights/best.pt",
+  "map50": 0.7985,
+  "map50_95": 0.5778,
+  "precision": 0.8639,
+  "recall": 0.7514,
+  "no_class_mean_recall": 0.6249,
+  "no_class_mean_ap50": 0.6745,
+  "speed_ms": {
+    "preprocess": 1.6,
+    "inference": 33.71,
+    "loss": 0.0,
+    "postprocess": 0.72
+  }
+}

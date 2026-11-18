@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17",
+ "updated": "2026-11-18",
  "training": {
   "note": "The shipped models were trained for 100 epochs at 640 px on a free Colab T4 GPU (about 19 minutes each, seed 42). An earlier 30-epoch run on a laptop CPU took about 17 hours and is kept for comparison in results/laptop30/."
  },
@@ -521,13 +521,13 @@
    {
     "label": "My model, real photos only",
     "person_recall": 0.857,
-    "accuracy": 0.841,
-    "decided": 44,
+    "accuracy": 0.837,
+    "decided": 49,
     "decidable": 75,
     "nc_caught": 0.789,
     "nc_green": 0.105,
-    "unsure": 0.307,
-    "no_vest_called": 0.364,
+    "unsure": 0.24,
+    "no_vest_called": 0.545,
     "no_vest_shown_vest": 0.182,
     "boots_shown_missing": 0.083,
     "no_helmet_called": 0.818,
@@ -537,18 +537,34 @@
    {
     "label": "My model + synthetic data",
     "person_recall": 0.846,
-    "accuracy": 0.881,
-    "decided": 42,
+    "accuracy": 0.854,
+    "decided": 48,
     "decidable": 75,
-    "nc_caught": 0.842,
-    "nc_green": 0.105,
-    "unsure": 0.307,
-    "no_vest_called": 0.273,
+    "nc_caught": 0.789,
+    "nc_green": 0.158,
+    "unsure": 0.227,
+    "no_vest_called": 0.364,
     "no_vest_shown_vest": 0.182,
     "boots_shown_missing": 0.0,
-    "no_helmet_called": 0.5,
+    "no_helmet_called": 0.583,
     "false_person_boxes": 9,
-    "night_nc_caught": 0.667
+    "night_nc_caught": 0.5
+   },
+   {
+    "label": "My model + extra real photos",
+    "person_recall": 0.912,
+    "accuracy": 0.8,
+    "decided": 40,
+    "decidable": 75,
+    "nc_caught": 0.947,
+    "nc_green": 0.053,
+    "unsure": 0.413,
+    "no_vest_called": 0.417,
+    "no_vest_shown_vest": 0.0,
+    "boots_shown_missing": 0.0,
+    "no_helmet_called": 0.167,
+    "false_person_boxes": 9,
+    "night_nc_caught": 1.0
    },
    {
     "label": "Off-the-shelf YOLOv8s (13k real photos)",

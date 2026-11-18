@@ -76,6 +76,7 @@ def fit_temperature(conf: np.ndarray, correct: np.ndarray) -> float:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="models/sitesafe_base.onnx")
+    ap.add_argument("--tag", default="base", help="non-base tags write calibration_<tag>.json and leave the app alone")
     a = ap.parse_args()
     det = Detector(a.model)
     out = RESULTS / "eval"
@@ -109,7 +110,7 @@ def main():
     ax.plot([p[0] for p in pts_after], [p[1] for p in pts_after], "s-", color="#1f6f43", label=f"temperature T={T:.2f} (ECE {e_after:.3f})")
     ax.set_xlabel("confidence"); ax.set_ylabel("share of detections that are correct")
     ax.set_title("Reliability diagram, test split"); ax.legend(loc="upper left"); ax.grid(alpha=0.3)
-    plt.tight_layout(); plt.savefig(out / "reliability.png", dpi=150); plt.close()
+    plt.tight_layout(); plt.savefig(out / ("reliability.png" if a.tag == "base" else f"reliability_{a.tag}.png"), dpi=150); plt.close()
 
     result = {"model": a.model, "temperature": round(T, 3), "target_precision": TARGET_PRECISION,
               "ece_val_before": round(e_val_before, 4), "ece_val_after": round(e_val_after, 4),
@@ -117,6 +118,10 @@ def main():
               "class_thresholds": thresholds,
               "class_thresholds_named": {CLASS_NAMES[int(k)]: v for k, v in thresholds.items()},
               "n_val_detections": int(len(vc)), "n_test_detections": int(len(tc))}
+    if a.tag != "base":
+        (out / f"calibration_{a.tag}.json").write_text(json.dumps(result, indent=2))
+        print(json.dumps(result, indent=2))
+        return
     (out / "calibration.json").write_text(json.dumps(result, indent=2))
     (ROOT / "web" / "src" / "lib").mkdir(parents=True, exist_ok=True)  # absent in the Colab code bundle
     (ROOT / "web" / "src" / "lib" / "thresholds.json").write_text(json.dumps({

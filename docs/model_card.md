@@ -21,11 +21,11 @@
 | Sent to "check manually" | 16.1 % |
 | Calibration error (ECE), raw → temperature-scaled | 0.086 → 0.053 |
 | Blurring faces before detection | mAP 0.801 → 0.700, goggles recall 0.98 → 0.02 (so the app detects first, then blurs the output) |
-| My own 30 real photos (91 workers) | accuracy 0.84 of decided, 31 % "check manually", 2 of 19 violators shown compliant |
+| My own 30 real photos (91 workers) | accuracy 0.84 of decided, 24 % "check manually", 2 of 19 violators shown compliant |
 
 **Subgroups (person detection recall, 95 % bootstrap interval).** Near 1.00; mid 0.97 (0.91–1.00); far 0.86 (0.77–0.93). Normal light 0.96 (0.92–0.98); dark 0.74 (0.53–0.89, only 19 people). Hi-vis clothing 1.00; dark clothing 0.87 (0.74–0.97). Violators caught or sent to check: near 1.00, far 0.75. Skin-tone results are withheld: the automatic colour-based grouping was unreliable, and the tags must be checked by hand first.
 
-**Known failures.** Small, distant workers (most missed people and most violators shown green). Dark scenes. On real photos outside the dataset: hi-vis jackets missed or vests seen that are not there (18 % of workers without hi-vis shown as wearing it), and some work boots called "no boots". Workers cut off by the image edge or heavily overlapping. Look-alike pairs: boots vs no_boots, helmet vs no_helmet, gloves vs no_gloves. Rare classes (no_goggle) have few test examples and wide uncertainty.
+**Known failures.** Small, distant workers (most missed people and most violators shown green). Dark scenes. On real photos outside the dataset: hi-vis jackets missed or vests seen that are not there (18 % of workers without hi-vis shown as wearing it), and some work boots called "no boots". Workers cut off by the image edge or heavily overlapping. Look-alike pairs: boots vs no_boots, helmet vs no_helmet, gloves vs no_gloves. Rare classes (no_goggle) have few test examples and wide uncertainty. A version fine-tuned on 3,465 extra real photos with pseudo-labels showed no worker without hi-vis as wearing it, but sent 41 % of workers on my photos to "check manually" and rarely called a missing helmet, so it is not shipped.
 
 **Privacy and human oversight.** Inference runs in the user's browser; no image is uploaded or stored. Faces are blurred before display or export. Results are aggregate, and worker numbers are anonymous and reset per analysis. Low-confidence decisions go to "check manually". Reports state that the tool supports and does not replace the safety officer.
 

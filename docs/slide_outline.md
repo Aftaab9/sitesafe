@@ -18,7 +18,7 @@ Numbers are from the held-out test split (100 real images, 230 people) unless st
 
 8. **Privacy: does blurring hurt?** (0:45). Blurring faces before detection: goggles recall 0.98 → 0.02, mAP 0.80 → 0.70. Strict face-area blur: helmet recall 0.77 → 0.58. Decision: detect on the original in memory, blur only the output. Images never leave the device.
 
-9. **Fairness and failures** (1:00). Subgroup recall with intervals: dark scenes 0.74 vs normal light 0.96; far workers 0.86 vs near 1.00. My own 30 real photos: 84 % of decided correct, 31 % to check. Skin-tone results withheld until tags are hand-checked (automatic grouping failed). Three failure images with one line each.
+9. **Fairness and failures** (1:00). Subgroup recall with intervals: dark scenes 0.74 vs normal light 0.96; far workers 0.86 vs near 1.00. My own 30 real photos: 84 % of decided correct, 24 % to check. Extra-real-data model: fewer wrong greens but 41 % to check, so not shipped. Skin-tone results withheld until tags are hand-checked (automatic grouping failed). Three failure images with one line each.
 
 10. **Live demo** (1:30). Sample photo → hover a worker → privacy slider → danger zone → clip timeline → PDF. Phone live view if time allows.
 

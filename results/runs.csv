@@ -6,3 +6,4 @@ inpaint,yolo11n.pt,ppe_synth_inpaint.yaml,100,640,16,42,19.8,0.7653,0.5438,0.886
 base_s,yolo11s.pt,ppe.yaml,100,640,16,42,23.5,0.7991,0.5766,0.8658,0.7575
 laptop30_base,yolo11n.pt,ppe.yaml,30,640,16,42,1018.4,0.7535,0.5328,0.8508,0.6879
 laptop30_synth,yolo11n.pt,ppe_synth_diffusion.yaml,30,640,16,42,155.0,0.7497,0.5323,0.8655,0.6784
+plus,models/sitesafe_base.pt,ppe_plus.yaml,15,640,16,42,1091.3,0.7525,0.5261,0.8427,0.7082
