@@ -2,8 +2,8 @@
 
     python scripts/build_real_samples.py      (after build_web_assets.py, which writes catalogue.json)
 
-The photos are listed in data/own_test/demo.txt. Most come from my own 30-photo test set, picked
-where every worker the model decided on is right according to my labels (so the demo is honest
+The photos are listed in data/own_test/demo.txt (file | title | optional failure note). Most come from my own 30-photo test set, picked
+where every labelled worker is found and every decision is right according to my labels (so the demo is honest
 about what works); the gallery card still shows "not sure" people as they are. Each sample carries
 its author and licence, shown under the photo in the app (CC BY / CC BY-SA require attribution).
 These photos have person-level labels only, so they are not used by the Inspector Challenge.
@@ -42,7 +42,9 @@ def main():
     pt = MODELS / "sitesafe_base.pt"
     real = []
     for i, line in enumerate([x for x in (OWN / "demo.txt").read_text().splitlines() if x.strip() and not x.startswith("#")], 1):
-        name, title = [s.strip() for s in line.split("|", 1)]
+        parts = [s.strip() for s in line.split("|")]
+        name, title = parts[0], parts[1]
+        fail_note = parts[2] if len(parts) > 2 else ""  # a known failure, shown with a warning in the app
         src = OWN / "images" / name
         if not src.exists():
             src = OWN / "candidates" / name
@@ -56,7 +58,7 @@ def main():
             cv2.imwrite(str(pub / "heatmaps" / f"{sid}.jpg"), eigencam(pt, bgr), [cv2.IMWRITE_JPEG_QUALITY, 70])
             heat = f"heatmaps/{sid}.jpg"
         author = m["author"].strip() or "unknown author"
-        real.append({"id": sid, "file": f"samples/{sid}.jpg", "title": title, "tags": ["real"], "failure": False, "note": "",
+        real.append({"id": sid, "file": f"samples/{sid}.jpg", "title": title, "tags": ["real"], "failure": bool(fail_note), "note": fail_note,
                      "heatmap": heat, "w": w, "h": h, "gt": [],
                      "credit": {"title": m["title"].removeprefix("File:").rsplit(".", 1)[0], "author": author[:80],
                                 "licence": m["licence"], "licence_url": m["licence_url"], "page": m["page"]}})

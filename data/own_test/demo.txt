@@ -1,13 +1,15 @@
-# Real-photo gallery for the web app (scripts/build_real_samples.py): file | title
+# Real-photo gallery for the web app (scripts/build_real_samples.py): file | title | optional failure note
+# Picked where every labelled worker is found and every decision the model makes is right; the last one is a known failure.
 c001.jpg | Rebar crew
 c090.jpg | Hi-vis, no helmets
 c047.jpg | Road crew
 c021.jpg | Crane riggers
-c109.jpg | Night road works
+c118.jpg | Night concrete pour
 c093.jpg | Excavator, one worker
 c116.jpg | Night, no PPE
 c094.jpg | Mobile crane
 c105.jpg | Night cutting
 c043.jpg | Sheet piling
 c050.jpg | Street works at night
-c020.jpg | Close-up at height
+c096.jpg | Bridge works
+c109.jpg | Night paving (failure) | At night the model finds the workers on the left but misses the worker bending over in the foreground, who is cut off by the edge of the photo, and the worker beside the paver in the glare of its lights. Bent poses, image edges and strong lights at night are its weak spots, so the officer should always look at the whole scene.
