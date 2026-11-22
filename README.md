@@ -6,8 +6,9 @@ MAIB AI 221 Computer Vision with Applications (S P Jain School of Global Managem
 
 | | |
 |---|---|
-| Main app (static, all AI in the browser) | Vercel: **https://sitesafe-phi.vercel.app** · mirror on Cloudflare Pages: _not set up yet_ |
-| Fallback app (Streamlit Community Cloud) | _not set up yet_ |
+| Live app (static, all AI in the browser) | **https://aftaab9.github.io/sitesafe/** (GitHub Pages, an approved platform) |
+| Mirror | https://sitesafe-phi.vercel.app (Vercel; multi-threaded WebAssembly) |
+| Fallback | Streamlit app in `streamlit_app/` (runs locally: `streamlit run streamlit_app/app.py`; deployable to Streamlit Community Cloud) |
 | Code | https://github.com/Aftaab9/sitesafe |
 | Model | YOLO11n fine-tuned on Construction-PPE, ONNX, 10.7 MB |
 | Training | Colab free T4, 100 epochs, about 20 minutes per model |
@@ -21,7 +22,7 @@ MAIB AI 221 Computer Vision with Applications (S P Jain School of Global Managem
 - Danger zones drawn as polygons; people inside a zone or close to a detected forklift are flagged.
 - Faces detected with YuNet and blurred before anything is shown or exported. Detection runs on the original frame held in memory.
 - Compliance percentage, counts by PPE type, a dashboard, and PDF and CSV incident reports generated in the browser.
-- Detector choice in Settings: Standard (default), Weather-trained (synthetic data), Cautious (extra real photos), and, when Ollama runs on the same computer, LFM3-Omni (a 1.7 B vision-language model) for photos. A "Second opinion" panel asks LFM3-Omni about each detected worker; crops go to `localhost` only. One-time setup: `ollama pull lfm3-omni` and `setx OLLAMA_ORIGINS "https://sitesafe-phi.vercel.app"`, then restart Ollama.
+- Detector choice in Settings: Standard (default), Weather-trained (synthetic data), Cautious (extra real photos), and, when Ollama runs on the same computer, LFM3-Omni (a 1.7 B vision-language model) for photos. A "Second opinion" panel asks LFM3-Omni about each detected worker; crops go to `localhost` only. One-time setup: `ollama pull lfm3-omni` and `setx OLLAMA_ORIGINS "https://aftaab9.github.io,https://sitesafe-phi.vercel.app"`, then restart Ollama.
 - Extras: live camera HUD, Inspector Challenge (you against the model), Weather Lab (diffusion-generated night, rain, fog and dust versions with both detectors), an optional small vision-language model that writes a summary whose every claim is checked against the detector.
 
 ## Results on the held-out test split (100 real images, never trained on)
@@ -99,9 +100,11 @@ streamlit run streamlit_app/app.py    # http://localhost:8501
 
 All free tiers, no card, no paid API, no serverless functions.
 
-**Vercel (main).** Import the GitHub repo in Vercel, set the root directory to `web`. `web/vercel.json` sets the build, the SPA rewrite, `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Embedder-Policy: require-corp` (needed for multi-threaded WASM) and long cache headers for `.onnx` and `.wasm`. Every push to `main` deploys automatically (the repo is connected; Root Directory is `web`); every branch gets a preview URL.
+**GitHub Pages (main, on the approved list).** `.github/workflows/pages.yml` builds `web/` and publishes `web/dist` on every push to `main` (repo Settings → Pages → Source: GitHub Actions). The build uses relative paths and hash routing, so it works under `/sitesafe/`. GitHub Pages cannot send cross-origin isolation headers, so WebAssembly runs on one thread there; WebGPU is unaffected (about 0.3 s per photo).
 
-**Cloudflare Pages (mirror, on the approved list).** Create a Pages project from the same repo: root directory `web`, build command `npm run build`, output `dist`. `web/public/_headers` carries the same headers. No code change. The build uses relative paths and hash routing, so it also works on GitHub Pages.
+**Vercel (mirror).** Import the repo, root directory `web`. `web/vercel.json` sets the SPA rewrite, `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Embedder-Policy: require-corp` (multi-threaded WebAssembly) and long cache headers for `.onnx` and `.wasm`. Every push to `main` deploys automatically. Vercel is not on the brief's approved list, so it is only a mirror.
+
+**Cloudflare Pages (optional mirror, approved).** Root directory `web`, build command `npm run build`, output `dist`; `web/public/_headers` carries the same headers as Vercel.
 
 **Streamlit Community Cloud (fallback).** New app from the repo, main file `streamlit_app/app.py`. It installs `requirements.txt` (no PyTorch) and reads `models/sitesafe_base.onnx` and the YuNet model from the repo.
 

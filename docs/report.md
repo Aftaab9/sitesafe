@@ -2,15 +2,15 @@
 
 MAIB AI 221 Computer Vision with Applications, Project 6. Technical report.
 
-Live app: https://sitesafe-phi.vercel.app · Code: https://github.com/Aftaab9/sitesafe
+Live app: https://aftaab9.github.io/sitesafe/ (mirror: https://sitesafe-phi.vercel.app) · Code: https://github.com/Aftaab9/sitesafe
 
 ## 1. Problem
 
-On a construction site, the safety officer is the person who has to notice that a worker has taken off a hard hat to wipe their forehead, or that the new labourer on the scaffold has no gloves. They cannot watch every work area at once, and the obvious fix, cameras that record workers, creates a second problem: identifiable images of people at work, which workers rightly distrust.
+On a construction site, the safety officer has to notice that a worker has taken off a hard hat, or that the new labourer on the scaffold has no gloves. They cannot watch every work area at once, and the obvious fix, cameras that record workers, creates a second problem: identifiable images of people at work, which workers rightly distrust.
 
 I built SiteSafe for that officer. It takes a site photo, a short clip of 10 to 30 seconds, or a live camera view, and marks each person in one of three ways: compliant, missing required PPE (and which item), or "not sure, check manually". It reports a compliance percentage and counts by PPE type, flags people inside a danger zone or near a forklift, and blurs faces. In the main app nothing leaves the user's device.
 
-The decision it supports is narrow on purpose: which workers should the officer go and speak to now. A missed "no helmet" is the expensive mistake, because it can end in a head injury; a false alarm costs a short walk. So I put recall on the "no_" classes (visibly missing PPE) ahead of overall accuracy, and added a third state, "not sure", so the model can hand a difficult case back to the human instead of guessing green.
+The decision it supports: which workers should the officer go and speak to now. A missed "no helmet" is the expensive mistake, because it can end in a head injury; a false alarm costs a short walk. So I put recall on the "no_" classes ahead of overall accuracy, and added a "not sure" state so the model can hand a hard case back instead of guessing green.
 
 ## 2. Data
 
@@ -20,7 +20,9 @@ The dataset ships with 800 training and 200 validation images and no test split.
 
 The class balance is uneven in the way that matters. In the test split there are 230 labelled people and 241 boots, but only 35 no_goggle boxes and 37 forklifts. Most photos are daylight scenes; very few are at night or in rain, fog or dust, the gap the generative part targets.
 
-The brief also asks for 30 images of my own from public, permitted sources. I took them from Wikimedia Commons with a script that keeps only CC0, public-domain, CC BY and CC BY-SA files and records author and licence (`data/own_test/sources.csv`). From 113 candidates I chose 30 that differ from the training data: 12 at night or in tunnels, distant workers, crowds, hi-vis jackets instead of vests, and people with no PPE. I labelled the 91 workers in them by eye at person level: helmet, hi-vis and boots each worn, missing or not visible. This set exposed a real weakness, discussed in section 5: about 570 of the 800 Construction-PPE images look AI-generated, and its "no_boots" examples are almost all canvas trainers, so the model learned habits that do not transfer to real sites.
+The brief also asks for 30 images of my own from public, permitted sources. A script took them from Wikimedia Commons, keeping only CC0, public-domain, CC BY and CC BY-SA files with author and licence (`data/own_test/sources.csv`). From 113 candidates I chose 30 that differ from the training data: 12 at night or in tunnels, distant workers, crowds, hi-vis jackets instead of vests, and people with no PPE. I labelled the 91 workers in them by eye at person level: helmet, hi-vis and boots each worn, missing or not visible. This set exposed a weakness (section 5): about 570 of the 800 training images look AI-generated, and "no_boots" mostly means canvas trainers.
+
+![Figure 1. Labelled boxes per class in Construction-PPE.](submission/figures/fig_class_counts.png)
 
 ## 3. Methods
 
@@ -50,13 +52,19 @@ Danger zones are polygons drawn by the user. A person is inside when their foot 
 
 Faces are found with YuNet (0.2 MB) and blurred by shrinking each region to a few pixels and enlarging it before a Gaussian blur, which destroys detail rather than hiding it. In strict mode, the face area of anyone whose face was not found is blurred too. My first version of that area covered the whole head, which hid the hard hat, so I moved it below the top of the box. The main app is static: the model runs in the browser with ONNX Runtime Web, on WebGPU or multi-threaded WebAssembly, inside a Web Worker. There is no server to receive an image. The Streamlit fallback processes uploads in memory and keeps nothing.
 
+![Figure 2. Photo check on a real Wikimedia Commons photo: four compliant workers, faces blurred, credit under the photo.](submission/screenshots/02_photo_compliant_crew.png)
+
+![Figure 3. The privacy slider: original frame on one side, blurred output on the other.](submission/screenshots/04_face_blur_before_after.png)
+
 ### 3.6 The generative AI component
 
-The data has almost no photographs at night or in rain, fog or dust, and few of missing goggles: exactly where a missed violation is most likely. I used SD-Turbo, an open diffusion model, in image-to-image mode at a low strength of 0.3. Each image first gets a cheap classical hint (darkening, streaks, haze or a sand tint), which the diffusion model re-renders as a photograph. At this strength the scene does not move, so the original boxes stay valid with no hand-labelling. A quality filter keeps an image only if the real-data model still finds at least half the labelled people, CLIP judges it the same scene, and CLIP agrees the condition was applied. On Colab 339 of 400 diffusion images passed; the rejects were mostly fog and dust that had erased distant workers.
+The data has almost no photographs at night or in rain, fog or dust, and few of missing goggles: exactly where a missed violation is most likely. I used SD-Turbo, an open diffusion model, in image-to-image mode at a low strength of 0.3. Each image first gets a cheap classical hint (darkening, streaks, haze or a sand tint), which the diffusion model re-renders as a photograph. At this strength the scene does not move, so the original boxes stay valid with no hand-labelling. A quality filter keeps an image only if the real-data model still finds at least half the labelled people, CLIP judges it the same scene, and CLIP agrees the condition was applied. On Colab 339 of 400 images passed; most rejects were fog or dust that had erased distant workers.
 
 The experiment trains a second model on the real images plus the kept synthetic ones, with the same seed, epochs and settings, and compares recall per class on the real test images, with a paired bootstrap over images for 95 percent intervals. The Colab notebook adds an arm trained with the classical filters only, which asks whether diffusion adds anything over a few lines of OpenCV, and an arm in which goggles are removed by inpainting and relabelled as no_goggle.
 
 The second generative piece is in the app. An optional button loads SmolVLM-256M in the browser, gives it the face-blurred photo and asks for fixed JSON: number of workers, number without each item, whether a forklift is present, and one sentence about the scene. Every number and yes/no claim is checked against the detector. Matching claims are kept, wrong ones are replaced by the detector's value and marked as corrected, and a scene sentence that restates counts or PPE facts is dropped. The language model may describe; it is never the source of a safety fact.
+
+![Figure 4. Weather Lab in the app: diffusion-made night, rain, fog and dust versions scored by both detectors.](submission/screenshots/12_weather_lab.png)
 
 ## 4. Results
 
@@ -68,6 +76,10 @@ The fine-tuned YOLO11n reaches a mAP@0.5 of 0.801 and a mAP@0.5:0.95 of 0.593 ac
 
 The confusion matrix shows where the errors go. The largest confusion is between boots and no_boots (fourteen no_boots called boots, seven the other way), then vest and no_vest, gloves and no_gloves, and helmet and no_helmet in both directions. These pairs share shape and position and differ in a detail a few pixels wide. Most remaining errors are small boxes not detected at all: 32 boots, 22 no_helmet and 14 no_goggle.
 
+![Figure 5. Training curves of the 100-epoch models, with and without diffusion data.](submission/figures/fig_training_curves.png)
+
+![Figure 6. Normalised confusion matrix on the test split.](submission/figures/fig_confusion_matrix.png)
+
 ### 4.2 Person-level compliance and the baselines
 
 Of the 230 labelled people, 223 can be judged from the labels; 95 of them are non-compliant under the general profile. The fine-tuned model detects 93.9 percent of people. It decides 177 of the 223 and sends the rest to "check manually" (16.1 percent) or misses them (4.5 percent). Among decided people it is right 94.9 percent of the time, with a precision of 0.93 and a recall of 0.94 for "PPE missing". Of all 95 violators, 88 percent were flagged or handed to the officer, and 4 (4.2 percent) were shown green, the figure I care most about.
@@ -76,15 +88,21 @@ The colour-rules baseline detects fewer people (86.5 percent). Its accuracy on d
 
 The zero-shot baseline finds people very well (95 percent) and hard hats reasonably (0.69), but almost never finds a vest from the prompt "safety vest" (0.05), and it cannot detect absence at all: "bare head without hard hat" and "person without safety vest" have recall zero. Through the matching code it is unsure about 93 percent of people. An open-vocabulary model knows what things are, not what is missing. I also tested LFM3-Omni, a 1.7-billion-parameter vision-language model run locally in Ollama, asked for every person with a box and whether they wear a hard hat and hi-vis. On my 30 photos it found 99 percent of workers against 86, called 92 percent of missing helmets and never said "not sure", but it showed 6 of 19 violators green against 2, because it almost always answers that hi-vis is worn. On the test split it was right on 91 percent against 95, showed 14 percent of violators green against 4, and took about 30 seconds per photo against 0.1. Used as a second opinion, with green only when both agree, it halved violators shown green on the test split (4.2 to 2.1 percent). The app offers both modes. An open YOLOv8s trained by others on about 13,000 real construction photos was no better than my model on my own photos (section 5).
 
+![Figure 7. Person-level results of the baselines and the fine-tuned model on the test split.](submission/figures/fig_baselines.png)
+
 ### 4.3 Calibration
 
 After temperature scaling the reliability curve (`results/eval/reliability.png`) sits close to the diagonal. The thresholds send 16.1 percent of people to "check manually": that costs the officer some time, and it is where the borderline cases go instead of into a wrong green.
+
+![Figure 8. Reliability diagram before and after temperature scaling.](submission/figures/fig_reliability.png)
 
 ### 4.4 The generative experiment
 
 All arms were trained on Colab with the same seed and 100 epochs. On the 100 real test photos the diffusion data made no measurable difference: pooled "no_" recall changed by −0.3 points (95 percent interval −3.0 to +2.7). Those photos are almost all clear daylight, which is not where the data was aimed. On weather versions of the same photos, pooled "no_" recall rose from 34.5 to 48.9 percent (+14.5 points, interval 8.6 to 20.9), and no_boots from 35 to 75 percent. The classical-filter control gained +10.2 points (6.0 to 14.8). Compared directly, diffusion beat the filters by 1.5 points of "no_" recall (interval −2.5 to +5.8, not significant) and 2.0 points over all classes (0.4 to 3.9), mostly on boots. So most of the gain comes from showing the model hard conditions at all, and diffusion adds a small extra; the stress test also flatters both, because the same pipeline made the training images. Goggle inpainting did not help the class it targeted (no_goggle −8.6 points, interval −20.6 to +3.1). On my own real photos both models caught 79 percent of violators, but the diffusion model called fewer missing helmets (58 against 82 percent) and showed one more violator green, so I found no real-world gain.
 
-The verified narrative was evaluated on 40 face-blurred test photos, scoring each claim against the labels. The small model was a poor witness. Only 14 of 40 answers were usable JSON, and most invented a list of workers with names and ages ("JOHN, 25"), a privacy failure as well as a factual one. Of its claims, 68 percent were wrong. After verification every published number comes from the detector, and the error on the same claims fell to 32 percent, the detector's own error on exact counts in crowded scenes. Each answer took about 46 seconds on the laptop CPU. A 256-million-parameter model can describe a scene but cannot be trusted with a fact; the verifier is what makes it usable, and it stays an optional button.
+The verified narrative was evaluated on 40 face-blurred test photos, scoring each claim against the labels. Only 14 of 40 answers were usable JSON, and most invented a list of workers with names and ages ("JOHN, 25"), a privacy failure as well as a factual one. Of its claims, 68 percent were wrong. After verification every published number comes from the detector, and the error on the same claims fell to 32 percent, the detector's own error on exact counts in crowded scenes. The verifier is what makes it usable, and it stays an optional button.
+
+![Figure 9. Recall of the "no_" classes with and without diffusion data, on real test images and on their weather versions.](submission/figures/fig_synthetic_with_without.png)
 
 ### 4.5 Face blurring and detection
 
@@ -94,11 +112,13 @@ So the app detects on the original frame, held only in memory, and blurs what it
 
 ### 4.6 Temporal smoothing
 
-There is no labelled PPE video, so I simulated 30 clips: a slow pan and zoom over labelled test photos, 10 seconds at 3 frames per second, with brightness flicker, noise, motion blur and JPEG compression. The crop is known, so every frame has ground truth; tracks with no decidable labelled person were left out. Neither setting raised a false violation alert in these clips, so precision was 1.0 either way. Smoothing (three of the last five frames) cut status flips per track from 5.9 to 2.3 per hundred track-frames, so the boxes are much steadier, at the price of per-frame recall, which fell from 53 to 46 percent. A simulated clip is a still photograph, so its mistakes repeat on every frame; real video should give smoothing more flicker to remove.
+There is no labelled PPE video, so I simulated 30 clips: a slow pan and zoom over labelled test photos, 10 seconds at 3 frames per second, with brightness flicker, noise, motion blur and JPEG compression. The crop is known, so every frame has ground truth; tracks with no decidable labelled person were left out. Neither setting raised a false alert, so precision was 1.0. Smoothing (three of the last five frames) cut status flips per track from 5.9 to 2.3 per hundred track-frames, so the boxes are much steadier, at the price of per-frame recall, which fell from 53 to 46 percent. A simulated clip is a still photograph, so its mistakes repeat on every frame; real video should give smoothing more flicker to remove.
+
+![Figure 10. Clip check: anonymous worker log, timeline and forklift alerts.](submission/screenshots/10_clip_timeline.png)
 
 ### 4.7 Speed
 
-End to end in Python, with face detection and matching, a photo takes about 147 ms on two laptop CPU threads, and a 30-second clip at 3 frames per second about 13 seconds. In the browser, WebGPU on the laptop's integrated graphics runs the model in about 115 ms and a whole photo in 250 to 350 ms; the WebAssembly fallback took 407 ms for the model while training occupied the CPU. The first WebGPU run compiles shaders and took almost five seconds, so the app warms up behind the loading bar. All of this is well inside the five-second budget.
+End to end in Python, with face detection and matching, a photo takes about 147 ms on two laptop CPU threads, and a 30-second clip at 3 frames per second about 13 seconds. In the browser, WebGPU on the laptop's integrated graphics runs the model in about 115 ms and a whole photo in 250 to 350 ms; the WebAssembly fallback took 407 ms for the model while training occupied the CPU. The first WebGPU run compiles shaders and took almost five seconds, so the app warms up behind the loading bar. All of this is well inside the five-second budget. The app is a static site on GitHub Pages, an approved platform, with a Vercel mirror. A static site keeps every image on the device; a Streamlit version of the pipeline is in the repository as a fallback. GitHub Pages cannot send the cross-origin isolation headers, so WebAssembly runs on one thread there; with WebGPU a photo took 325 ms.
 
 Int8 quantisation shrank the model from 10.7 to 3.3 MB, cost 1.8 points of mAP@0.5 and changed "no_" recall by +1.6 points; its CPU speed-up was inconsistent across machines and WebGPU has no int8 fast path, so the app ships the float model.
 
@@ -112,21 +132,25 @@ My own 30 real photos were harder than the test split. With the same calibrated 
 
 Two attempts to fix this with more real photos failed. Fine-tuning on 3,465 extra photos whose missing labels came from that YOLOv8s left the model doubting: on my photos 41 percent of workers went to "check manually" and only 2 of 12 missing helmets were called, because unlabelled PPE had been taught as background. A second run on Kaggle added Hard Hat Workers and SH17 and painted uncertain regions grey; it cut no-vest-shown-as-vest from 18 to 8 percent but called only 4 of 12 missing helmets. The original model stays in the app.
 
-The skin-tone part of the audit did not work. I estimated a coarse, Monk-style group from face-pixel colour (Individual Typology Angle); the tags put 124 people in the darkest group and one in the lightest, which is plainly wrong, because hi-vis colour casts and small shaded faces break a colour estimate. I withheld these results rather than report numbers I know are false. The tag sheet has a "verified" column, and skin-tone groups are reported only after hand checking; a ControlNet-generated set with fixed pose and varied skin tone is the natural next step.
+Automatic skin-tone grouping from face-pixel colour (Individual Typology Angle) failed: it put 124 people in the darkest group and one in the lightest, because hi-vis colour casts and small shaded faces break a colour estimate. I therefore labelled the 230 test-split workers by eye from head-and-shoulder crops: 62 lighter, 74 medium, 12 darker and 82 not visible. Violators flagged or sent to "check manually" were 13 of 15 for lighter skin, 34 of 35 for medium and 8 of 8 for darker, so there is no sign that the model is worse on darker skin; but the darker group is small, one person did the labelling, and many dataset images look AI-generated. The weak group is "not visible", far or turned-away workers, with 75 percent caught: the distance effect again.
+
+![Figure 11. Person recall by subgroup with 95 % intervals.](submission/figures/fig_subgroups.png)
+
+![Figure 12. A known failure shown in the app: two workers missed at night.](submission/screenshots/07_failure_case.png)
 
 ## 6. Responsible AI
 
-First, aggregate statistics only. The report and the dashboard give counts and a percentage; worker numbers are anonymous and reset with every analysis; the tracker stores no appearance, so it cannot follow a person across clips. Second, retain no data. The browser app has no back end, the session log lives in memory and is gone when the tab closes, and the Streamlit app keeps nothing after the request. Third, explain the purpose. The live camera page asks the officer to tell people in view what the check is for before starting, and every report says it supports the officer and must not be used to discipline individuals. Fourth, a human in the loop by design, not as a disclaimer: the "not sure" state, the per-class thresholds and the failure note on the demo gallery all push hard cases back to the person who can walk over and look.
+First, aggregate statistics only. Reports give counts and a percentage; worker numbers are anonymous and reset with every analysis, and the tracker stores no appearance. Second, retain no data. The browser app has no back end, the session log lives in memory and is gone when the tab closes, and the Streamlit app keeps nothing after the request. Third, explain the purpose. The live page asks the officer to tell people in view what the check is for, and every report says it must not be used to discipline individuals. Fourth, a human in the loop by design, not as a disclaimer: the "not sure" state, the per-class thresholds and the failure note on the demo gallery all push hard cases back to the person who can walk over and look.
 
 The model card lists out-of-scope uses: individual monitoring, discipline, identification and covert surveillance.
 
 ## 7. Limitations
 
-The training data is small, mostly daylight and partly synthetic-looking, and the model inherits that: distance and darkness are the dominant failures, and real hi-vis jackets and work boots are under-represented. My own test set has only 91 workers and 19 violators, labelled by me, so its numbers carry wide uncertainty. The test split has only 35 no_goggle boxes. The smoothing study uses simulated clips, forklift proximity has no depth, and the skin-tone audit is not yet valid. Compliance ground truth on the test split is derived from the dataset labels with the same matching rules as the model, so a labelling mistake becomes a ground-truth mistake.
+The training data is small, mostly daylight and partly synthetic-looking, and the model inherits that: distance and darkness are the dominant failures, and real hi-vis jackets and work boots are under-represented. My own test set has only 91 workers and 19 violators, labelled by me, so its numbers carry wide uncertainty. The test split has only 35 no_goggle boxes. The smoothing study uses simulated clips, forklift proximity has no depth, and the skin-tone groups were labelled by one person, with only 12 darker-skinned workers. Compliance ground truth on the test split is derived from the dataset labels with the same matching rules as the model, so a labelling mistake becomes a ground-truth mistake.
 
 ## 8. Conclusion
 
-A 10 MB detector, fine-tuned in twenty minutes on a free GPU, decides whether a worker is wearing the required PPE correctly 95 percent of the time when it decides at all, hands about one in six people back to the officer, and shows 4 of 95 violators as compliant. It does this in a third of a second inside a browser, without sending a pixel anywhere. Baselines without PPE training reach 70 percent accuracy or abstain almost entirely. The diffusion experiment gave a clear result: no change on ordinary photos, a large gain under simulated bad weather, and only a small edge over cheap filters. The face-blur study turned a privacy instinct into a design rule: blur the output, never the input. On real photos from outside the dataset the model is weaker, and more real training data, not a bigger model, is the next step.
+A 10 MB detector, fine-tuned in twenty minutes on a free GPU, decides whether a worker is wearing the required PPE correctly 95 percent of the time when it decides at all, hands about one in six people back to the officer, and shows 4 of 95 violators as compliant. It runs in a third of a second in the browser, sending nothing anywhere. Baselines without PPE training reach 70 percent accuracy or abstain almost entirely. The diffusion experiment gave a clear result: no change on ordinary photos, a large gain under simulated bad weather, and only a small edge over cheap filters. The face-blur study set a design rule: blur the output, never the input. On real photos from outside the dataset the model is weaker, and more real training data, not a bigger model, is the next step.
 
 ## References
 

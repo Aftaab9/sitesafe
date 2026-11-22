@@ -3,7 +3,7 @@
 // crops never leave the computer. Visitors without Ollama simply see that it is not available.
 //
 // One-time setup on the computer (so Ollama accepts requests from the website):
-//   Windows:  setx OLLAMA_ORIGINS "https://sitesafe-phi.vercel.app,http://localhost:5173,http://localhost:4173"
+//   Windows:  setx OLLAMA_ORIGINS "https://aftaab9.github.io,https://sitesafe-phi.vercel.app"
 //             then quit Ollama from the tray and start it again.
 //   ollama pull lfm3-omni
 
