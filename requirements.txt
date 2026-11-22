@@ -1,7 +1,7 @@
 # Runtime for the Streamlit Community Cloud app (no PyTorch needed)
 streamlit==1.67.0
 onnxruntime==1.32.0
-opencv-python-headless>=4.10,<6
+opencv-python-headless==5.0.0.93
 numpy==2.5.4
 pandas==3.1.1
 pillow==13.0.0

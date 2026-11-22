@@ -40,3 +40,4 @@ data/extra_v2/
 colab/sitesafe_v2_results*.zip
 colab/sitesafe_v2_code.zip
 colab/__notebook_source__.ipynb
+web/tsconfig.tsbuildinfo

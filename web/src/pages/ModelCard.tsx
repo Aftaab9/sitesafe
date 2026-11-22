@@ -58,7 +58,7 @@ export default function ModelCard() {
         A plain-language summary of the detector behind SiteSafe: what it was built for, how well it works, where it fails and how it should be used.
       </PageHeader>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-2 [&>*]:min-w-0">
         <Section title="Intended use">
           <ul className="space-y-2">
             {['Helping a site safety officer spot missing PPE in photos, short clips and live video.',
@@ -133,7 +133,7 @@ export default function ModelCard() {
         </Section>
       )}
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-2 [&>*]:min-w-0">
         {m?.calibration && (
           <Section title="Confidence and the “not sure” state">
             <p>Expected calibration error on the test split: {pct(m.calibration.ece_before)} before and {pct(m.calibration.ece_after)} after temperature scaling (T = {m.calibration.temperature.toFixed(2)}).</p>
@@ -204,7 +204,7 @@ export default function ModelCard() {
           <li>Forklift distance is estimated in the image, without depth. Treat proximity alerts as prompts to look, not as measurements.</li>
         </ul>
         {m?.failures && m.failures.length > 0 && (
-          <div className="grid gap-3 pt-2 sm:grid-cols-2">
+          <div className="grid gap-3 pt-2 sm:grid-cols-2 [&>*]:min-w-0">
             {m.failures.map((f) => (
               <figure key={f.image} className="overflow-hidden rounded border border-line">
                 <img src={asset(f.image)} alt="" loading="lazy" className="w-full" />
