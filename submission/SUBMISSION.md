@@ -13,7 +13,65 @@ The app is a static site: all models run in the visitor's browser, so there is n
 
 ## What is in the zip
 
-FILE_LIST_PLACEHOLDER
+Top level:
+
+- `Technical_Report.docx`: technical report, 3,991 words in the body, 12 figures (training curves, confusion matrix, baselines, calibration, with vs without synthetic data, subgroups, app screenshots)
+- `Model_Card.docx`: one-page model card
+- `SiteSafe_Presentation.pptx`: 14 slides for a 10-minute talk, speaker notes with timings on every slide
+- `SUBMISSION.md`: this file
+
+`screenshots/` (live app at 1920 x 1080, taken with Playwright):
+
+- `screenshots/01_landing.png`
+- `screenshots/02_photo_compliant_crew.png`
+- `screenshots/02b_photo_compliant_crew_full.png`
+- `screenshots/03_photo_missing_helmets.png`
+- `screenshots/04_face_blur_before_after.png`
+- `screenshots/05_danger_zone.png`
+- `screenshots/06_not_sure_state.png`
+- `screenshots/07_failure_case.png`
+- `screenshots/08_explain_heatmap.png`
+- `screenshots/09_pdf_report.png`
+- `screenshots/10_clip_timeline.png`
+- `screenshots/10b_clip_summary_full.png`
+- `screenshots/11_dashboard.png`
+- `screenshots/11b_dashboard_full.png`
+- `screenshots/12_weather_lab.png`
+- `screenshots/13_inspector_challenge.png`
+- `screenshots/14_model_card.png`
+- `screenshots/14b_model_card_full.png`
+- `screenshots/15_help.png`
+- `screenshots/16_live_camera_start.png`
+- `screenshots/incident_example.csv`
+- `screenshots/incident_report_example.pdf`
+
+`figures/` (drawn from `results/` by `scripts/make_report_figures.py`):
+
+- `figures/fig_baselines.png`
+- `figures/fig_class_counts.png`
+- `figures/fig_confusion_matrix.png`
+- `figures/fig_reliability.png`
+- `figures/fig_subgroups.png`
+- `figures/fig_synthetic_with_without.png`
+- `figures/fig_training_curves.png`
+
+`sitesafe-repo/`: clean copy of the GitHub repository (tracked files only: no datasets, virtual environment, node_modules or training runs). Files per folder:
+
+- `(root files)`: 9
+- `.github`: 2
+- `colab`: 8
+- `data`: 41
+- `docs`: 8
+- `models`: 3
+- `notebooks`: 3
+- `results`: 171
+- `scripts`: 36
+- `sitesafe`: 11
+- `streamlit_app`: 1
+- `tests`: 4
+- `web`: 174
+
+Left out of the repo copy to keep the zip small (all still in the GitHub repository): the YOLO11s comparison model (38 MB), the two ablation models of the synthetic-data experiment, duplicate copies of the synth and plus models (the app's copies in `web/public/models/` are included), the Colab code bundles, duplicate .docx files and Ultralytics' sample-batch images. The datasets are downloaded by `scripts/download_data.py`.
 
 ## Numbers
 
