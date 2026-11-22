@@ -1,231 +1,231 @@
 image,person,x1,y1,x2,y2,lighting,distance,clothing,skin_tone,verified
-source-078aa002dcdc9f8ffd092bed4da44e59.jpg,0,1251,383,1347,522,normal,far,hi-vis,not visible,0
-source-078aa002dcdc9f8ffd092bed4da44e59.jpg,1,464,660,739,1167,normal,mid,other,darker,0
-source-078aa002dcdc9f8ffd092bed4da44e59.jpg,2,930,387,1027,633,normal,far,other,not visible,0
-source-08e4ee526a5ea46b79ae4b6da87e91a1.jpg,0,423,270,462,366,normal,far,other,not visible,0
-source-08e4ee526a5ea46b79ae4b6da87e91a1.jpg,1,1066,174,1104,308,normal,far,other,not visible,0
-source-08e4ee526a5ea46b79ae4b6da87e91a1.jpg,2,1199,183,1239,290,normal,far,other,not visible,0
-source-0e2a4d4463396c949ccdf3a3253e1552.jpg,0,221,361,431,955,normal,mid,other,darker,0
-source-0e2a4d4463396c949ccdf3a3253e1552.jpg,1,641,349,764,663,normal,far,hi-vis,not visible,0
-source-0e2a4d4463396c949ccdf3a3253e1552.jpg,2,846,315,963,630,normal,far,hi-vis,darker,0
-source-0e2a4d4463396c949ccdf3a3253e1552.jpg,3,678,549,1118,1109,normal,mid,other,darker,0
-source-0e2a4d4463396c949ccdf3a3253e1552.jpg,4,1240,414,1419,857,normal,mid,hi-vis,darker,0
-source-1c60612624732b80742dd50ae6225c57.jpg,0,373,366,403,435,normal,far,other,not visible,0
-source-1c60612624732b80742dd50ae6225c57.jpg,1,100,397,131,482,normal,far,hi-vis,not visible,0
-source-1c60612624732b80742dd50ae6225c57.jpg,2,477,440,516,542,normal,far,dark,not visible,0
-source-1c60612624732b80742dd50ae6225c57.jpg,3,778,656,843,806,normal,far,dark,not visible,0
-source-1c60612624732b80742dd50ae6225c57.jpg,4,870,750,940,933,normal,far,hi-vis,not visible,0
-source-29a54f6e5e66462bbcbec90273e92a51.jpg,0,362,426,397,518,normal,far,hi-vis,not visible,0
-source-29a54f6e5e66462bbcbec90273e92a51.jpg,1,558,461,641,680,normal,far,hi-vis,not visible,0
-source-29a54f6e5e66462bbcbec90273e92a51.jpg,2,438,466,524,691,normal,far,hi-vis,not visible,0
-source-29a54f6e5e66462bbcbec90273e92a51.jpg,3,630,632,831,1194,normal,mid,hi-vis,darker,0
-source-29a54f6e5e66462bbcbec90273e92a51.jpg,4,914,569,1140,1139,normal,mid,hi-vis,darker,0
-source-32e03cdb08168418670930ec33c24ec1.jpg,0,321,583,547,1330,normal,mid,hi-vis,darker,0
-source-32e03cdb08168418670930ec33c24ec1.jpg,1,678,622,943,1359,normal,mid,hi-vis,not visible,0
-source-32e03cdb08168418670930ec33c24ec1.jpg,2,1046,578,1290,1287,normal,mid,hi-vis,not visible,0
-source-32e03cdb08168418670930ec33c24ec1.jpg,3,1344,569,1534,1178,normal,mid,hi-vis,not visible,0
-source-449d7c49b40597a87fd789730bc14f43.jpg,0,740,854,804,1089,bright,far,other,darker,0
-source-449d7c49b40597a87fd789730bc14f43.jpg,1,817,851,880,1079,bright,far,other,darker,0
-source-449d7c49b40597a87fd789730bc14f43.jpg,2,1237,855,1297,1089,bright,far,other,not visible,0
-source-449d7c49b40597a87fd789730bc14f43.jpg,3,970,437,1014,562,bright,far,hi-vis,not visible,0
-source-449d7c49b40597a87fd789730bc14f43.jpg,4,882,453,927,574,bright,far,hi-vis,not visible,0
-source-449d7c49b40597a87fd789730bc14f43.jpg,5,613,854,667,1088,bright,far,other,darker,0
-source-4d6af6d0fce09bd9d6228c8525c2f2c5.jpg,0,354,267,413,433,normal,far,other,not visible,0
-source-4d6af6d0fce09bd9d6228c8525c2f2c5.jpg,1,794,311,858,475,normal,far,hi-vis,not visible,0
-source-4d6af6d0fce09bd9d6228c8525c2f2c5.jpg,2,1299,291,1377,499,normal,far,other,darker,0
-source-4d6af6d0fce09bd9d6228c8525c2f2c5.jpg,3,687,588,794,937,normal,mid,dark,darker,0
-source-4d6af6d0fce09bd9d6228c8525c2f2c5.jpg,4,831,527,984,894,normal,mid,hi-vis,not visible,0
-source-4d6af6d0fce09bd9d6228c8525c2f2c5.jpg,5,1206,150,1238,189,normal,far,other,not visible,0
-source-5140dd69d9fd4bda1414dfea2e2e0512.jpg,0,591,561,622,648,dark,far,other,not visible,0
-source-5140dd69d9fd4bda1414dfea2e2e0512.jpg,1,679,547,713,636,dark,far,other,not visible,0
-source-5140dd69d9fd4bda1414dfea2e2e0512.jpg,2,888,650,933,779,dark,far,hi-vis,not visible,0
-source-5140dd69d9fd4bda1414dfea2e2e0512.jpg,3,926,673,997,853,dark,far,other,not visible,0
-source-5140dd69d9fd4bda1414dfea2e2e0512.jpg,4,1184,503,1221,563,dark,far,other,not visible,0
-source-58c7f3d161f4a1348b91f9808ba107a3.jpg,0,920,652,1128,1252,normal,mid,other,darker,0
-source-58c7f3d161f4a1348b91f9808ba107a3.jpg,1,831,632,1017,1107,normal,mid,hi-vis,not visible,0
-source-58c7f3d161f4a1348b91f9808ba107a3.jpg,2,690,585,863,866,normal,far,hi-vis,darker,0
-source-58c7f3d161f4a1348b91f9808ba107a3.jpg,3,513,597,635,1069,normal,mid,hi-vis,darker,0
-source-58c7f3d161f4a1348b91f9808ba107a3.jpg,4,575,645,803,1275,normal,mid,hi-vis,darker,0
-source-58c7f3d161f4a1348b91f9808ba107a3.jpg,5,399,628,603,1198,normal,mid,other,darker,0
-source-5b6157b76d4cbbf7c549b77632814ace.jpg,0,775,276,1217,1466,normal,near,dark,darker,0
-source-697ef7be42e68d78ab9ba0191638f308.jpg,0,847,704,897,898,normal,far,other,darker,0
-source-697ef7be42e68d78ab9ba0191638f308.jpg,1,937,701,1013,886,normal,far,other,not visible,0
-source-697ef7be42e68d78ab9ba0191638f308.jpg,2,898,707,920,787,normal,far,other,not visible,0
-source-9ba04898abfcdd5d414807101c5b223c.jpg,0,840,251,1232,1417,normal,near,dark,darker,0
-source-b6c58df2d8dae678b01bd4c57f28e6b3.jpg,0,681,263,720,326,bright,far,other,not visible,0
-source-b6c58df2d8dae678b01bd4c57f28e6b3.jpg,1,816,282,844,351,bright,far,other,not visible,0
-source-b6c58df2d8dae678b01bd4c57f28e6b3.jpg,2,894,309,925,365,bright,far,hi-vis,not visible,0
-source-b6c58df2d8dae678b01bd4c57f28e6b3.jpg,3,1083,338,1105,390,bright,far,hi-vis,not visible,0
-source-b6c58df2d8dae678b01bd4c57f28e6b3.jpg,4,1186,349,1204,403,bright,far,other,not visible,0
-source-baa51c2ac69f7c70e92d77f740b0f120.jpg,0,104,935,162,1084,normal,far,hi-vis,not visible,0
-source-baa51c2ac69f7c70e92d77f740b0f120.jpg,1,176,941,225,1087,normal,far,hi-vis,not visible,0
-source-baa51c2ac69f7c70e92d77f740b0f120.jpg,2,417,897,463,1041,normal,far,hi-vis,not visible,0
-source-baa51c2ac69f7c70e92d77f740b0f120.jpg,3,206,706,259,838,normal,far,other,not visible,0
-source-baa51c2ac69f7c70e92d77f740b0f120.jpg,4,1380,804,1436,960,normal,far,hi-vis,not visible,0
-source-baa51c2ac69f7c70e92d77f740b0f120.jpg,5,1111,359,1151,480,normal,far,hi-vis,not visible,0
-source-baa51c2ac69f7c70e92d77f740b0f120.jpg,6,1564,299,1611,424,normal,far,other,not visible,0
-source-baa51c2ac69f7c70e92d77f740b0f120.jpg,7,1282,40,1317,132,normal,far,dark,not visible,0
-source-baa51c2ac69f7c70e92d77f740b0f120.jpg,8,1075,932,1130,1023,normal,far,other,not visible,0
-source-bfbb13f4dbe39c58cf7d0106cd8000f7.jpg,0,411,453,460,585,dark,far,dark,not visible,0
-source-bfbb13f4dbe39c58cf7d0106cd8000f7.jpg,1,631,663,703,865,dark,far,other,not visible,0
-source-bfbb13f4dbe39c58cf7d0106cd8000f7.jpg,2,870,882,965,1130,dark,far,dark,darker,0
-source-bfbb13f4dbe39c58cf7d0106cd8000f7.jpg,3,1350,1016,1492,1336,dark,far,dark,not visible,0
-source-bfbb13f4dbe39c58cf7d0106cd8000f7.jpg,4,1634,798,1726,1060,dark,far,dark,not visible,0
-source-bfbb13f4dbe39c58cf7d0106cd8000f7.jpg,5,90,479,139,540,dark,far,dark,not visible,0
-source-c285b53fb701de95fbfe70714765e8c7.jpg,0,1160,251,1221,404,normal,far,other,darker,0
-source-c285b53fb701de95fbfe70714765e8c7.jpg,1,783,324,888,606,normal,far,other,darker,0
-source-c285b53fb701de95fbfe70714765e8c7.jpg,2,412,230,491,430,normal,far,other,darker,0
-source-c285b53fb701de95fbfe70714765e8c7.jpg,3,387,478,548,866,normal,mid,other,darker,0
-source-d6cf98f5a426285e1ad496703b33cf93.jpg,0,832,627,856,717,normal,far,dark,not visible,0
-source-d6cf98f5a426285e1ad496703b33cf93.jpg,1,430,1044,483,1163,normal,far,other,not visible,0
-source-d6cf98f5a426285e1ad496703b33cf93.jpg,2,839,878,896,963,normal,far,other,not visible,0
-source-d6cf98f5a426285e1ad496703b33cf93.jpg,3,711,886,754,972,normal,far,other,not visible,0
-source-d6cf98f5a426285e1ad496703b33cf93.jpg,4,1139,811,1175,940,normal,far,other,not visible,0
-source-d6cf98f5a426285e1ad496703b33cf93.jpg,5,1170,790,1208,901,normal,far,other,not visible,0
-source-d7438871aefee49d413dcede6cd5d626.jpg,0,20,662,67,780,normal,far,hi-vis,not visible,0
-source-d7438871aefee49d413dcede6cd5d626.jpg,1,84,583,121,676,normal,far,hi-vis,not visible,0
-source-d7438871aefee49d413dcede6cd5d626.jpg,2,1678,555,1702,633,normal,far,dark,not visible,0
-source-e459eb61dde6db49ddc16578bb8ceda7.jpg,0,70,232,299,699,normal,mid,other,darker,0
-source-e459eb61dde6db49ddc16578bb8ceda7.jpg,1,539,87,714,494,normal,mid,other,not visible,0
-source-e459eb61dde6db49ddc16578bb8ceda7.jpg,2,905,257,1129,460,normal,far,other,darker,0
-source-e459eb61dde6db49ddc16578bb8ceda7.jpg,3,1309,249,1525,707,normal,mid,other,not visible,0
-source-e497834ebd715d706366646daeb2269e.jpg,0,885,451,1229,1351,normal,mid,dark,darker,0
-source-efa761a319a37ba07e58ccd0bc1a4003.jpg,0,27,815,122,1068,normal,far,other,darker,0
-source-efa761a319a37ba07e58ccd0bc1a4003.jpg,1,552,383,605,525,normal,far,other,not visible,0
-source-efa761a319a37ba07e58ccd0bc1a4003.jpg,2,856,426,906,573,normal,far,other,not visible,0
-source-efa761a319a37ba07e58ccd0bc1a4003.jpg,3,1036,537,1096,707,normal,far,other,not visible,0
-source-efa761a319a37ba07e58ccd0bc1a4003.jpg,4,1127,250,1151,321,normal,far,other,not visible,0
-source-efa761a319a37ba07e58ccd0bc1a4003.jpg,5,236,289,266,374,normal,far,other,not visible,0
-source-efa761a319a37ba07e58ccd0bc1a4003.jpg,6,444,336,497,429,normal,far,other,not visible,0
-source-efa761a319a37ba07e58ccd0bc1a4003.jpg,7,907,230,928,258,normal,far,other,not visible,0
-source-f891b842074a79a1fef1c89bc8d39507.jpg,0,1192,199,1310,466,normal,far,hi-vis,darker,0
-source-f891b842074a79a1fef1c89bc8d39507.jpg,1,1376,235,1508,508,normal,far,other,darker,0
-source-f891b842074a79a1fef1c89bc8d39507.jpg,2,1343,462,1539,890,normal,mid,other,not visible,0
-source-f891b842074a79a1fef1c89bc8d39507.jpg,3,745,283,846,428,normal,far,hi-vis,not visible,0
-source-f891b842074a79a1fef1c89bc8d39507.jpg,4,464,354,703,769,normal,mid,other,darker,0
-source-f891b842074a79a1fef1c89bc8d39507.jpg,5,842,499,1104,918,normal,mid,hi-vis,darker,0
-source-fc7635f8f5ccf2152ef0afcd824df643.jpg,0,359,890,439,1122,dark,far,dark,not visible,0
-source-fc7635f8f5ccf2152ef0afcd824df643.jpg,1,388,743,445,897,dark,far,dark,not visible,0
-source-fc7635f8f5ccf2152ef0afcd824df643.jpg,2,275,712,311,840,dark,far,dark,not visible,0
-source-fc7635f8f5ccf2152ef0afcd824df643.jpg,3,1199,854,1265,1049,dark,far,hi-vis,not visible,0
-source-fc7635f8f5ccf2152ef0afcd824df643.jpg,4,514,703,592,775,dark,far,other,not visible,0
-source-fc7635f8f5ccf2152ef0afcd824df643.jpg,5,195,602,217,668,dark,far,other,not visible,0
-source-fc7635f8f5ccf2152ef0afcd824df643.jpg,6,958,654,989,702,dark,far,dark,not visible,0
-source-fd87396c628d9e0ce1ac0177cfbf27e3.jpg,0,302,105,458,465,normal,mid,other,darker,0
-source-fd87396c628d9e0ce1ac0177cfbf27e3.jpg,1,551,269,739,713,normal,mid,other,darker,0
-source-fd87396c628d9e0ce1ac0177cfbf27e3.jpg,2,1102,188,1315,678,normal,mid,other,darker,0
-ultralytics-ppe-nov2026-003.jpg,0,138,197,802,2029,normal,near,dark,darker,0
-ultralytics-ppe-nov2026-003.jpg,1,651,198,1268,2048,normal,near,other,darker,0
-ultralytics-ppe-nov2026-003.jpg,2,582,569,804,1537,normal,mid,dark,not visible,0
-ultralytics-ppe-nov2026-003.jpg,3,4,777,115,1118,normal,far,other,darker,0
-ultralytics-ppe-nov2026-006.jpg,0,190,8,949,1137,normal,near,other,darker,0
-ultralytics-ppe-nov2026-006.jpg,1,1377,112,1967,1077,normal,near,other,darker,0
-ultralytics-ppe-nov2026-006.jpg,2,859,148,1479,1001,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-014.jpg,0,1229,78,1679,1332,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-014.jpg,1,928,148,1296,1138,normal,near,dark,darker,0
-ultralytics-ppe-nov2026-014.jpg,2,184,175,563,1258,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-037.jpg,0,74,330,529,1916,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-037.jpg,1,562,345,1145,1959,normal,near,other,darker,0
-ultralytics-ppe-nov2026-037.jpg,2,425,386,822,1602,normal,mid,other,darker,0
-ultralytics-ppe-nov2026-054.jpg,0,300,203,987,2048,normal,near,other,darker,0
-ultralytics-ppe-nov2026-057.jpg,0,826,472,1333,1860,normal,near,other,darker,0
-ultralytics-ppe-nov2026-057.jpg,1,234,486,755,1962,normal,near,other,darker,0
-ultralytics-ppe-nov2026-083.jpg,0,323,425,903,1927,normal,near,other,darker,0
-ultralytics-ppe-nov2026-084.jpg,0,622,111,1397,2048,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-103.jpg,0,554,462,1360,2048,normal,near,other,darker,0
-ultralytics-ppe-nov2026-107.jpg,0,674,178,1267,1771,normal,near,other,darker,0
-ultralytics-ppe-nov2026-116.jpg,0,714,324,1088,1982,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-116.jpg,1,16,527,554,1817,normal,near,other,medium,0
-ultralytics-ppe-nov2026-129.jpg,0,0,91,280,2048,normal,near,other,not visible,0
-ultralytics-ppe-nov2026-129.jpg,1,375,133,840,1844,normal,near,other,darker,0
-ultralytics-ppe-nov2026-129.jpg,2,179,439,253,609,normal,far,other,not visible,0
-ultralytics-ppe-nov2026-132.jpg,0,311,80,1207,2006,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-151.jpg,0,895,44,1421,1360,normal,near,other,darker,0
-ultralytics-ppe-nov2026-153.jpg,0,482,457,1278,1781,normal,near,other,darker,0
-ultralytics-ppe-nov2026-154.jpg,0,457,461,1026,2033,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-155.jpg,0,690,142,1448,1960,normal,near,other,darker,0
-ultralytics-ppe-nov2026-156.jpg,0,1128,68,1464,1152,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-156.jpg,1,353,77,765,1152,normal,near,other,darker,0
-ultralytics-ppe-nov2026-176.jpg,0,1091,0,1971,1360,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-176.jpg,1,235,59,955,1360,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-178.jpg,0,775,35,1268,1903,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-178.jpg,1,71,479,687,1943,normal,near,other,not visible,0
-ultralytics-ppe-nov2026-180.jpg,0,1419,169,1918,2007,normal,near,hi-vis,medium,0
-ultralytics-ppe-nov2026-180.jpg,1,472,206,1051,1980,normal,near,other,medium,0
-ultralytics-ppe-nov2026-185.jpg,0,854,205,1238,1360,normal,near,other,lighter,0
-ultralytics-ppe-nov2026-193.jpg,0,662,87,1412,1360,normal,near,other,darker,0
-ultralytics-ppe-nov2026-205.jpg,0,791,184,1465,1872,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-208.jpg,0,372,206,1152,2036,normal,near,dark,darker,0
-ultralytics-ppe-nov2026-209.jpg,0,932,200,1502,2048,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-233.jpg,0,310,144,999,1900,normal,near,other,darker,0
-ultralytics-ppe-nov2026-251.jpg,0,880,69,1420,1360,normal,near,other,darker,0
-ultralytics-ppe-nov2026-261.jpg,0,468,279,1059,2048,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-267.jpg,0,877,310,1607,2048,normal,near,other,darker,0
-ultralytics-ppe-nov2026-268.jpg,0,289,17,893,1360,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-316.jpg,0,670,203,1133,1983,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-316.jpg,1,0,309,522,1789,normal,near,other,darker,0
-ultralytics-ppe-nov2026-317.jpg,0,840,45,1610,2048,normal,near,other,darker,0
-ultralytics-ppe-nov2026-326.jpg,0,748,0,2048,1360,normal,near,dark,darker,0
-ultralytics-ppe-nov2026-327.jpg,0,874,19,1228,1152,normal,near,other,darker,0
-ultralytics-ppe-nov2026-331.jpg,0,0,0,440,1152,normal,near,dark,not visible,0
-ultralytics-ppe-nov2026-331.jpg,1,659,49,1045,1042,normal,near,dark,darker,0
-ultralytics-ppe-nov2026-339.jpg,0,1143,101,1563,1351,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-339.jpg,1,1545,129,1991,1360,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-339.jpg,2,678,194,1083,1328,normal,near,dark,darker,0
-ultralytics-ppe-nov2026-342.jpg,0,224,176,983,1908,normal,near,other,darker,0
-ultralytics-ppe-nov2026-342.jpg,1,1003,175,1683,1983,normal,near,other,darker,0
-ultralytics-ppe-nov2026-360.jpg,0,1350,25,1742,1340,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-360.jpg,1,478,534,857,1311,normal,mid,hi-vis,darker,0
-ultralytics-ppe-nov2026-368.jpg,0,480,36,1179,1360,normal,near,other,medium,0
-ultralytics-ppe-nov2026-380.jpg,0,1386,48,1880,1974,normal,near,hi-vis,medium,0
-ultralytics-ppe-nov2026-380.jpg,1,278,243,982,1939,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-381.jpg,0,834,314,1318,1080,normal,near,other,darker,0
-ultralytics-ppe-nov2026-386.jpg,0,343,70,1188,2048,normal,near,other,medium,0
-ultralytics-ppe-nov2026-420.jpg,0,36,289,627,2043,normal,near,hi-vis,medium,0
-ultralytics-ppe-nov2026-420.jpg,1,900,541,1281,1855,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-427.jpg,0,982,14,1356,1152,normal,near,other,darker,0
-ultralytics-ppe-nov2026-439.jpg,0,1079,115,1497,1299,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-439.jpg,1,637,118,1026,1345,normal,near,other,darker,0
-ultralytics-ppe-nov2026-459.jpg,0,1246,56,1680,2024,normal,near,other,darker,0
-ultralytics-ppe-nov2026-459.jpg,1,973,113,1427,1615,normal,near,dark,darker,0
-ultralytics-ppe-nov2026-459.jpg,2,451,170,987,1988,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-469.jpg,0,663,78,1133,1152,normal,near,other,darker,0
-ultralytics-ppe-nov2026-477.jpg,0,902,86,1190,1152,normal,near,hi-vis,not visible,0
-ultralytics-ppe-nov2026-477.jpg,1,1360,147,1612,1152,normal,near,other,darker,0
-ultralytics-ppe-nov2026-490.jpg,0,1165,0,2048,1152,normal,near,dark,darker,0
-ultralytics-ppe-nov2026-493.jpg,0,819,50,1405,1360,normal,near,other,darker,0
-ultralytics-ppe-nov2026-507.jpg,0,271,518,761,1928,normal,near,dark,darker,0
-ultralytics-ppe-nov2026-511.jpg,0,490,190,1159,2048,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-513.jpg,0,518,115,1258,1623,normal,near,other,darker,0
-ultralytics-ppe-nov2026-514.jpg,0,940,95,1560,1360,normal,near,other,medium,0
-ultralytics-ppe-nov2026-516.jpg,0,750,489,1100,1991,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-516.jpg,1,158,632,548,1763,normal,mid,hi-vis,darker,0
-ultralytics-ppe-nov2026-516.jpg,2,90,733,129,840,normal,far,other,not visible,0
-ultralytics-ppe-nov2026-528.jpg,0,327,676,1216,2004,dark,near,dark,darker,0
-ultralytics-ppe-nov2026-528.jpg,1,972,369,1106,580,dark,far,other,not visible,0
-ultralytics-ppe-nov2026-538.jpg,0,1279,47,1887,2045,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-538.jpg,1,277,224,990,1982,normal,near,other,darker,0
-ultralytics-ppe-nov2026-551.jpg,0,795,77,1311,1360,normal,near,other,darker,0
-ultralytics-ppe-nov2026-556.jpg,0,1433,30,1733,1149,normal,near,hi-vis,medium,0
-ultralytics-ppe-nov2026-556.jpg,1,332,76,834,1152,normal,near,other,darker,0
-ultralytics-ppe-nov2026-566.jpg,0,304,461,960,2003,normal,near,other,medium,0
-ultralytics-ppe-nov2026-585.jpg,0,915,316,1223,902,normal,mid,other,darker,0
-ultralytics-ppe-nov2026-585.jpg,1,535,15,584,45,normal,far,light,not visible,0
-ultralytics-ppe-nov2026-617.jpg,0,1064,243,1690,2019,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-617.jpg,1,160,363,768,2048,normal,near,other,darker,0
-ultralytics-ppe-nov2026-618.jpg,0,1368,22,1864,1353,normal,near,other,darker,0
-ultralytics-ppe-nov2026-618.jpg,1,180,51,848,1360,normal,near,hi-vis,medium,0
-ultralytics-ppe-nov2026-619.jpg,0,802,90,1155,1124,bright,near,other,darker,0
-ultralytics-ppe-nov2026-619.jpg,1,316,456,742,1133,bright,mid,other,darker,0
-ultralytics-ppe-nov2026-626.jpg,0,1132,0,2048,1360,normal,near,dark,not visible,0
-ultralytics-ppe-nov2026-628.jpg,0,561,770,1228,1942,normal,mid,other,darker,0
-ultralytics-ppe-nov2026-630.jpg,0,166,304,830,1966,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-639.jpg,0,561,59,992,1342,normal,near,other,darker,0
-ultralytics-ppe-nov2026-639.jpg,1,1123,102,1499,1319,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-642.jpg,0,1031,21,1723,2017,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-642.jpg,1,389,563,428,629,normal,far,light,not visible,0
-ultralytics-ppe-nov2026-666.jpg,0,255,378,1059,2004,normal,near,other,darker,0
-ultralytics-ppe-nov2026-670.jpg,0,471,24,1147,2048,normal,near,other,darker,0
-ultralytics-ppe-nov2026-684.jpg,0,399,15,1232,2015,normal,near,hi-vis,darker,0
-ultralytics-ppe-nov2026-690.jpg,0,205,0,1981,1070,normal,near,other,darker,0
-ultralytics-ppe-nov2026-693.jpg,0,774,58,1284,1360,normal,near,dark,darker,0
+source-078aa002dcdc9f8ffd092bed4da44e59.jpg,0,1251,383,1347,522,normal,far,hi-vis,not visible,1
+source-078aa002dcdc9f8ffd092bed4da44e59.jpg,1,464,660,739,1167,normal,mid,other,not visible,1
+source-078aa002dcdc9f8ffd092bed4da44e59.jpg,2,930,387,1027,633,normal,far,other,lighter,1
+source-08e4ee526a5ea46b79ae4b6da87e91a1.jpg,0,423,270,462,366,normal,far,other,lighter,1
+source-08e4ee526a5ea46b79ae4b6da87e91a1.jpg,1,1066,174,1104,308,normal,far,other,not visible,1
+source-08e4ee526a5ea46b79ae4b6da87e91a1.jpg,2,1199,183,1239,290,normal,far,other,lighter,1
+source-0e2a4d4463396c949ccdf3a3253e1552.jpg,0,221,361,431,955,normal,mid,other,medium,1
+source-0e2a4d4463396c949ccdf3a3253e1552.jpg,1,641,349,764,663,normal,far,hi-vis,lighter,1
+source-0e2a4d4463396c949ccdf3a3253e1552.jpg,2,846,315,963,630,normal,far,hi-vis,medium,1
+source-0e2a4d4463396c949ccdf3a3253e1552.jpg,3,678,549,1118,1109,normal,mid,other,medium,1
+source-0e2a4d4463396c949ccdf3a3253e1552.jpg,4,1240,414,1419,857,normal,mid,hi-vis,medium,1
+source-1c60612624732b80742dd50ae6225c57.jpg,0,373,366,403,435,normal,far,other,not visible,1
+source-1c60612624732b80742dd50ae6225c57.jpg,1,100,397,131,482,normal,far,hi-vis,not visible,1
+source-1c60612624732b80742dd50ae6225c57.jpg,2,477,440,516,542,normal,far,dark,not visible,1
+source-1c60612624732b80742dd50ae6225c57.jpg,3,778,656,843,806,normal,far,dark,not visible,1
+source-1c60612624732b80742dd50ae6225c57.jpg,4,870,750,940,933,normal,far,hi-vis,not visible,1
+source-29a54f6e5e66462bbcbec90273e92a51.jpg,0,362,426,397,518,normal,far,hi-vis,not visible,1
+source-29a54f6e5e66462bbcbec90273e92a51.jpg,1,558,461,641,680,normal,far,hi-vis,not visible,1
+source-29a54f6e5e66462bbcbec90273e92a51.jpg,2,438,466,524,691,normal,far,hi-vis,not visible,1
+source-29a54f6e5e66462bbcbec90273e92a51.jpg,3,630,632,831,1194,normal,mid,hi-vis,lighter,1
+source-29a54f6e5e66462bbcbec90273e92a51.jpg,4,914,569,1140,1139,normal,mid,hi-vis,medium,1
+source-32e03cdb08168418670930ec33c24ec1.jpg,0,321,583,547,1330,normal,mid,hi-vis,not visible,1
+source-32e03cdb08168418670930ec33c24ec1.jpg,1,678,622,943,1359,normal,mid,hi-vis,not visible,1
+source-32e03cdb08168418670930ec33c24ec1.jpg,2,1046,578,1290,1287,normal,mid,hi-vis,not visible,1
+source-32e03cdb08168418670930ec33c24ec1.jpg,3,1344,569,1534,1178,normal,mid,hi-vis,not visible,1
+source-449d7c49b40597a87fd789730bc14f43.jpg,0,740,854,804,1089,bright,far,other,medium,1
+source-449d7c49b40597a87fd789730bc14f43.jpg,1,817,851,880,1079,bright,far,other,not visible,1
+source-449d7c49b40597a87fd789730bc14f43.jpg,2,1237,855,1297,1089,bright,far,other,medium,1
+source-449d7c49b40597a87fd789730bc14f43.jpg,3,970,437,1014,562,bright,far,hi-vis,not visible,1
+source-449d7c49b40597a87fd789730bc14f43.jpg,4,882,453,927,574,bright,far,hi-vis,not visible,1
+source-449d7c49b40597a87fd789730bc14f43.jpg,5,613,854,667,1088,bright,far,other,medium,1
+source-4d6af6d0fce09bd9d6228c8525c2f2c5.jpg,0,354,267,413,433,normal,far,other,not visible,1
+source-4d6af6d0fce09bd9d6228c8525c2f2c5.jpg,1,794,311,858,475,normal,far,hi-vis,not visible,1
+source-4d6af6d0fce09bd9d6228c8525c2f2c5.jpg,2,1299,291,1377,499,normal,far,other,not visible,1
+source-4d6af6d0fce09bd9d6228c8525c2f2c5.jpg,3,687,588,794,937,normal,mid,dark,not visible,1
+source-4d6af6d0fce09bd9d6228c8525c2f2c5.jpg,4,831,527,984,894,normal,mid,hi-vis,not visible,1
+source-4d6af6d0fce09bd9d6228c8525c2f2c5.jpg,5,1206,150,1238,189,normal,far,other,not visible,1
+source-5140dd69d9fd4bda1414dfea2e2e0512.jpg,0,591,561,622,648,dark,far,other,not visible,1
+source-5140dd69d9fd4bda1414dfea2e2e0512.jpg,1,679,547,713,636,dark,far,other,not visible,1
+source-5140dd69d9fd4bda1414dfea2e2e0512.jpg,2,888,650,933,779,dark,far,hi-vis,not visible,1
+source-5140dd69d9fd4bda1414dfea2e2e0512.jpg,3,926,673,997,853,dark,far,other,not visible,1
+source-5140dd69d9fd4bda1414dfea2e2e0512.jpg,4,1184,503,1221,563,dark,far,other,not visible,1
+source-58c7f3d161f4a1348b91f9808ba107a3.jpg,0,920,652,1128,1252,normal,mid,other,lighter,1
+source-58c7f3d161f4a1348b91f9808ba107a3.jpg,1,831,632,1017,1107,normal,mid,hi-vis,lighter,1
+source-58c7f3d161f4a1348b91f9808ba107a3.jpg,2,690,585,863,866,normal,far,hi-vis,lighter,1
+source-58c7f3d161f4a1348b91f9808ba107a3.jpg,3,513,597,635,1069,normal,mid,hi-vis,lighter,1
+source-58c7f3d161f4a1348b91f9808ba107a3.jpg,4,575,645,803,1275,normal,mid,hi-vis,lighter,1
+source-58c7f3d161f4a1348b91f9808ba107a3.jpg,5,399,628,603,1198,normal,mid,other,lighter,1
+source-5b6157b76d4cbbf7c549b77632814ace.jpg,0,775,276,1217,1466,normal,near,dark,lighter,1
+source-697ef7be42e68d78ab9ba0191638f308.jpg,0,847,704,897,898,normal,far,other,lighter,1
+source-697ef7be42e68d78ab9ba0191638f308.jpg,1,937,701,1013,886,normal,far,other,not visible,1
+source-697ef7be42e68d78ab9ba0191638f308.jpg,2,898,707,920,787,normal,far,other,not visible,1
+source-9ba04898abfcdd5d414807101c5b223c.jpg,0,840,251,1232,1417,normal,near,dark,lighter,1
+source-b6c58df2d8dae678b01bd4c57f28e6b3.jpg,0,681,263,720,326,bright,far,other,not visible,1
+source-b6c58df2d8dae678b01bd4c57f28e6b3.jpg,1,816,282,844,351,bright,far,other,not visible,1
+source-b6c58df2d8dae678b01bd4c57f28e6b3.jpg,2,894,309,925,365,bright,far,hi-vis,not visible,1
+source-b6c58df2d8dae678b01bd4c57f28e6b3.jpg,3,1083,338,1105,390,bright,far,hi-vis,not visible,1
+source-b6c58df2d8dae678b01bd4c57f28e6b3.jpg,4,1186,349,1204,403,bright,far,other,not visible,1
+source-baa51c2ac69f7c70e92d77f740b0f120.jpg,0,104,935,162,1084,normal,far,hi-vis,not visible,1
+source-baa51c2ac69f7c70e92d77f740b0f120.jpg,1,176,941,225,1087,normal,far,hi-vis,not visible,1
+source-baa51c2ac69f7c70e92d77f740b0f120.jpg,2,417,897,463,1041,normal,far,hi-vis,not visible,1
+source-baa51c2ac69f7c70e92d77f740b0f120.jpg,3,206,706,259,838,normal,far,other,medium,1
+source-baa51c2ac69f7c70e92d77f740b0f120.jpg,4,1380,804,1436,960,normal,far,hi-vis,not visible,1
+source-baa51c2ac69f7c70e92d77f740b0f120.jpg,5,1111,359,1151,480,normal,far,hi-vis,not visible,1
+source-baa51c2ac69f7c70e92d77f740b0f120.jpg,6,1564,299,1611,424,normal,far,other,not visible,1
+source-baa51c2ac69f7c70e92d77f740b0f120.jpg,7,1282,40,1317,132,normal,far,dark,not visible,1
+source-baa51c2ac69f7c70e92d77f740b0f120.jpg,8,1075,932,1130,1023,normal,far,other,not visible,1
+source-bfbb13f4dbe39c58cf7d0106cd8000f7.jpg,0,411,453,460,585,dark,far,dark,not visible,1
+source-bfbb13f4dbe39c58cf7d0106cd8000f7.jpg,1,631,663,703,865,dark,far,other,not visible,1
+source-bfbb13f4dbe39c58cf7d0106cd8000f7.jpg,2,870,882,965,1130,dark,far,dark,medium,1
+source-bfbb13f4dbe39c58cf7d0106cd8000f7.jpg,3,1350,1016,1492,1336,dark,far,dark,not visible,1
+source-bfbb13f4dbe39c58cf7d0106cd8000f7.jpg,4,1634,798,1726,1060,dark,far,dark,not visible,1
+source-bfbb13f4dbe39c58cf7d0106cd8000f7.jpg,5,90,479,139,540,dark,far,dark,not visible,1
+source-c285b53fb701de95fbfe70714765e8c7.jpg,0,1160,251,1221,404,normal,far,other,lighter,1
+source-c285b53fb701de95fbfe70714765e8c7.jpg,1,783,324,888,606,normal,far,other,lighter,1
+source-c285b53fb701de95fbfe70714765e8c7.jpg,2,412,230,491,430,normal,far,other,medium,1
+source-c285b53fb701de95fbfe70714765e8c7.jpg,3,387,478,548,866,normal,mid,other,lighter,1
+source-d6cf98f5a426285e1ad496703b33cf93.jpg,0,832,627,856,717,normal,far,dark,not visible,1
+source-d6cf98f5a426285e1ad496703b33cf93.jpg,1,430,1044,483,1163,normal,far,other,not visible,1
+source-d6cf98f5a426285e1ad496703b33cf93.jpg,2,839,878,896,963,normal,far,other,not visible,1
+source-d6cf98f5a426285e1ad496703b33cf93.jpg,3,711,886,754,972,normal,far,other,not visible,1
+source-d6cf98f5a426285e1ad496703b33cf93.jpg,4,1139,811,1175,940,normal,far,other,not visible,1
+source-d6cf98f5a426285e1ad496703b33cf93.jpg,5,1170,790,1208,901,normal,far,other,not visible,1
+source-d7438871aefee49d413dcede6cd5d626.jpg,0,20,662,67,780,normal,far,hi-vis,not visible,1
+source-d7438871aefee49d413dcede6cd5d626.jpg,1,84,583,121,676,normal,far,hi-vis,not visible,1
+source-d7438871aefee49d413dcede6cd5d626.jpg,2,1678,555,1702,633,normal,far,dark,not visible,1
+source-e459eb61dde6db49ddc16578bb8ceda7.jpg,0,70,232,299,699,normal,mid,other,lighter,1
+source-e459eb61dde6db49ddc16578bb8ceda7.jpg,1,539,87,714,494,normal,mid,other,lighter,1
+source-e459eb61dde6db49ddc16578bb8ceda7.jpg,2,905,257,1129,460,normal,far,other,medium,1
+source-e459eb61dde6db49ddc16578bb8ceda7.jpg,3,1309,249,1525,707,normal,mid,other,lighter,1
+source-e497834ebd715d706366646daeb2269e.jpg,0,885,451,1229,1351,normal,mid,dark,darker,1
+source-efa761a319a37ba07e58ccd0bc1a4003.jpg,0,27,815,122,1068,normal,far,other,medium,1
+source-efa761a319a37ba07e58ccd0bc1a4003.jpg,1,552,383,605,525,normal,far,other,medium,1
+source-efa761a319a37ba07e58ccd0bc1a4003.jpg,2,856,426,906,573,normal,far,other,medium,1
+source-efa761a319a37ba07e58ccd0bc1a4003.jpg,3,1036,537,1096,707,normal,far,other,medium,1
+source-efa761a319a37ba07e58ccd0bc1a4003.jpg,4,1127,250,1151,321,normal,far,other,not visible,1
+source-efa761a319a37ba07e58ccd0bc1a4003.jpg,5,236,289,266,374,normal,far,other,medium,1
+source-efa761a319a37ba07e58ccd0bc1a4003.jpg,6,444,336,497,429,normal,far,other,not visible,1
+source-efa761a319a37ba07e58ccd0bc1a4003.jpg,7,907,230,928,258,normal,far,other,not visible,1
+source-f891b842074a79a1fef1c89bc8d39507.jpg,0,1192,199,1310,466,normal,far,hi-vis,lighter,1
+source-f891b842074a79a1fef1c89bc8d39507.jpg,1,1376,235,1508,508,normal,far,other,lighter,1
+source-f891b842074a79a1fef1c89bc8d39507.jpg,2,1343,462,1539,890,normal,mid,other,lighter,1
+source-f891b842074a79a1fef1c89bc8d39507.jpg,3,745,283,846,428,normal,far,hi-vis,not visible,1
+source-f891b842074a79a1fef1c89bc8d39507.jpg,4,464,354,703,769,normal,mid,other,medium,1
+source-f891b842074a79a1fef1c89bc8d39507.jpg,5,842,499,1104,918,normal,mid,hi-vis,lighter,1
+source-fc7635f8f5ccf2152ef0afcd824df643.jpg,0,359,890,439,1122,dark,far,dark,darker,1
+source-fc7635f8f5ccf2152ef0afcd824df643.jpg,1,388,743,445,897,dark,far,dark,not visible,1
+source-fc7635f8f5ccf2152ef0afcd824df643.jpg,2,275,712,311,840,dark,far,dark,not visible,1
+source-fc7635f8f5ccf2152ef0afcd824df643.jpg,3,1199,854,1265,1049,dark,far,hi-vis,not visible,1
+source-fc7635f8f5ccf2152ef0afcd824df643.jpg,4,514,703,592,775,dark,far,other,not visible,1
+source-fc7635f8f5ccf2152ef0afcd824df643.jpg,5,195,602,217,668,dark,far,other,not visible,1
+source-fc7635f8f5ccf2152ef0afcd824df643.jpg,6,958,654,989,702,dark,far,dark,not visible,1
+source-fd87396c628d9e0ce1ac0177cfbf27e3.jpg,0,302,105,458,465,normal,mid,other,lighter,1
+source-fd87396c628d9e0ce1ac0177cfbf27e3.jpg,1,551,269,739,713,normal,mid,other,lighter,1
+source-fd87396c628d9e0ce1ac0177cfbf27e3.jpg,2,1102,188,1315,678,normal,mid,other,lighter,1
+ultralytics-ppe-nov2026-003.jpg,0,138,197,802,2029,normal,near,dark,medium,1
+ultralytics-ppe-nov2026-003.jpg,1,651,198,1268,2048,normal,near,other,medium,1
+ultralytics-ppe-nov2026-003.jpg,2,582,569,804,1537,normal,mid,dark,not visible,1
+ultralytics-ppe-nov2026-003.jpg,3,4,777,115,1118,normal,far,other,medium,1
+ultralytics-ppe-nov2026-006.jpg,0,190,8,949,1137,normal,near,other,medium,1
+ultralytics-ppe-nov2026-006.jpg,1,1377,112,1967,1077,normal,near,other,medium,1
+ultralytics-ppe-nov2026-006.jpg,2,859,148,1479,1001,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-014.jpg,0,1229,78,1679,1332,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-014.jpg,1,928,148,1296,1138,normal,near,dark,medium,1
+ultralytics-ppe-nov2026-014.jpg,2,184,175,563,1258,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-037.jpg,0,74,330,529,1916,normal,near,hi-vis,lighter,1
+ultralytics-ppe-nov2026-037.jpg,1,562,345,1145,1959,normal,near,other,lighter,1
+ultralytics-ppe-nov2026-037.jpg,2,425,386,822,1602,normal,mid,other,lighter,1
+ultralytics-ppe-nov2026-054.jpg,0,300,203,987,2048,normal,near,other,medium,1
+ultralytics-ppe-nov2026-057.jpg,0,826,472,1333,1860,normal,near,other,medium,1
+ultralytics-ppe-nov2026-057.jpg,1,234,486,755,1962,normal,near,other,medium,1
+ultralytics-ppe-nov2026-083.jpg,0,323,425,903,1927,normal,near,other,medium,1
+ultralytics-ppe-nov2026-084.jpg,0,622,111,1397,2048,normal,near,hi-vis,lighter,1
+ultralytics-ppe-nov2026-103.jpg,0,554,462,1360,2048,normal,near,other,darker,1
+ultralytics-ppe-nov2026-107.jpg,0,674,178,1267,1771,normal,near,other,medium,1
+ultralytics-ppe-nov2026-116.jpg,0,714,324,1088,1982,normal,near,hi-vis,lighter,1
+ultralytics-ppe-nov2026-116.jpg,1,16,527,554,1817,normal,near,other,lighter,1
+ultralytics-ppe-nov2026-129.jpg,0,0,91,280,2048,normal,near,other,not visible,1
+ultralytics-ppe-nov2026-129.jpg,1,375,133,840,1844,normal,near,other,medium,1
+ultralytics-ppe-nov2026-129.jpg,2,179,439,253,609,normal,far,other,not visible,1
+ultralytics-ppe-nov2026-132.jpg,0,311,80,1207,2006,normal,near,hi-vis,lighter,1
+ultralytics-ppe-nov2026-151.jpg,0,895,44,1421,1360,normal,near,other,medium,1
+ultralytics-ppe-nov2026-153.jpg,0,482,457,1278,1781,normal,near,other,medium,1
+ultralytics-ppe-nov2026-154.jpg,0,457,461,1026,2033,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-155.jpg,0,690,142,1448,1960,normal,near,other,darker,1
+ultralytics-ppe-nov2026-156.jpg,0,1128,68,1464,1152,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-156.jpg,1,353,77,765,1152,normal,near,other,lighter,1
+ultralytics-ppe-nov2026-176.jpg,0,1091,0,1971,1360,normal,near,hi-vis,darker,1
+ultralytics-ppe-nov2026-176.jpg,1,235,59,955,1360,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-178.jpg,0,775,35,1268,1903,normal,near,hi-vis,darker,1
+ultralytics-ppe-nov2026-178.jpg,1,71,479,687,1943,normal,near,other,lighter,1
+ultralytics-ppe-nov2026-180.jpg,0,1419,169,1918,2007,normal,near,hi-vis,lighter,1
+ultralytics-ppe-nov2026-180.jpg,1,472,206,1051,1980,normal,near,other,medium,1
+ultralytics-ppe-nov2026-185.jpg,0,854,205,1238,1360,normal,near,other,not visible,1
+ultralytics-ppe-nov2026-193.jpg,0,662,87,1412,1360,normal,near,other,darker,1
+ultralytics-ppe-nov2026-205.jpg,0,791,184,1465,1872,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-208.jpg,0,372,206,1152,2036,normal,near,dark,lighter,1
+ultralytics-ppe-nov2026-209.jpg,0,932,200,1502,2048,normal,near,hi-vis,lighter,1
+ultralytics-ppe-nov2026-233.jpg,0,310,144,999,1900,normal,near,other,medium,1
+ultralytics-ppe-nov2026-251.jpg,0,880,69,1420,1360,normal,near,other,lighter,1
+ultralytics-ppe-nov2026-261.jpg,0,468,279,1059,2048,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-267.jpg,0,877,310,1607,2048,normal,near,other,medium,1
+ultralytics-ppe-nov2026-268.jpg,0,289,17,893,1360,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-316.jpg,0,670,203,1133,1983,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-316.jpg,1,0,309,522,1789,normal,near,other,medium,1
+ultralytics-ppe-nov2026-317.jpg,0,840,45,1610,2048,normal,near,other,medium,1
+ultralytics-ppe-nov2026-326.jpg,0,748,0,2048,1360,normal,near,dark,not visible,1
+ultralytics-ppe-nov2026-327.jpg,0,874,19,1228,1152,normal,near,other,medium,1
+ultralytics-ppe-nov2026-331.jpg,0,0,0,440,1152,normal,near,dark,not visible,1
+ultralytics-ppe-nov2026-331.jpg,1,659,49,1045,1042,normal,near,dark,medium,1
+ultralytics-ppe-nov2026-339.jpg,0,1143,101,1563,1351,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-339.jpg,1,1545,129,1991,1360,normal,near,hi-vis,darker,1
+ultralytics-ppe-nov2026-339.jpg,2,678,194,1083,1328,normal,near,dark,medium,1
+ultralytics-ppe-nov2026-342.jpg,0,224,176,983,1908,normal,near,other,lighter,1
+ultralytics-ppe-nov2026-342.jpg,1,1003,175,1683,1983,normal,near,other,lighter,1
+ultralytics-ppe-nov2026-360.jpg,0,1350,25,1742,1340,normal,near,hi-vis,darker,1
+ultralytics-ppe-nov2026-360.jpg,1,478,534,857,1311,normal,mid,hi-vis,lighter,1
+ultralytics-ppe-nov2026-368.jpg,0,480,36,1179,1360,normal,near,other,lighter,1
+ultralytics-ppe-nov2026-380.jpg,0,1386,48,1880,1974,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-380.jpg,1,278,243,982,1939,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-381.jpg,0,834,314,1318,1080,normal,near,other,medium,1
+ultralytics-ppe-nov2026-386.jpg,0,343,70,1188,2048,normal,near,other,lighter,1
+ultralytics-ppe-nov2026-420.jpg,0,36,289,627,2043,normal,near,hi-vis,lighter,1
+ultralytics-ppe-nov2026-420.jpg,1,900,541,1281,1855,normal,near,hi-vis,lighter,1
+ultralytics-ppe-nov2026-427.jpg,0,982,14,1356,1152,normal,near,other,medium,1
+ultralytics-ppe-nov2026-439.jpg,0,1079,115,1497,1299,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-439.jpg,1,637,118,1026,1345,normal,near,other,darker,1
+ultralytics-ppe-nov2026-459.jpg,0,1246,56,1680,2024,normal,near,other,medium,1
+ultralytics-ppe-nov2026-459.jpg,1,973,113,1427,1615,normal,near,dark,medium,1
+ultralytics-ppe-nov2026-459.jpg,2,451,170,987,1988,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-469.jpg,0,663,78,1133,1152,normal,near,other,medium,1
+ultralytics-ppe-nov2026-477.jpg,0,902,86,1190,1152,normal,near,hi-vis,not visible,1
+ultralytics-ppe-nov2026-477.jpg,1,1360,147,1612,1152,normal,near,other,not visible,1
+ultralytics-ppe-nov2026-490.jpg,0,1165,0,2048,1152,normal,near,dark,not visible,1
+ultralytics-ppe-nov2026-493.jpg,0,819,50,1405,1360,normal,near,other,medium,1
+ultralytics-ppe-nov2026-507.jpg,0,271,518,761,1928,normal,near,dark,medium,1
+ultralytics-ppe-nov2026-511.jpg,0,490,190,1159,2048,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-513.jpg,0,518,115,1258,1623,normal,near,other,medium,1
+ultralytics-ppe-nov2026-514.jpg,0,940,95,1560,1360,normal,near,other,lighter,1
+ultralytics-ppe-nov2026-516.jpg,0,750,489,1100,1991,normal,near,hi-vis,lighter,1
+ultralytics-ppe-nov2026-516.jpg,1,158,632,548,1763,normal,mid,hi-vis,lighter,1
+ultralytics-ppe-nov2026-516.jpg,2,90,733,129,840,normal,far,other,not visible,1
+ultralytics-ppe-nov2026-528.jpg,0,327,676,1216,2004,dark,near,dark,lighter,1
+ultralytics-ppe-nov2026-528.jpg,1,972,369,1106,580,dark,far,other,not visible,1
+ultralytics-ppe-nov2026-538.jpg,0,1279,47,1887,2045,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-538.jpg,1,277,224,990,1982,normal,near,other,lighter,1
+ultralytics-ppe-nov2026-551.jpg,0,795,77,1311,1360,normal,near,other,medium,1
+ultralytics-ppe-nov2026-556.jpg,0,1433,30,1733,1149,normal,near,hi-vis,lighter,1
+ultralytics-ppe-nov2026-556.jpg,1,332,76,834,1152,normal,near,other,lighter,1
+ultralytics-ppe-nov2026-566.jpg,0,304,461,960,2003,normal,near,other,lighter,1
+ultralytics-ppe-nov2026-585.jpg,0,915,316,1223,902,normal,mid,other,medium,1
+ultralytics-ppe-nov2026-585.jpg,1,535,15,584,45,normal,far,light,not visible,1
+ultralytics-ppe-nov2026-617.jpg,0,1064,243,1690,2019,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-617.jpg,1,160,363,768,2048,normal,near,other,medium,1
+ultralytics-ppe-nov2026-618.jpg,0,1368,22,1864,1353,normal,near,other,darker,1
+ultralytics-ppe-nov2026-618.jpg,1,180,51,848,1360,normal,near,hi-vis,lighter,1
+ultralytics-ppe-nov2026-619.jpg,0,802,90,1155,1124,bright,near,other,medium,1
+ultralytics-ppe-nov2026-619.jpg,1,316,456,742,1133,bright,mid,other,medium,1
+ultralytics-ppe-nov2026-626.jpg,0,1132,0,2048,1360,normal,near,dark,lighter,1
+ultralytics-ppe-nov2026-628.jpg,0,561,770,1228,1942,normal,mid,other,lighter,1
+ultralytics-ppe-nov2026-630.jpg,0,166,304,830,1966,normal,near,hi-vis,lighter,1
+ultralytics-ppe-nov2026-639.jpg,0,561,59,992,1342,normal,near,other,medium,1
+ultralytics-ppe-nov2026-639.jpg,1,1123,102,1499,1319,normal,near,hi-vis,medium,1
+ultralytics-ppe-nov2026-642.jpg,0,1031,21,1723,2017,normal,near,hi-vis,lighter,1
+ultralytics-ppe-nov2026-642.jpg,1,389,563,428,629,normal,far,light,not visible,1
+ultralytics-ppe-nov2026-666.jpg,0,255,378,1059,2004,normal,near,other,medium,1
+ultralytics-ppe-nov2026-670.jpg,0,471,24,1147,2048,normal,near,other,lighter,1
+ultralytics-ppe-nov2026-684.jpg,0,399,15,1232,2015,normal,near,hi-vis,lighter,1
+ultralytics-ppe-nov2026-690.jpg,0,205,0,1981,1070,normal,near,other,not visible,1
+ultralytics-ppe-nov2026-693.jpg,0,774,58,1284,1360,normal,near,dark,darker,1

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18",
+ "updated": "2026-11-22",
  "training": {
   "note": "The shipped models were trained for 100 epochs at 640 px on a free Colab T4 GPU (about 19 minutes each, seed 42). An earlier 30-epoch run on a laptop CPU took about 17 hours and is kept for comparison in results/laptop30/."
  },
@@ -342,7 +342,7 @@
   "unsure_share": 0.1614
  },
  "subgroups": {
-  "note": "Subgroup tags are automatic estimates (0 of 230 checked by hand so far); skin-tone results are withheld until the tags are checked by hand, because the automatic colour-based grouping proved unreliable (it put almost every visible face in one group). Groups under 30 people have wide intervals and support no firm conclusion. \u201cno_\u201d recall counts a non-compliant worker as caught when the model says missing PPE or check manually.",
+  "note": "Lighting, distance and clothing tags are automatic; skin tone was labelled by eye from head-and-shoulder crops (lighter / medium / darker, or not visible when the face is turned away, tiny or blurred), because the automatic colour-based grouping proved unreliable. Groups under 30 people have wide intervals and support no firm conclusion. \u201cno_\u201d recall counts a non-compliant worker as caught when the model says missing PPE or check manually.",
   "rows": [
    {
     "group": "lighting: bright",
@@ -423,6 +423,38 @@
     "lo": 0.8772,
     "hi": 0.9737,
     "no_recall": 0.8627
+   },
+   {
+    "group": "skin_tone: darker",
+    "n": 12,
+    "person_recall": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "no_recall": 1.0
+   },
+   {
+    "group": "skin_tone: lighter",
+    "n": 57,
+    "person_recall": 0.9825,
+    "lo": 0.9474,
+    "hi": 1.0,
+    "no_recall": 0.8667
+   },
+   {
+    "group": "skin_tone: medium",
+    "n": 71,
+    "person_recall": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "no_recall": 0.9714
+   },
+   {
+    "group": "skin_tone: not visible",
+    "n": 76,
+    "person_recall": 0.8421,
+    "lo": 0.75,
+    "hi": 0.9211,
+    "no_recall": 0.75
    }
   ]
  },

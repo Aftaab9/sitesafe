@@ -113,9 +113,9 @@ def main():
         df = pd.read_csv(fa)
         meta = load(E / "fairness_meta.json") or {}
         m["subgroups"] = {
-            "note": (f"Subgroup tags are automatic estimates ({meta.get('tags_verified_by_hand', 0)} of {meta.get('tags_total', 0)} checked by hand so far); "
-                     "skin-tone results are withheld until the tags are checked by hand, because the automatic colour-based grouping proved unreliable "
-                     "(it put almost every visible face in one group). Groups under 30 people have wide intervals and support no firm conclusion. "
+            "note": ("Lighting, distance and clothing tags are automatic; skin tone was labelled by eye from head-and-shoulder crops "
+                     "(lighter / medium / darker, or not visible when the face is turned away, tiny or blurred), because the automatic "
+                     "colour-based grouping proved unreliable. Groups under 30 people have wide intervals and support no firm conclusion. "
                      "“no_” recall counts a non-compliant worker as caught when the model says missing PPE or check manually."),
             "rows": [{"group": f"{r.dimension}: {r.group}", "n": int(r.n_people), "person_recall": r.person_recall, "lo": r.lo, "hi": r.hi,
                       "no_recall": None if pd.isna(r.nc_flagged_or_unsure) else r.nc_flagged_or_unsure} for r in df.itertuples()
