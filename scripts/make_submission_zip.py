@@ -35,19 +35,30 @@ DOCS = ["Technical_Report.docx", "Model_Card.docx", "SiteSafe_Presentation.pptx"
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--name", required=True)
+    ap.add_argument("--no-repo", action="store_true", help="documents and screenshots only; the repository is given as a link")
     a = ap.parse_args()
-    out = ROOT / f"SiteSafe_Submission_{a.name}.zip"
+    out = ROOT / f"SiteSafe_Submission_{a.name}{'_docs' if a.no_repo else ''}.zip"
     tar = subprocess.run(["git", "archive", "--format=tar", "HEAD"], cwd=ROOT, capture_output=True, check=True).stdout
     n_repo = 0
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED, compresslevel=6) as z:
         for d in DOCS:
-            z.write(SUB / d, d)
+            if d == "SUBMISSION.md" and a.no_repo:  # describe what this smaller zip actually contains
+                text = (SUB / d).read_text(encoding="utf-8")
+                i, j = text.index("`sitesafe-repo/`"), text.index("## Numbers")
+                text = text[:i] + ("The code is not in this zip. It is in the public GitHub repository "
+                                   "https://github.com/Aftaab9/sitesafe (README with set-up, run, train and deploy steps, "
+                                   "pinned requirements, ONNX models, licence notices).\n\n") + text[j:]
+                z.writestr(d, text)
+            else:
+                z.write(SUB / d, d)
         for f in sorted((SUB / "screenshots").iterdir()):
             z.write(f, f"screenshots/{f.name}")
         for f in sorted((SUB / "figures").iterdir()):
             z.write(f, f"figures/{f.name}")
-        with tarfile.open(fileobj=io.BytesIO(tar)) as t:
-            for m in t.getmembers():
+        if a.no_repo:
+            tar = b""
+        with tarfile.open(fileobj=io.BytesIO(tar)) if tar else io.BytesIO() as t:
+            for m in (t.getmembers() if tar else []):
                 if (not m.isfile() or m.name.startswith(SKIP_PREFIX) or m.name.startswith("submission/")
                         or any(part in m.name for part in SKIP_PART)):
                     continue
