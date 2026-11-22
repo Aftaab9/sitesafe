@@ -44,7 +44,9 @@ function card(slide, x, y, w, h, fill = C.surface) {
 }
 function stat(slide, x, y, w, value, label, color = C.hivis) {
   card(slide, x, y, w, 1.55);
-  slide.addText(value, { x: x + 0.25, y: y + 0.15, w: w - 0.5, h: 0.8, fontFace: HEAD, fontSize: 34, bold: true, color, margin: 0, isTextBox: true });
+  // Shrink long values so they stay on one line (bold Arial is about 0.62 em per character).
+  const size = Math.min(34, Math.floor(((w - 0.5) * 72) / (value.length * 0.62)));
+  slide.addText(value, { x: x + 0.25, y: y + 0.15, w: w - 0.5, h: 0.8, fontFace: HEAD, fontSize: size, bold: true, color, margin: 0, valign: 'middle', isTextBox: true });
   slide.addText(label, { x: x + 0.25, y: y + 0.92, w: w - 0.5, h: 0.55, fontFace: BODY, fontSize: 13, color: C.muted, margin: 0, valign: 'top', isTextBox: true });
 }
 function bullets(slide, items, x, y, w, h, size = 16) {
@@ -69,7 +71,7 @@ let s = pres.addSlide({ masterName: 'DARK' });
 s.addShape(pres.shapes.RECTANGLE, { x: 0, y: 0, w: 13.33, h: 0.16, fill: { color: C.hivis }, line: { color: C.hivis } });
 s.addText('SITESAFE · PROJECT 6 · CONSTRUCTION', { x: 0.7, y: 1.0, w: 6, h: 0.35, fontFace: BODY, fontSize: 13, color: C.muted, charSpacing: 2, margin: 0, isTextBox: true });
 s.addText([{ text: 'See who is missing PPE.', options: { breakLine: true, color: C.ink } }, { text: 'Without seeing who they are.', options: { color: C.hivis } }],
-  { x: 0.7, y: 1.5, w: 6.2, h: 1.9, fontFace: HEAD, fontSize: 36, bold: true, margin: 0, valign: 'top', isTextBox: true });
+  { x: 0.7, y: 1.5, w: 6.4, h: 1.9, fontFace: HEAD, fontSize: 33, bold: true, margin: 0, valign: 'top', isTextBox: true });
 s.addText('On-device PPE checks for site safety officers: photos, short clips and live video. Faces blurred, nothing uploaded.',
   { x: 0.7, y: 3.55, w: 5.9, h: 1.0, fontFace: BODY, fontSize: 16, color: C.muted, margin: 0, valign: 'top', isTextBox: true });
 s.addText([{ text: 'Live app  ', options: { color: C.muted } }, { text: LIVE, options: { color: C.hivis, hyperlink: { url: LIVE } } }],
@@ -100,8 +102,8 @@ s.addNotes('[0:30-1:15] The user is the site safety officer. The decision is nar
 s = pres.addSlide({ masterName: 'CONTENT' });
 title(s, 'Data: Construction-PPE plus 30 real photos of my own', 'Ultralytics Construction-PPE, CC BY 4.0 · 1,000 images · 12 classes, five of them "no_"');
 figure(s, FIG('fig_class_counts.png'), 0.6, 1.8, 6.6, 4.9);
-stat(s, 7.5, 1.8, 2.5, '700 / 200 / 100', 'seeded, stratified train / val / test split (the dataset has no test split)');
-stat(s, 10.23, 1.8, 2.5, '30 photos', 'my own test set from Wikimedia Commons, 91 workers labelled by hand');
+stat(s, 7.5, 1.8, 2.5, '700 / 200 / 100', 'seeded train / val / test split; test used once');
+stat(s, 10.23, 1.8, 2.5, '30 photos', 'my own Wikimedia test set, 91 workers');
 card(s, 7.5, 3.6, 5.23, 3.1);
 bullets(s, [
   'Test split is never used for training or tuning',
@@ -163,9 +165,9 @@ s.addNotes('[3:00-4:00] I compared against three methods that need no PPE traini
 s = pres.addSlide({ masterName: 'CONTENT' });
 title(s, 'Generative AI: diffusion-made hard cases', 'SD-Turbo image-to-image at strength 0.3: night, rain, fog and dust versions with the original labels · CLIP + detector quality filter');
 figure(s, FIG('fig_synthetic_with_without.png'), 0.6, 1.8, 7.7, 3.2);
-stat(s, 0.6, 5.2, 2.45, '−0.3 pts', '"no_" recall on real test images (95 % CI −3.0 to +2.7)', C.muted);
-stat(s, 3.22, 5.2, 2.45, '+14.5 pts', 'on weather versions of the test images (8.6 to 20.9)', C.ok);
-stat(s, 5.84, 5.2, 2.45, '35 → 75 %', 'no_boots recall on the weather versions', C.hivis);
+stat(s, 0.6, 5.2, 2.45, '−0.3 pts', 'on real test images (CI −3.0 to +2.7)', C.muted);
+stat(s, 3.22, 5.2, 2.45, '+14.5 pts', 'on weather versions (CI 8.6 to 20.9)', C.ok);
+stat(s, 5.84, 5.2, 2.45, '35 → 75 %', 'no_boots recall, weather versions', C.hivis);
 card(s, 8.6, 1.8, 4.13, 4.95);
 bullets(s, [
   '339 of 400 diffusion images passed the quality filter',
@@ -270,7 +272,7 @@ bullets(s, [
   'Own test set is small: 91 workers, 19 violators',
   'Smoothing study uses simulated clips; forklift proximity has no depth',
   'Skin-tone groups labelled by one person; darker group is small',
-], 0.85, 2.2, 5.5, 4.3, 15);
+], 0.85, 2.25, 5.5, 4.3, 18);
 card(s, 6.76, 1.4, 5.97, 5.3);
 s.addText('Next steps', { x: 7.01, y: 1.6, w: 5.5, h: 0.45, fontFace: HEAD, fontSize: 20, bold: true, color: C.ok, margin: 0, isTextBox: true });
 bullets(s, [
@@ -278,7 +280,7 @@ bullets(s, [
   'Use the vision-language model only as a second opinion: green when both agree halved violators shown green (4.2 → 2.1 %)',
   'Real labelled video for the tracker and smoothing',
   'A ControlNet fairness set with fixed poses and varied skin tones',
-], 7.01, 2.2, 5.5, 4.3, 15);
+], 7.01, 2.25, 5.5, 4.3, 18);
 s.addNotes('[9:40-10:00] The limits are mainly data: a small, partly synthetic training set, and a small real test set. The next step is labelled real photos, not a bigger model. The vision-language model is worth keeping as a second opinion: green only when both agree halved the violators shown green on the test split. Thank you; I am happy to take questions.');
 
 // 14 · Close ----------------------------------------------------------------------------

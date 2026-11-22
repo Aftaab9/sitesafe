@@ -78,7 +78,10 @@ def convert(md: Path, out: Path, compact: bool = False):
         if img:  # a figure: picture plus a short caption (captions are not part of the body word count)
             path = ROOT / img.group(2)
             if path.exists():
-                doc.add_picture(str(path), width=Inches(6.0))
+                from PIL import Image
+                with Image.open(path) as im:
+                    aspect = im.height / im.width
+                doc.add_picture(str(path), width=Inches(min(6.0, 4.5 / aspect)))  # at most 4.5 in tall
                 doc.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
                 cap = doc.add_paragraph(); cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
                 r = cap.add_run(img.group(1)); r.italic = True; r.font.size = Pt(9); r.font.color.rgb = BLACK
